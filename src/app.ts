@@ -16,7 +16,7 @@
 
 import { Card, CardOrderColor, CardStyle, CardType } from "./card";
 import { serialize, deserialize } from "typescript-json-serializer";
-import { parse } from 'papaparse';
+import { parse, RECORD_SEP, UNIT_SEP } from 'papaparse';
 
 import $ from 'jquery';
 
@@ -197,10 +197,15 @@ function handleFileSelect(event: Event) {
             const fileExt = getFileExtension(f.name);
             if (fileExt === "csv" || fileExt === 'tsv') {
                 let config: any;
-                parse(f, {complete: (result) => {
+                parse(f, {
+	                delimiter: RECORD_SEP,
+                    newline: "\r\n",
+                    complete: (result) => {
                     for (let data of result.data) {
+                        console.log(result)
                         let fields = data as Array<string>;
                         let cardType = CardType.Stratagem;
+                        console.log(fields);
                         if (fields[0].toUpperCase() == "STRATAGEM") cardType = CardType.Stratagem;
                         else if (fields[0].toUpperCase() === "PSYCHIC POWER") cardType = CardType.PsychicPower;
                         else if (fields[0].toUpperCase() === "TACTICAL OBJECTIVE") cardType = CardType.TacticalObjective;
@@ -219,7 +224,7 @@ function handleFileSelect(event: Event) {
                             else if (fields.length == 7) {
                                 card._style = textToStyle(fields[i++]);
                             }
-                            switch(fields[i]) {
+                            switch(fields[i++]) {
                                 case "Assault":{
                                     card._order = CardOrderColor.Assault;                           
                                     break;
@@ -301,7 +306,7 @@ function onBatchSave() {
     console.log(cards_to_export)
 
     let csvContent = "data:text/csv;charset=utf-8," 
-    + cards_to_export.map(e => e.join(",")).join("\n");
+    + cards_to_export.map(e => e.join(RECORD_SEP)).join("\r\n");
     var encodedUri = encodeURI(csvContent);
     window.open(encodedUri);
     return null;
