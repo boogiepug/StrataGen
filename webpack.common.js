@@ -10,11 +10,11 @@ module.exports = {
   optimization: {
     usedExports: true
   },
-  output: {
-    filename: 'stratagen.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+//   output: {
+//     filename: 'stratagen.js',
+//     path: path.resolve(__dirname, 'dist'),
+//     clean: true,
+//   },
   module: {
     rules: [
       {
