@@ -415,7 +415,7 @@ function plumbCallbacks() {
     $('#previouscard').click(onPreviousCard);
     $('#nextcard').click(onNextCard);
 
-    $('#cardtype').on('change', onCardTypeChanged);
+    // $('#cardtype').on('change', onCardTypeChanged);
     $('#cardstyle').on('change', onCardStyleChanged);
     $('#cardheader').on('input', onHeaderChanged);
     $('#cardtitle').on('input', onTitleChanged);
