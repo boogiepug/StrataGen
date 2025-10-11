@@ -162,7 +162,7 @@ export class Card {
         this._width = canvas.width - 2 * marginPx;
         this._height = canvas.height - 2 * marginPx;
         this._scale = Math.max(this._width/Card.defaultWidthPx, this._height/Card.defaultHeightPx);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#f8f9fa";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         // Apply margin - move the origin to the margin.

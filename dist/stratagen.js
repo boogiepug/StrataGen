@@ -15768,7 +15768,7 @@ function handleCreate() {
         canvas.height = Math.round(mmToInches(cardSizeMm[1]) * dpi) + 2 * marginPx;
         activeCards[currentCard].draw(canvas, marginPx);
         let link = document.createElement('a');
-        link.download = 'stratagem.png';
+        link.download = `${activeCards[currentCard]._title}.png`;
         link.href = canvas.toDataURL("image/png");
         link.click();
         console.log("Current card: " + currentCard + " Num active cards: " + activeCards.length);
@@ -16205,7 +16205,7 @@ let Card = Card_1 = class Card {
         this._width = canvas.width - 2 * marginPx;
         this._height = canvas.height - 2 * marginPx;
         this._scale = Math.max(this._width / Card_1.defaultWidthPx, this._height / Card_1.defaultHeightPx);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#f8f9fa";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.translate(marginPx, marginPx);
         ctx.fillRect(30, 15, this._width - 60, this._height - 30);
@@ -16544,7 +16544,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b0cd708cb4b35c6c72f7")
+/******/ 		__webpack_require__.h = () => ("cf693a283553cb242c1b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

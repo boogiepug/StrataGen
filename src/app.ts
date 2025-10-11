@@ -158,7 +158,7 @@ function handleCreate() {
         activeCards[currentCard].draw(canvas, marginPx);
 
         let link = document.createElement('a');
-        link.download = 'stratagem.png';
+        link.download = `${activeCards[currentCard]._title}.png`;
         link.href = canvas.toDataURL("image/png");
         link.click();
 
