@@ -122,6 +122,7 @@ export class Card {
     @JsonProperty() public _style: CardStyle = CardStyle.Classic;
     @JsonProperty() public _order: CardOrderColor = CardOrderColor.Assault;
 
+    @JsonProperty() public _batch: string = "New Set";
     @JsonProperty() public _heading: string = "CORE";
     @JsonProperty() public _title: string = "<Title>";
     @JsonProperty() public _fluff: string = "<Fluff text>";

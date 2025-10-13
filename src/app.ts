@@ -182,6 +182,17 @@ function textToStyle(styleText: string): CardStyle {
     return CardStyle.Edition_9th;
 }
 
+function onBatchNameChanged(event: Event) {
+    let inputElem = event.target as HTMLInputElement;
+
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._batch = inputElem.value;
+        console.log("Current set: " + inputElem.value)
+        updatePreview();
+    }
+
+}
+
 function handleFileSelect(event: Event) {
     const input = event.target as HTMLInputElement;
     const files = input.files;
@@ -201,11 +212,12 @@ function handleFileSelect(event: Event) {
 	                delimiter: RECORD_SEP,
                     newline: "\r\n",
                     complete: (result) => {
+                    const fileName = f.name.substring(0, f.name.length-4);
                     for (let data of result.data) {
-                        console.log(result)
                         let fields = data as Array<string>;
                         let cardType = CardType.Stratagem;
-                        console.log(fields);
+
+                        // console.log(fileName);
                         if (fields[0].toUpperCase() == "STRATAGEM") cardType = CardType.Stratagem;
                         else if (fields[0].toUpperCase() === "PSYCHIC POWER") cardType = CardType.PsychicPower;
                         else if (fields[0].toUpperCase() === "TACTICAL OBJECTIVE") cardType = CardType.TacticalObjective;
@@ -218,6 +230,7 @@ function handleFileSelect(event: Event) {
                             let card = new Card();
                             card._type = cardType;
                             card._value = "";
+                            card._batch = fileName;
                             if (fields.length == 6) {
                                 card._style = defaultStyle;
                             }
@@ -284,7 +297,10 @@ function handleFileSelect(event: Event) {
                             activeCards.push(card);
                         }
                     }
+
+
                     currentCard = 0;
+                    console.log("Current set: " + fileName)
                     console.log("Num active cards: " + activeCards.length);
                     updateCardUI();
                     updatePreview();
@@ -299,7 +315,7 @@ function handleFileSelect(event: Event) {
 }
 
 function onBatchSave() {
-    let cards_to_export:string[][] = []
+    let cards_to_export:string[][] = [];
     activeCards.forEach((card) => {
         cards_to_export.push(["PRAYER", card._style.toLocaleUpperCase(), parseOrder(card), card._title, card._heading, card._fluff, card._rule])
     })
@@ -307,8 +323,16 @@ function onBatchSave() {
 
     let csvContent = "data:text/csv;charset=utf-8," 
     + cards_to_export.map(e => e.join(RECORD_SEP)).join("\r\n");
-    var encodedUri = encodeURI(csvContent);
-    window.open(encodedUri);
+   var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${activeCards[currentCard]._batch}.csv`);
+    document.body.appendChild(link); // Required for FF
+
+    link.click(); // This will download the data file named "my_data.csv".
+
+    link.remove();
+
     return null;
 }
 
@@ -365,8 +389,9 @@ function parseOrder(card:Card):string {
 
 function updateCardUI() {
     if (activeCards[currentCard]) {
-    $("#cardcounter").html(`[${currentCard+1}/${activeCards.length}]`)
-
+        $("#cardcounter").html(`[${currentCard+1}/${activeCards.length}]`);
+        $("#batchname").val(`${activeCards[currentCard]._batch}`);
+        
         $('#cardtype').val(activeCards[currentCard]._type.toString());
         $('#cardstyle').val(parseOrder(activeCards[currentCard]));
         $('#cardheader').val(activeCards[currentCard]._heading);
@@ -429,8 +454,10 @@ function plumbCallbacks() {
     $('#cardvalue').on('input', onValueChanged);
     $('#cardfooter').on('input', onFooterChanged);
 
-    $('#createcard').click(handleCreate);
+    $('#batchname').on('blur', onBatchNameChanged)
     $('#datacardfile').on('change', handleFileSelect);
+    $('#batchsave').click(onBatchSave);
+    $('#createcard').click(handleCreate);
 
     $('#backgroundfile').on('change', onBackgroundLoad);
     $('#bgopacity').on('input', onBgOpacityChanged);
@@ -439,7 +466,6 @@ function plumbCallbacks() {
     $('#savecard').click(onSaveCard);
     $('#loadcard').click(onLoadCard);
 
-    $('#batchsave').click(onBatchSave);
 }
 
 console.log("Reloading web page.");
