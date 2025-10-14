@@ -349,6 +349,21 @@ function onLoadCard() {
     updatePreview();
 }
 
+function deleteCard() {    
+    if(confirm(`Are you sure you want to delete ${activeCards[currentCard]._title}?`)){
+        if(activeCards.length == 1) {
+            activeCards[currentCard] = new Card();
+        }
+        else if(activeCards.length > 1) {
+            activeCards.splice(currentCard, 1);
+            if(currentCard >= activeCards.length) {
+                currentCard -= 1;
+            }
+        }
+    }
+    updateCardUI();
+    updatePreview();
+}
 
 function onBackgroundLoad(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -458,6 +473,7 @@ function plumbCallbacks() {
     $('#datacardfile').on('change', handleFileSelect);
     $('#batchsave').click(onBatchSave);
     $('#createcard').click(handleCreate);
+    $('#deletecard').click(deleteCard)
 
     $('#backgroundfile').on('change', onBackgroundLoad);
     $('#bgopacity').on('input', onBgOpacityChanged);
