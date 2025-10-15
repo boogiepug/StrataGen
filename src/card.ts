@@ -132,12 +132,12 @@ export class Card {
 
     private headerFont(): string {
         if (this._style == CardStyle.Edition_9th) {
-            return Math.round(16*this._scale).toString() + 'px ' + 'Teko';
+            return Math.round(20*this._scale).toString() + 'px ' + 'Teko';
         }
         return Math.round(24*this._scale).toString() + 'px ' + 'Teko';
     }
     private titleFont(): string {
-        return Math.round(26*this._scale).toString() + 'px ' + 'Teko';
+        return Math.round(32*this._scale).toString() + 'px ' + 'Teko';
     }
     private fluffFont(): string {
         return 'italic ' + Math.round(13*this._scale).toString() + 'px ' + 'serif';
@@ -162,22 +162,27 @@ export class Card {
 
         this._width = canvas.width - 2 * marginPx;
         this._height = canvas.height - 2 * marginPx;
+        // this._width = canvas.width;
+        // this._height = canvas.height;
         this._scale = Math.max(this._width/Card.defaultWidthPx, this._height/Card.defaultHeightPx);
         ctx.fillStyle = "#f8f9fa";
+        // ctx.fillStyle = "#2586e7ff";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         // Apply margin - move the origin to the margin.
         ctx.translate(marginPx, marginPx);
-        ctx.fillRect(30, 15, this._width - 60, this._height - 30);
+        ctx.fillRect(0, 0, this._width, this._height);
         ctx.lineJoin = 'round';
         ctx.strokeStyle = 'silver';
         // this.roundRect(ctx, 1, 1, this._width - 2, this._height - 2, 20, false, true);
 
-        const borderX = this._width * 0.05;
-        const borderY = this._height * 0.02;
+        // const borderX = this._width * 0.05;
+        // const borderY = this._height * 0.02;
+        const borderX = 5;
+        const borderY = 5;
         const borderWidth = this._width - 2 * borderX;
         const borderHeight = this._height - 2 * borderY;
-        const borderLineWidth = Math.ceil(borderX * 0.3);
+        const borderLineWidth = Math.ceil(5);
 
         let numRows = 12;
         if (this._style  == CardStyle.Edition_9th) numRows = 20;

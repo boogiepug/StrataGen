@@ -15756,7 +15756,7 @@ function handleCreate() {
     if (activeCards[currentCard]) {
         const cardSizeMm = [63, 88];
         let dpi = 300;
-        let marginMm = 0;
+        let marginMm = -20;
         const outputDPIInput = document.getElementById('outputdpi');
         if (outputDPIInput)
             dpi = parseInt(outputDPIInput.value);
@@ -15767,7 +15767,7 @@ function handleCreate() {
         let canvas = document.createElement('canvas');
         canvas.width = Math.round(mmToInches(cardSizeMm[0]) * dpi) + 2 * marginPx;
         canvas.height = Math.round(mmToInches(cardSizeMm[1]) * dpi) + 2 * marginPx;
-        activeCards[currentCard].draw(canvas, marginPx);
+        activeCards[currentCard].draw(canvas, marginMm);
         let link = document.createElement('a');
         link.download = `${activeCards[currentCard]._title}.png`;
         link.href = canvas.toDataURL("image/png");
@@ -16231,12 +16231,12 @@ let Card = Card_1 = class Card {
     }
     headerFont() {
         if (this._style == CardStyle.Edition_9th) {
-            return Math.round(16 * this._scale).toString() + 'px ' + 'Teko';
+            return Math.round(20 * this._scale).toString() + 'px ' + 'Teko';
         }
         return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
     }
     titleFont() {
-        return Math.round(26 * this._scale).toString() + 'px ' + 'Teko';
+        return Math.round(32 * this._scale).toString() + 'px ' + 'Teko';
     }
     fluffFont() {
         return 'italic ' + Math.round(13 * this._scale).toString() + 'px ' + 'serif';
@@ -16263,14 +16263,14 @@ let Card = Card_1 = class Card {
         ctx.fillStyle = "#f8f9fa";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.translate(marginPx, marginPx);
-        ctx.fillRect(30, 15, this._width - 60, this._height - 30);
+        ctx.fillRect(0, 0, this._width, this._height);
         ctx.lineJoin = 'round';
         ctx.strokeStyle = 'silver';
-        const borderX = this._width * 0.05;
-        const borderY = this._height * 0.02;
+        const borderX = 5;
+        const borderY = 5;
         const borderWidth = this._width - 2 * borderX;
         const borderHeight = this._height - 2 * borderY;
-        const borderLineWidth = Math.ceil(borderX * 0.3);
+        const borderLineWidth = Math.ceil(5);
         let numRows = 12;
         if (this._style == CardStyle.Edition_9th)
             numRows = 20;
@@ -16603,7 +16603,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e2cb6d2da5e553665911")
+/******/ 		__webpack_require__.h = () => ("c6ea3ef9373e28c400b2")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

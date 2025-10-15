@@ -144,7 +144,7 @@ function handleCreate() {
         const cardSizeMm = [63, 88];
 
         let dpi = 300;
-        let marginMm = 0;
+        let marginMm = -20;
         const outputDPIInput = document.getElementById('outputdpi') as HTMLInputElement;
         if (outputDPIInput) dpi = parseInt(outputDPIInput.value);
         const outputMargin = document.getElementById('outputmargin') as HTMLInputElement;
@@ -156,7 +156,7 @@ function handleCreate() {
         canvas.width = Math.round(mmToInches(cardSizeMm[0]) * dpi) + 2 * marginPx;
         canvas.height = Math.round(mmToInches(cardSizeMm[1]) * dpi) + 2 * marginPx;
 
-        activeCards[currentCard].draw(canvas, marginPx);
+        activeCards[currentCard].draw(canvas, marginMm);
 
         let link = document.createElement('a');
         link.download = `${activeCards[currentCard]._title}.png`;
