@@ -176,10 +176,10 @@ export class Card {
         ctx.strokeStyle = 'silver';
         // this.roundRect(ctx, 1, 1, this._width - 2, this._height - 2, 20, false, true);
 
-        // const borderX = this._width * 0.05;
-        // const borderY = this._height * 0.02;
-        const borderX = 5;
-        const borderY = 5;
+        // let borderX = this._width * 0.05;
+        // let borderY = this._height * 0.02;
+        let borderX = 5;
+        let borderY = 5;
         const borderWidth = this._width - 2 * borderX;
         const borderHeight = this._height - 2 * borderY;
         const borderLineWidth = Math.ceil(5);
@@ -206,6 +206,8 @@ export class Card {
         RenderText(ctx, cardHeader, borderX, borderY, borderWidth, textRegionHeight, Justification.Center);
         ctx.restore();
 
+        borderX = this._width * 0.05;
+        borderY = this._height * 0.02;
         let curY = borderY * 2 + textRegionHeight;
         const marginXLeft = borderX * 2;
         const marginXRight = this._width - 2 * borderX;
@@ -319,13 +321,13 @@ export class Card {
         this.bevelRect(ctx, x, y, width, height, bevel, false, true);
         ctx.moveTo(x, y + bevel);
         ctx.lineTo(x + width, y + bevel);
-        let region = new Path2D();
-        region.moveTo(x,y + bevel);
-        region.lineTo(x + width, y + bevel);
-        region.lineTo(x + width - bevel, y);
-        region.lineTo(x + bevel, y);
+        let orderColor = new Path2D();
+        orderColor.moveTo(x,y + bevel);
+        orderColor.lineTo(x + width, y + bevel);
+        orderColor.lineTo(x + width - bevel, y);
+        orderColor.lineTo(x + bevel, y);
         ctx.fillStyle = this.cardColor();
-        ctx.fill(region, "evenodd");
+        ctx.fill(orderColor, "evenodd");
         ctx.stroke();
     }
 

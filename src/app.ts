@@ -144,7 +144,7 @@ function handleCreate() {
         const cardSizeMm = [63, 88];
 
         let dpi = 300;
-        let marginMm = -20;
+        let marginMm = 0;
         const outputDPIInput = document.getElementById('outputdpi') as HTMLInputElement;
         if (outputDPIInput) dpi = parseInt(outputDPIInput.value);
         const outputMargin = document.getElementById('outputmargin') as HTMLInputElement;
