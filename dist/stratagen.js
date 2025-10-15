@@ -15658,6 +15658,7 @@ function updatePreview() {
     if (canvas && activeCards[currentCard]) {
         activeCards[currentCard].draw(canvas, 0);
     }
+    sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
 }
 function onCardTypeChanged(event) {
     const selectElem = event.target;
@@ -16036,7 +16037,6 @@ function updateCardUI() {
             jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
         }
         jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').val(activeCards[currentCard]._value);
-        sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
     }
 }
 function loadPreviousCards() {
@@ -16603,7 +16603,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ae8b84a97406dde0bcc4")
+/******/ 		__webpack_require__.h = () => ("e2cb6d2da5e553665911")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -28,6 +28,7 @@ function updatePreview() {
     if (canvas && activeCards[currentCard]) {
         activeCards[currentCard].draw(canvas, 0);
     }
+    sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
 }
 
 function onCardTypeChanged(event: Event) {
@@ -453,7 +454,6 @@ function updateCardUI() {
 
         $('#cardvalue').val(activeCards[currentCard]._value);
 
-        sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
     }
 }
 
