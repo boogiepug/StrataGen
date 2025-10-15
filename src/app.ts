@@ -452,6 +452,31 @@ function updateCardUI() {
         }
 
         $('#cardvalue').val(activeCards[currentCard]._value);
+
+        sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
+    }
+}
+
+function loadPreviousCards() {
+    let cardsBackup = sessionStorage.getItem("setBackup");
+    if(cardsBackup) {
+        JSON.parse(cardsBackup).forEach((card:Card, i:number) => {
+            activeCards[i] = new Card()
+
+            activeCards[i]._batch = card._batch;
+            activeCards[i]._fluff = card._fluff;
+            activeCards[i]._footer = card._footer;
+            activeCards[i].​​_heading = card.​​_heading;
+            activeCards[i].​​_order = card.​​_order;
+            activeCards[i].​​_rule = card.​​_rule;
+            activeCards[i].​​_style = card.​​_style;
+            activeCards[i].​​_title = card.​​_title;
+            activeCards[i].​​_type = card.​​_type;
+            activeCards[i].​​_value = card.​​_value;
+
+            currentCard = i;
+        });
+        console.log(activeCards) 
     }
 }
 
@@ -496,6 +521,8 @@ if (canvas) {
         }
     }
 }
+
+loadPreviousCards();
 
 plumbCallbacks();
 

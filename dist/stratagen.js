@@ -16036,6 +16036,27 @@ function updateCardUI() {
             jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
         }
         jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').val(activeCards[currentCard]._value);
+        sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
+    }
+}
+function loadPreviousCards() {
+    let cardsBackup = sessionStorage.getItem("setBackup");
+    if (cardsBackup) {
+        JSON.parse(cardsBackup).forEach((card, i) => {
+            activeCards[i] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+            activeCards[i]._batch = card._batch;
+            activeCards[i]._fluff = card._fluff;
+            activeCards[i]._footer = card._footer;
+            activeCards[i]._heading = card._heading;
+            activeCards[i]._order = card._order;
+            activeCards[i]._rule = card._rule;
+            activeCards[i]._style = card._style;
+            activeCards[i]._title = card._title;
+            activeCards[i]._type = card._type;
+            activeCards[i]._value = card._value;
+            currentCard = i;
+        });
+        console.log(activeCards);
     }
 }
 function plumbCallbacks() {
@@ -16070,6 +16091,7 @@ if (canvas) {
         }
     }
 }
+loadPreviousCards();
 plumbCallbacks();
 updateCardUI();
 updatePreview();
@@ -16581,7 +16603,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c0a58f8b700ceeaf7d9e")
+/******/ 		__webpack_require__.h = () => ("ae8b84a97406dde0bcc4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
