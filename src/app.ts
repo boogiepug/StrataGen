@@ -337,6 +337,16 @@ function onBatchSave() {
     return null;
 }
 
+function onBatchPrint() {
+    let currentCardHolder:number = currentCard;
+    currentCard = 0;
+    activeCards.forEach((_, i) => {
+        handleCreate()
+        currentCard++
+    })
+    currentCard = currentCardHolder;
+}
+
 function onSaveCard() {
     localStorage.setItem('lastCard', JSON.stringify(serialize(activeCards[currentCard])));
 }
@@ -345,6 +355,7 @@ function onLoadCard() {
     activeCards.push(activeCards[currentCard])
     currentCard++;
     activeCards[currentCard] = new Card()
+    activeCards[currentCard]._batch = activeCards[currentCard-1]._batch;
     console.log(activeCards)
     updateCardUI();
     updatePreview();
@@ -494,11 +505,13 @@ function plumbCallbacks() {
     $('#cardvalue').on('input', onValueChanged);
     $('#cardfooter').on('input', onFooterChanged);
 
+    $('#createcard').click(handleCreate);
+    $('#deletecard').click(deleteCard)
+
     $('#batchname').on('blur', onBatchNameChanged)
     $('#datacardfile').on('change', handleFileSelect);
     $('#batchsave').click(onBatchSave);
-    $('#createcard').click(handleCreate);
-    $('#deletecard').click(deleteCard)
+    $('#batchcreate').click(onBatchPrint);
 
     $('#backgroundfile').on('change', onBackgroundLoad);
     $('#bgopacity').on('input', onBgOpacityChanged);

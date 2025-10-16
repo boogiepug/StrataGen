@@ -15931,6 +15931,15 @@ function onBatchSave() {
     link.remove();
     return null;
 }
+function onBatchPrint() {
+    let currentCardHolder = currentCard;
+    currentCard = 0;
+    activeCards.forEach((_, i) => {
+        handleCreate();
+        currentCard++;
+    });
+    currentCard = currentCardHolder;
+}
 function onSaveCard() {
     localStorage.setItem('lastCard', JSON.stringify((0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__.serialize)(activeCards[currentCard])));
 }
@@ -15938,6 +15947,7 @@ function onLoadCard() {
     activeCards.push(activeCards[currentCard]);
     currentCard++;
     activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+    activeCards[currentCard]._batch = activeCards[currentCard - 1]._batch;
     console.log(activeCards);
     updateCardUI();
     updatePreview();
@@ -16069,11 +16079,12 @@ function plumbCallbacks() {
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfluff').on('input', onFluffChanged);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').on('input', onValueChanged);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfooter').on('input', onFooterChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#createcard').click(handleCreate);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#deletecard').click(deleteCard);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchname').on('blur', onBatchNameChanged);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#datacardfile').on('change', handleFileSelect);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchsave').click(onBatchSave);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#createcard').click(handleCreate);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#deletecard').click(deleteCard);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchcreate').click(onBatchPrint);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#backgroundfile').on('change', onBackgroundLoad);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgopacity').on('input', onBgOpacityChanged);
     jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgsaturation').on('input', onBgSaturationChanged);
@@ -16605,7 +16616,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("269db4f5597aa587127d")
+/******/ 		__webpack_require__.h = () => ("5f61900c9f892f32bcf9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
