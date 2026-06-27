@@ -3,3 +3,21 @@ body {
     font-family: 'PT Serif', serif;
     break-after: avoid;
 }
+
+.diceImg {
+    width: 50px;
+    height: 50px;
+    padding:3px;
+}
+
+.diceInput {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+
+.dice_row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

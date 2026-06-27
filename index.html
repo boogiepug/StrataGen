@@ -23,8 +23,8 @@
 
       <div class="container bg-secondary py-2">
             <h1 class="text-light">StrataGen</h1>
-            <p class="lead text-light">Generate Warhammer 40k data cards.</p> 
-            <p class="text-light">Create and export stratagem, psychic power and tactical objective data cards for Warhammer 40k.</p>     
+            <p class="lead text-light">Generate Warhammer 40k: Grand Assault ploy cards.</p> 
+            <p class="text-light">Create, save and export Assault, Mobility and Support ploy cards for custom gamemode of Warhammer 40k - Grand Assault.</p>     
       </div>
 
       <div class="container">      
@@ -32,16 +32,6 @@
                   <div class="col-md-6 order-md-1">                        
                         <h4 class="m-3">Card Details</h4>
                         <form>
-                              <!-- <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label" for="cardtype">Card Type</label>
-                                    <select class="form-control col-sm-9" name="" id="cardtype">
-                                          <option value="Stratagem">Stratagem</option>
-                                          <option value="Psychic Power">Psychic Power</option>
-                                          <option value="Tactical Objective">Tactical Objective</option>
-                                          <option value="Prayer">Prayer</option>
-                                    </select>
-                              </div> -->
-
                               <div class="form-group row">
                                     <label class="col-sm-3 col-form-label" for="cardstyle">Order</label>
                                     <select class="form-control col-sm-9" name="" id="cardstyle">
@@ -73,6 +63,28 @@
                                     <label class="col-sm-3 col-form-label" for="cardrule">Rule</label>
                                     <textarea class="form-control col-sm-9" name="" id="cardrule" cols="40" rows="5"
                                           placeholder="Rule text" required></textarea>
+                              </div>
+
+                              <div class="form-group row" style="flex-wrap: nowrap;">
+                                    <div class="col-sm-3 col-form-label" for="cardrule">Cost</div>
+                                    <div class="container">
+                                        <div class="dice_row">
+                                            <img src="./css/images/Dice_1.webp" alt="Dice_1" class="diceImg"/>
+                                            <img src="./css/images/Dice_2.webp" alt="Dice_1" class="diceImg"/>
+                                            <img src="./css/images/Dice_3.webp" alt="Dice_1" class="diceImg"/>
+                                            <img src="./css/images/Dice_4.webp" alt="Dice_1" class="diceImg"/>
+                                            <img src="./css/images/Dice_5.webp" alt="Dice_1" class="diceImg"/>
+                                            <img src="./css/images/Dice_6.webp" alt="Dice_1" class="diceImg"/>
+                                        </div>
+                                        <div class="dice_row">
+                                            <input type="number" id="dice_cost_1" name="0" value="0" min="0" max="6" class="diceInput"/>
+                                            <input type="number" id="dice_cost_2" name="1" value="0" min="0" max="6" class="diceInput"/>
+                                            <input type="number" id="dice_cost_3" name="2" value="0" min="0" max="6" class="diceInput"/>
+                                            <input type="number" id="dice_cost_4" name="3" value="0" min="0" max="6" class="diceInput"/>
+                                            <input type="number" id="dice_cost_5" name="4" value="0" min="0" max="6" class="diceInput"/>
+                                            <input type="number" id="dice_cost_6" name="5" value="0" min="0" max="6" class="diceInput"/>
+                                        </div> 
+                                    </div>
                               </div>
 
                               <div class="form-group row" id="cardvaluecontrol">

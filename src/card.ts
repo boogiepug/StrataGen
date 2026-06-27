@@ -129,6 +129,7 @@ export class Card {
     @JsonProperty() public _rule: string = "<Rule text>"
     @JsonProperty() public _footer: string = "<Footer>"
     @JsonProperty() public _value: string = "1";
+    @JsonProperty() public _diceCost: number[] = [0, 0, 0, 0, 0, 0];
 
     private headerFont(): string {
         if (this._style == CardStyle.Edition_9th) {
@@ -154,7 +155,49 @@ export class Card {
     private footerFont(): string {
         return Math.round(24*this._scale).toString() + 'px ' + 'Teko';
     }
+    private drawDiceRow(
+        ctx: CanvasRenderingContext2D,
+        diceImages: number[],
+        centerY: number
+    ) {
+        
+        const imageArray:HTMLImageElement[] = Array.from({length: 6}, (_, i) => {
+            const img = document.createElement("img");
+            img.src = `./css/images/Dice_${i + 1}.webp`;
+            return img;
+        });
 
+        if (diceImages.length === 0) {
+            return;
+        }
+
+        const iconSize = 45;      // px
+        const spacing = 5;        // px between icons
+
+        const totalWidth =(iconSize + spacing) * 6
+            // diceImages.length * iconSize +
+            // (diceImages.length - 1) * spacing;
+        const sumUsed = diceImages.reduce((sum, value) => sum + value, 0);
+        const startX = (this._width /2 ) - (Math.min(sumUsed, 6) * (iconSize + spacing) /2);
+        let used = 0;
+        diceImages.forEach((entry, index) => {
+            for (let i = 0; i < entry; i++) {
+                const x = startX + used * (iconSize + spacing);
+                used++;
+                // console.log(imageArray)
+                if(used <= 6) {
+                    ctx.drawImage(
+                        imageArray[index],
+                        x,
+                        centerY,
+                        iconSize,
+                        iconSize
+                    );
+                }
+            }
+        })
+        
+    }
     public draw(canvas: HTMLCanvasElement, marginPx: number) {
 
         let ctx = canvas.getContext('2d');
@@ -260,6 +303,15 @@ export class Card {
         ctx.restore();
 
         curY = this._height - borderY * 1.5 - textRegionHeight;
+        
+        
+        //dice cost
+        // console.log(this._diceCost)
+        this.drawDiceRow(
+            ctx,
+            this._diceCost,
+            curY
+        )
 
         if ((this._type == CardType.Stratagem) || (this._type == CardType.PsychicPower) || (this._type == CardType.TacticalObjective)) {
             if (this._style == CardStyle.Classic) {

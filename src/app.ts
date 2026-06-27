@@ -123,6 +123,17 @@ function onFooterChanged(event: Event) {
     }
 }
 
+function onDiceCostChange(event: Event) {
+    const inputElem = event.target as HTMLInputElement;
+    if (inputElem && activeCards[currentCard]) {
+        for(let i = 1; i < 7; i++) {
+            const input = document.getElementById(`dice_cost_${i}`) as HTMLInputElement
+            activeCards[currentCard]._diceCost[parseInt(input.name)] = parseInt(input.value);
+        }
+        updatePreview();
+    }
+}
+
 function onPreviousCard() {
     currentCard = Math.max(currentCard - 1, 0);
     updateCardUI();
@@ -309,7 +320,7 @@ function handleFileSelect(event: Event) {
             }
             else {
                 $('#errorText').html('StrataGen only supports .csv files.  Selected file is a \'' + fileExt + "\' file.");
-                $('#errorDialog').modal();
+                
             }
         }
     }
@@ -465,7 +476,10 @@ function updateCardUI() {
 
         $('#cardvalue').val(activeCards[currentCard]._value);
 
-    }
+        for(let i = 1; i < 7; i++) {
+            $(`#dice_cost_${i}`).val(activeCards[currentCard]._diceCost[i-1])
+        }
+    }   
 }
 
 function loadPreviousCards() {
@@ -484,7 +498,7 @@ function loadPreviousCards() {
             activeCards[i].​​_title = card.​​_title;
             activeCards[i].​​_type = card.​​_type;
             activeCards[i].​​_value = card.​​_value;
-
+            activeCards[i]._diceCost = card._diceCost;
             currentCard = i;
         });
         console.log(activeCards) 
@@ -504,6 +518,10 @@ function plumbCallbacks() {
     $('#cardfluff').on('input', onFluffChanged);
     $('#cardvalue').on('input', onValueChanged);
     $('#cardfooter').on('input', onFooterChanged);
+    for( let i = 1; i < 7; i++) {
+        $(`#dice_cost_${i}`).on('change', onDiceCostChange)
+    }
+
 
     $('#createcard').click(handleCreate);
     $('#deletecard').click(deleteCard)
@@ -519,6 +537,7 @@ function plumbCallbacks() {
 
     $('#savecard').click(onSaveCard);
     $('#loadcard').click(onLoadCard);
+
 
 }
 

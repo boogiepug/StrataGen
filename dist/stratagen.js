@@ -1,11 +1,11 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/ansi-html-community/index.js":
+/***/ "./node_modules/ansi-html-community/index.js"
 /*!***************************************************!*\
   !*** ./node_modules/ansi-html-community/index.js ***!
   \***************************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 
@@ -186,13 +186,13 @@ function _setTags (colors) {
 ansiHTML.reset()
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/events/events.js":
+/***/ "./node_modules/events/events.js"
 /*!***************************************!*\
   !*** ./node_modules/events/events.js ***!
   \***************************************/
-/***/ ((module) => {
+(module) {
 
 "use strict";
 // Copyright Joyent, Inc. and other Node contributors.
@@ -694,13 +694,13 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/jquery/dist/jquery.js":
+/***/ "./node_modules/jquery/dist/jquery.js"
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
-/***/ (function(module, exports) {
+(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.7.1
@@ -11421,32 +11421,32 @@ return jQuery;
 } );
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/papaparse/papaparse.min.js":
+/***/ "./node_modules/papaparse/papaparse.min.js"
 /*!*************************************************!*\
   !*** ./node_modules/papaparse/papaparse.min.js ***!
   \*************************************************/
-/***/ (function(module, exports) {
+(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* @license
 Papa Parse
-v5.5.3
+v5.5.4
 https://github.com/mholt/PapaParse
 License: MIT
 */
 ((e,t)=>{ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(this,function r(){var n="undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==n?n:{};var d,s=!n.document&&!!n.postMessage,a=n.IS_PAPA_WORKER||!1,o={},h=0,v={};function u(e){this._handle=null,this._finished=!1,this._completed=!1,this._halted=!1,this._input=null,this._baseIndex=0,this._partialLine="",this._rowCount=0,this._start=0,this._nextChunk=null,this.isFirstChunk=!0,this._completeResults={data:[],errors:[],meta:{}},function(e){var t=b(e);t.chunkSize=parseInt(t.chunkSize),e.step||e.chunk||(t.chunkSize=null);this._handle=new i(t),(this._handle.streamer=this)._config=t}.call(this,e),this.parseChunk=function(t,e){var i=parseInt(this._config.skipFirstNLines)||0;if(this.isFirstChunk&&0<i){let e=this._config.newline;e||(r=this._config.quoteChar||'"',e=this._handle.guessLineEndings(t,r)),t=[...t.split(e).slice(i)].join(e)}this.isFirstChunk&&U(this._config.beforeFirstChunk)&&void 0!==(r=this._config.beforeFirstChunk(t))&&(t=r),this.isFirstChunk=!1,this._halted=!1;var i=this._partialLine+t,r=(this._partialLine="",this._handle.parse(i,this._baseIndex,!this._finished));if(!this._handle.paused()&&!this._handle.aborted()){t=r.meta.cursor,i=(this._finished||(this._partialLine=i.substring(t-this._baseIndex),this._baseIndex=t),r&&r.data&&(this._rowCount+=r.data.length),this._finished||this._config.preview&&this._rowCount>=this._config.preview);if(a)n.postMessage({results:r,workerId:v.WORKER_ID,finished:i});else if(U(this._config.chunk)&&!e){if(this._config.chunk(r,this._handle),this._handle.paused()||this._handle.aborted())return void(this._halted=!0);this._completeResults=r=void 0}return this._config.step||this._config.chunk||(this._completeResults.data=this._completeResults.data.concat(r.data),this._completeResults.errors=this._completeResults.errors.concat(r.errors),this._completeResults.meta=r.meta),this._completed||!i||!U(this._config.complete)||r&&r.meta.aborted||(this._config.complete(this._completeResults,this._input),this._completed=!0),i||r&&r.meta.paused||this._nextChunk(),r}this._halted=!0},this._sendError=function(e){U(this._config.error)?this._config.error(e):a&&this._config.error&&n.postMessage({workerId:v.WORKER_ID,error:e,finished:!1})}}function f(e){var r;(e=e||{}).chunkSize||(e.chunkSize=v.RemoteChunkSize),u.call(this,e),this._nextChunk=s?function(){this._readChunk(),this._chunkLoaded()}:function(){this._readChunk()},this.stream=function(e){this._input=e,this._nextChunk()},this._readChunk=function(){if(this._finished)this._chunkLoaded();else{if(r=new XMLHttpRequest,this._config.withCredentials&&(r.withCredentials=this._config.withCredentials),s||(r.onload=y(this._chunkLoaded,this),r.onerror=y(this._chunkError,this)),r.open(this._config.downloadRequestBody?"POST":"GET",this._input,!s),this._config.downloadRequestHeaders){var e,t=this._config.downloadRequestHeaders;for(e in t)r.setRequestHeader(e,t[e])}var i;this._config.chunkSize&&(i=this._start+this._config.chunkSize-1,r.setRequestHeader("Range","bytes="+this._start+"-"+i));try{r.send(this._config.downloadRequestBody)}catch(e){this._chunkError(e.message)}s&&0===r.status&&this._chunkError()}},this._chunkLoaded=function(){4===r.readyState&&(r.status<200||400<=r.status?this._chunkError():(this._start+=this._config.chunkSize||r.responseText.length,this._finished=!this._config.chunkSize||this._start>=(e=>null!==(e=e.getResponseHeader("Content-Range"))?parseInt(e.substring(e.lastIndexOf("/")+1)):-1)(r),this.parseChunk(r.responseText)))},this._chunkError=function(e){e=r.statusText||e;this._sendError(new Error(e))}}function l(e){(e=e||{}).chunkSize||(e.chunkSize=v.LocalChunkSize),u.call(this,e);var i,r,n="undefined"!=typeof FileReader;this.stream=function(e){this._input=e,r=e.slice||e.webkitSlice||e.mozSlice,n?((i=new FileReader).onload=y(this._chunkLoaded,this),i.onerror=y(this._chunkError,this)):i=new FileReaderSync,this._nextChunk()},this._nextChunk=function(){this._finished||this._config.preview&&!(this._rowCount<this._config.preview)||this._readChunk()},this._readChunk=function(){var e=this._input,t=(this._config.chunkSize&&(t=Math.min(this._start+this._config.chunkSize,this._input.size),e=r.call(e,this._start,t)),i.readAsText(e,this._config.encoding));n||this._chunkLoaded({target:{result:t}})},this._chunkLoaded=function(e){this._start+=this._config.chunkSize,this._finished=!this._config.chunkSize||this._start>=this._input.size,this.parseChunk(e.target.result)},this._chunkError=function(){this._sendError(i.error)}}function c(e){var i;u.call(this,e=e||{}),this.stream=function(e){return i=e,this._nextChunk()},this._nextChunk=function(){var e,t;if(!this._finished)return e=this._config.chunkSize,i=e?(t=i.substring(0,e),i.substring(e)):(t=i,""),this._finished=!i,this.parseChunk(t)}}function p(e){u.call(this,e=e||{});var t=[],i=!0,r=!1;this.pause=function(){u.prototype.pause.apply(this,arguments),this._input.pause()},this.resume=function(){u.prototype.resume.apply(this,arguments),this._input.resume()},this.stream=function(e){this._input=e,this._input.on("data",this._streamData),this._input.on("end",this._streamEnd),this._input.on("error",this._streamError)},this._checkIsFinished=function(){r&&1===t.length&&(this._finished=!0)},this._nextChunk=function(){this._checkIsFinished(),t.length?this.parseChunk(t.shift()):i=!0},this._streamData=y(function(e){try{t.push("string"==typeof e?e:e.toString(this._config.encoding)),i&&(i=!1,this._checkIsFinished(),this.parseChunk(t.shift()))}catch(e){this._streamError(e)}},this),this._streamError=y(function(e){this._streamCleanUp(),this._sendError(e)},this),this._streamEnd=y(function(){this._streamCleanUp(),r=!0,this._streamData("")},this),this._streamCleanUp=y(function(){this._input.removeListener("data",this._streamData),this._input.removeListener("end",this._streamEnd),this._input.removeListener("error",this._streamError)},this)}function i(m){var n,s,a,t,o=Math.pow(2,53),h=-o,u=/^\s*-?(\d+\.?|\.\d+|\d+\.\d+)([eE][-+]?\d+)?\s*$/,d=/^((\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z)))$/,i=this,r=0,f=0,l=!1,e=!1,c=[],p={data:[],errors:[],meta:{}};function y(e){return"greedy"===m.skipEmptyLines?""===e.join("").trim():1===e.length&&0===e[0].length}function g(){if(p&&a&&(k("Delimiter","UndetectableDelimiter","Unable to auto-detect delimiting character; defaulted to '"+v.DefaultDelimiter+"'"),a=!1),m.skipEmptyLines&&(p.data=p.data.filter(function(e){return!y(e)})),_()){if(p)if(Array.isArray(p.data[0])){for(var e=0;_()&&e<p.data.length;e++)p.data[e].forEach(t);p.data.splice(0,1)}else p.data.forEach(t);function t(e,t){U(m.transformHeader)&&(e=m.transformHeader(e,t)),c.push(e)}}function i(e,t){for(var i=m.header?{}:[],r=0;r<e.length;r++){var n=r,s=e[r],s=((e,t)=>(e=>(m.dynamicTypingFunction&&void 0===m.dynamicTyping[e]&&(m.dynamicTyping[e]=m.dynamicTypingFunction(e)),!0===(m.dynamicTyping[e]||m.dynamicTyping)))(e)?"true"===t||"TRUE"===t||"false"!==t&&"FALSE"!==t&&((e=>{if(u.test(e)){e=parseFloat(e);if(h<e&&e<o)return 1}})(t)?parseFloat(t):d.test(t)?new Date(t):""===t?null:t):t)(n=m.header?r>=c.length?"__parsed_extra":c[r]:n,s=m.transform?m.transform(s,n):s);"__parsed_extra"===n?(i[n]=i[n]||[],i[n].push(s)):i[n]=s}return m.header&&(r>c.length?k("FieldMismatch","TooManyFields","Too many fields: expected "+c.length+" fields but parsed "+r,f+t):r<c.length&&k("FieldMismatch","TooFewFields","Too few fields: expected "+c.length+" fields but parsed "+r,f+t)),i}var r;p&&(m.header||m.dynamicTyping||m.transform)&&(r=1,!p.data.length||Array.isArray(p.data[0])?(p.data=p.data.map(i),r=p.data.length):p.data=i(p.data,0),m.header&&p.meta&&(p.meta.fields=c),f+=r)}function _(){return m.header&&0===c.length}function k(e,t,i,r){e={type:e,code:t,message:i};void 0!==r&&(e.row=r),p.errors.push(e)}U(m.step)&&(t=m.step,m.step=function(e){p=e,_()?g():(g(),0!==p.data.length&&(r+=e.data.length,m.preview&&r>m.preview?s.abort():(p.data=p.data[0],t(p,i))))}),this.parse=function(e,t,i){var r=m.quoteChar||'"',r=(m.newline||(m.newline=this.guessLineEndings(e,r)),a=!1,m.delimiter?U(m.delimiter)&&(m.delimiter=m.delimiter(e),p.meta.delimiter=m.delimiter):((r=((e,t,i,r,n)=>{var s,a,o,h;n=n||[",","\t","|",";",v.RECORD_SEP,v.UNIT_SEP];for(var u=0;u<n.length;u++){for(var d,f=n[u],l=0,c=0,p=0,g=(o=void 0,new E({comments:r,delimiter:f,newline:t,preview:10}).parse(e)),_=0;_<g.data.length;_++)i&&y(g.data[_])?p++:(d=g.data[_].length,c+=d,void 0===o?o=d:0<d&&(l+=Math.abs(d-o),o=d));0<g.data.length&&(c/=g.data.length-p),(void 0===a||l<=a)&&(void 0===h||h<c)&&1.99<c&&(a=l,s=f,h=c)}return{successful:!!(m.delimiter=s),bestDelimiter:s}})(e,m.newline,m.skipEmptyLines,m.comments,m.delimitersToGuess)).successful?m.delimiter=r.bestDelimiter:(a=!0,m.delimiter=v.DefaultDelimiter),p.meta.delimiter=m.delimiter),b(m));return m.preview&&m.header&&r.preview++,n=e,s=new E(r),p=s.parse(n,t,i),g(),l?{meta:{paused:!0}}:p||{meta:{paused:!1}}},this.paused=function(){return l},this.pause=function(){l=!0,s.abort(),n=U(m.chunk)?"":n.substring(s.getCharIndex())},this.resume=function(){i.streamer._halted?(l=!1,i.streamer.parseChunk(n,!0)):setTimeout(i.resume,3)},this.aborted=function(){return e},this.abort=function(){e=!0,s.abort(),p.meta.aborted=!0,U(m.complete)&&m.complete(p),n=""},this.guessLineEndings=function(e,t){e=e.substring(0,1048576);var t=new RegExp(P(t)+"([^]*?)"+P(t),"gm"),i=(e=e.replace(t,"")).split("\r"),t=e.split("\n"),e=1<t.length&&t[0].length<i[0].length;if(1===i.length||e)return"\n";for(var r=0,n=0;n<i.length;n++)"\n"===i[n][0]&&r++;return r>=i.length/2?"\r\n":"\r"}}function P(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}function E(C){var S=(C=C||{}).delimiter,O=C.newline,x=C.comments,I=C.step,A=C.preview,T=C.fastMode,D=null,L=!1,F=null==C.quoteChar?'"':C.quoteChar,j=F;if(void 0!==C.escapeChar&&(j=C.escapeChar),("string"!=typeof S||-1<v.BAD_DELIMITERS.indexOf(S))&&(S=","),x===S)throw new Error("Comment character same as delimiter");!0===x?x="#":("string"!=typeof x||-1<v.BAD_DELIMITERS.indexOf(x))&&(x=!1),"\n"!==O&&"\r"!==O&&"\r\n"!==O&&(O="\n");var z=0,M=!1;this.parse=function(i,t,r){if("string"!=typeof i)throw new Error("Input must be a string");var n=i.length,e=S.length,s=O.length,a=x.length,o=U(I),h=[],u=[],d=[],f=z=0;if(!i)return w();if(T||!1!==T&&-1===i.indexOf(F)){for(var l=i.split(O),c=0;c<l.length;c++){if(d=l[c],z+=d.length,c!==l.length-1)z+=O.length;else if(r)return w();if(!x||d.substring(0,a)!==x){if(o){if(h=[],k(d.split(S)),R(),M)return w()}else k(d.split(S));if(A&&A<=c)return h=h.slice(0,A),w(!0)}}return w()}for(var p=i.indexOf(S,z),g=i.indexOf(O,z),_=new RegExp(P(j)+P(F),"g"),m=i.indexOf(F,z);;)if(i[z]===F)for(m=z,z++;;){if(-1===(m=i.indexOf(F,m+1)))return r||u.push({type:"Quotes",code:"MissingQuotes",message:"Quoted field unterminated",row:h.length,index:z}),E();if(m===n-1)return E(i.substring(z,m).replace(_,F));if(F===j&&i[m+1]===j)m++;else if(F===j||0===m||i[m-1]!==j){-1!==p&&p<m+1&&(p=i.indexOf(S,m+1));var y=v(-1===(g=-1!==g&&g<m+1?i.indexOf(O,m+1):g)?p:Math.min(p,g));if(i.substr(m+1+y,e)===S){d.push(i.substring(z,m).replace(_,F)),i[z=m+1+y+e]!==F&&(m=i.indexOf(F,z)),p=i.indexOf(S,z),g=i.indexOf(O,z);break}y=v(g);if(i.substring(m+1+y,m+1+y+s)===O){if(d.push(i.substring(z,m).replace(_,F)),b(m+1+y+s),p=i.indexOf(S,z),m=i.indexOf(F,z),o&&(R(),M))return w();if(A&&h.length>=A)return w(!0);break}u.push({type:"Quotes",code:"InvalidQuotes",message:"Trailing quote on quoted field is malformed",row:h.length,index:z}),m++}}else if(x&&0===d.length&&i.substring(z,z+a)===x){if(-1===g)return w();z=g+s,g=i.indexOf(O,z),p=i.indexOf(S,z)}else if(-1!==p&&(p<g||-1===g))d.push(i.substring(z,p)),z=p+e,p=i.indexOf(S,z);else{if(-1===g)break;if(d.push(i.substring(z,g)),b(g+s),o&&(R(),M))return w();if(A&&h.length>=A)return w(!0)}return E();function k(e){h.push(e),f=z}function v(e){var t=0;return t=-1!==e&&(e=i.substring(m+1,e))&&""===e.trim()?e.length:t}function E(e){return r||(void 0===e&&(e=i.substring(z)),d.push(e),z=n,k(d),o&&R()),w()}function b(e){z=e,k(d),d=[],g=i.indexOf(O,z)}function w(e){if(C.header&&!t&&h.length&&!L){var s=h[0],a=Object.create(null),o=new Set(s);let n=!1;for(let r=0;r<s.length;r++){let i=s[r];if(a[i=U(C.transformHeader)?C.transformHeader(i,r):i]){let e,t=a[i];for(;e=i+"_"+t,t++,o.has(e););o.add(e),s[r]=e,a[i]++,n=!0,(D=null===D?{}:D)[e]=i}else a[i]=1,s[r]=i;o.add(i)}n&&console.warn("Duplicate headers found and renamed."),L=!0}return{data:h,errors:u,meta:{delimiter:S,linebreak:O,aborted:M,truncated:!!e,cursor:f+(t||0),renamedHeaders:D}}}function R(){I(w()),h=[],u=[]}},this.abort=function(){M=!0},this.getCharIndex=function(){return z}}function g(e){var t=e.data,i=o[t.workerId],r=!1;if(t.error)i.userError(t.error,t.file);else if(t.results&&t.results.data){var n={abort:function(){r=!0,_(t.workerId,{data:[],errors:[],meta:{aborted:!0}})},pause:m,resume:m};if(U(i.userStep)){for(var s=0;s<t.results.data.length&&(i.userStep({data:t.results.data[s],errors:t.results.errors,meta:t.results.meta},n),!r);s++);delete t.results}else U(i.userChunk)&&(i.userChunk(t.results,n,t.file),delete t.results)}t.finished&&!r&&_(t.workerId,t.results)}function _(e,t){var i=o[e];U(i.userComplete)&&i.userComplete(t),i.terminate(),delete o[e]}function m(){throw new Error("Not implemented.")}function b(e){if("object"!=typeof e||null===e)return e;var t,i=Array.isArray(e)?[]:{};for(t in e)i[t]=b(e[t]);return i}function y(e,t){return function(){e.apply(t,arguments)}}function U(e){return"function"==typeof e}return v.parse=function(e,t){var i=(t=t||{}).dynamicTyping||!1;U(i)&&(t.dynamicTypingFunction=i,i={});if(t.dynamicTyping=i,t.transform=!!U(t.transform)&&t.transform,!t.worker||!v.WORKERS_SUPPORTED)return i=null,v.NODE_STREAM_INPUT,"string"==typeof e?(e=(e=>65279!==e.charCodeAt(0)?e:e.slice(1))(e),i=new(t.download?f:c)(t)):!0===e.readable&&U(e.read)&&U(e.on)?i=new p(t):(n.File&&e instanceof File||e instanceof Object)&&(i=new l(t)),i.stream(e);(i=(()=>{var e;return!!v.WORKERS_SUPPORTED&&(e=(()=>{var e=n.URL||n.webkitURL||null,t=r.toString();return v.BLOB_URL||(v.BLOB_URL=e.createObjectURL(new Blob(["var global = (function() { if (typeof self !== 'undefined') { return self; } if (typeof window !== 'undefined') { return window; } if (typeof global !== 'undefined') { return global; } return {}; })(); global.IS_PAPA_WORKER=true; ","(",t,")();"],{type:"text/javascript"})))})(),(e=new n.Worker(e)).onmessage=g,e.id=h++,o[e.id]=e)})()).userStep=t.step,i.userChunk=t.chunk,i.userComplete=t.complete,i.userError=t.error,t.step=U(t.step),t.chunk=U(t.chunk),t.complete=U(t.complete),t.error=U(t.error),delete t.worker,i.postMessage({input:e,config:t,workerId:i.id})},v.unparse=function(e,t){var n=!1,_=!0,m=",",y="\r\n",s='"',a=s+s,i=!1,r=null,o=!1,h=((()=>{if("object"==typeof t){if("string"!=typeof t.delimiter||v.BAD_DELIMITERS.filter(function(e){return-1!==t.delimiter.indexOf(e)}).length||(m=t.delimiter),"boolean"!=typeof t.quotes&&"function"!=typeof t.quotes&&!Array.isArray(t.quotes)||(n=t.quotes),"boolean"!=typeof t.skipEmptyLines&&"string"!=typeof t.skipEmptyLines||(i=t.skipEmptyLines),"string"==typeof t.newline&&(y=t.newline),"string"==typeof t.quoteChar&&(s=t.quoteChar),"boolean"==typeof t.header&&(_=t.header),Array.isArray(t.columns)){if(0===t.columns.length)throw new Error("Option columns is empty");r=t.columns}void 0!==t.escapeChar&&(a=t.escapeChar+s),t.escapeFormulae instanceof RegExp?o=t.escapeFormulae:"boolean"==typeof t.escapeFormulae&&t.escapeFormulae&&(o=/^[=+\-@\t\r].*$/)}})(),new RegExp(P(s),"g"));"string"==typeof e&&(e=JSON.parse(e));if(Array.isArray(e)){if(!e.length||Array.isArray(e[0]))return u(null,e,i);if("object"==typeof e[0])return u(r||Object.keys(e[0]),e,i)}else if("object"==typeof e)return"string"==typeof e.data&&(e.data=JSON.parse(e.data)),Array.isArray(e.data)&&(e.fields||(e.fields=e.meta&&e.meta.fields||r),e.fields||(e.fields=Array.isArray(e.data[0])?e.fields:"object"==typeof e.data[0]?Object.keys(e.data[0]):[]),Array.isArray(e.data[0])||"object"==typeof e.data[0]||(e.data=[e.data])),u(e.fields||[],e.data||[],i);throw new Error("Unable to serialize unrecognized input");function u(e,t,i){var r="",n=("string"==typeof e&&(e=JSON.parse(e)),"string"==typeof t&&(t=JSON.parse(t)),Array.isArray(e)&&0<e.length),s=!Array.isArray(t[0]);if(n&&_){for(var a=0;a<e.length;a++)0<a&&(r+=m),r+=k(e[a],a);0<t.length&&(r+=y)}for(var o=0;o<t.length;o++){var h=(n?e:t[o]).length,u=!1,d=n?0===Object.keys(t[o]).length:0===t[o].length;if(i&&!n&&(u="greedy"===i?""===t[o].join("").trim():1===t[o].length&&0===t[o][0].length),"greedy"===i&&n){for(var f=[],l=0;l<h;l++){var c=s?e[l]:l;f.push(t[o][c])}u=""===f.join("").trim()}if(!u){for(var p=0;p<h;p++){0<p&&!d&&(r+=m);var g=n&&s?e[p]:p;r+=k(t[o][g],p)}o<t.length-1&&(!i||0<h&&!d)&&(r+=y)}}return r}function k(e,t){var i,r;return null==e?"":e.constructor===Date?JSON.stringify(e).slice(1,25):(r=!1,o&&"string"==typeof e&&o.test(e)&&(e="'"+e,r=!0),i=e.toString().replace(h,a),(r=r||!0===n||"function"==typeof n&&n(e,t)||Array.isArray(n)&&n[t]||((e,t)=>{for(var i=0;i<t.length;i++)if(-1<e.indexOf(t[i]))return!0;return!1})(i,v.BAD_DELIMITERS)||-1<i.indexOf(m)||" "===i.charAt(0)||" "===i.charAt(i.length-1))?s+i+s:i)}},v.RECORD_SEP=String.fromCharCode(30),v.UNIT_SEP=String.fromCharCode(31),v.BYTE_ORDER_MARK="\ufeff",v.BAD_DELIMITERS=["\r","\n",'"',v.BYTE_ORDER_MARK],v.WORKERS_SUPPORTED=!s&&!!n.Worker,v.NODE_STREAM_INPUT=1,v.LocalChunkSize=10485760,v.RemoteChunkSize=5242880,v.DefaultDelimiter=",",v.Parser=E,v.ParserHandle=i,v.NetworkStreamer=f,v.FileStreamer=l,v.StringStreamer=c,v.ReadableStreamStreamer=p,n.jQuery&&((d=n.jQuery).fn.parse=function(o){var i=o.config||{},h=[];return this.each(function(e){if(!("INPUT"===d(this).prop("tagName").toUpperCase()&&"file"===d(this).attr("type").toLowerCase()&&n.FileReader)||!this.files||0===this.files.length)return!0;for(var t=0;t<this.files.length;t++)h.push({file:this.files[t],inputElem:this,instanceConfig:d.extend({},i)})}),e(),this;function e(){if(0===h.length)U(o.complete)&&o.complete();else{var e,t,i,r,n=h[0];if(U(o.before)){var s=o.before(n.file,n.inputElem);if("object"==typeof s){if("abort"===s.action)return e="AbortError",t=n.file,i=n.inputElem,r=s.reason,void(U(o.error)&&o.error({name:e},t,i,r));if("skip"===s.action)return void u();"object"==typeof s.config&&(n.instanceConfig=d.extend(n.instanceConfig,s.config))}else if("skip"===s)return void u()}var a=n.instanceConfig.complete;n.instanceConfig.complete=function(e){U(a)&&a(e,n.file,n.inputElem),u()},v.parse(n.file,n.instanceConfig)}}function u(){h.splice(0,1),e()}}),a&&(n.onmessage=function(e){e=e.data;void 0===v.WORKER_ID&&e&&(v.WORKER_ID=e.workerId);"string"==typeof e.input?n.postMessage({workerId:v.WORKER_ID,results:v.parse(e.input,e.config),finished:!0}):(n.File&&e.input instanceof File||e.input instanceof Object)&&(e=v.parse(e.input,e.config))&&n.postMessage({workerId:v.WORKER_ID,results:e,finished:!0})}),(f.prototype=Object.create(u.prototype)).constructor=f,(l.prototype=Object.create(u.prototype)).constructor=l,(c.prototype=Object.create(c.prototype)).constructor=c,(p.prototype=Object.create(u.prototype)).constructor=p,v});
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(this,function r(){var n="undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==n?n:{};var d,s=!n.document&&!!n.postMessage,a=n.IS_PAPA_WORKER||!1,o={},h=0,v={};function P(e){return 65279===e.charCodeAt(0)?e.slice(1):e}function u(e){this._handle=null,this._finished=!1,this._completed=!1,this._halted=!1,this._input=null,this._baseIndex=0,this._partialLine="",this._rowCount=0,this._start=0,this._nextChunk=null,this.isFirstChunk=!0,this._completeResults={data:[],errors:[],meta:{}},function(e){var t=b(e);t.chunkSize=parseInt(t.chunkSize),e.step||e.chunk||(t.chunkSize=null);this._handle=new i(t),(this._handle.streamer=this)._config=t}.call(this,e),this.parseChunk=function(t,e){var i=parseInt(this._config.skipFirstNLines)||0;if(this.isFirstChunk&&0<i){let e=this._config.newline;e||(r=this._config.quoteChar||'"',e=this._handle.guessLineEndings(t,r)),t=[...t.split(e).slice(i)].join(e)}this.isFirstChunk&&q(this._config.beforeFirstChunk)&&void 0!==(r=this._config.beforeFirstChunk(t))&&(t=r),this.isFirstChunk=!1,this._halted=!1;var i=this._partialLine+t,r=(this._partialLine="",this._handle.parse(i,this._baseIndex,!this._finished));if(!this._handle.paused()&&!this._handle.aborted()){t=r.meta.cursor,i=(this._finished||(this._partialLine=i.substring(t-this._baseIndex),this._baseIndex=t),r&&r.data&&(this._rowCount+=r.data.length),this._finished||this._config.preview&&this._rowCount>=this._config.preview);if(a)n.postMessage({results:r,workerId:v.WORKER_ID,finished:i});else if(q(this._config.chunk)&&!e){if(this._config.chunk(r,this._handle),this._handle.paused()||this._handle.aborted())return void(this._halted=!0);this._completeResults=r=void 0}return this._config.step||this._config.chunk||(this._completeResults.data=this._completeResults.data.concat(r.data),this._completeResults.errors=this._completeResults.errors.concat(r.errors),this._completeResults.meta=r.meta),this._completed||!i||!q(this._config.complete)||r&&r.meta.aborted||(this._config.complete(this._completeResults,this._input),this._completed=!0),i||r&&r.meta.paused||this._nextChunk(),r}this._halted=!0},this._sendError=function(e){q(this._config.error)?this._config.error(e):a&&this._config.error&&n.postMessage({workerId:v.WORKER_ID,error:e,finished:!1})}}function f(e){var r;(e=e||{}).chunkSize||(e.chunkSize=v.RemoteChunkSize),u.call(this,e),this._nextChunk=s?function(){this._readChunk(),this._chunkLoaded()}:function(){this._readChunk()},this.stream=function(e){this._input=e,this._nextChunk()},this._readChunk=function(){if(this._finished)this._chunkLoaded();else{if(r=new XMLHttpRequest,this._config.withCredentials&&(r.withCredentials=this._config.withCredentials),s||(r.onload=y(this._chunkLoaded,this),r.onerror=y(this._chunkError,this)),r.open(this._config.downloadRequestBody?"POST":"GET",this._input,!s),this._config.downloadRequestHeaders){var e,t=this._config.downloadRequestHeaders;for(e in t)r.setRequestHeader(e,t[e])}var i;this._config.chunkSize&&(i=this._start+this._config.chunkSize-1,r.setRequestHeader("Range","bytes="+this._start+"-"+i));try{r.send(this._config.downloadRequestBody)}catch(e){this._chunkError(e.message)}s&&0===r.status&&this._chunkError()}},this._chunkLoaded=function(){4===r.readyState&&(r.status<200||400<=r.status?this._chunkError():(this._start+=this._config.chunkSize||r.responseText.length,this._finished=!this._config.chunkSize||this._start>=(e=>null!==(e=e.getResponseHeader("Content-Range"))?parseInt(e.substring(e.lastIndexOf("/")+1)):-1)(r),this.parseChunk(r.responseText)))},this._chunkError=function(e){e=r.statusText||e;this._sendError(new Error(e))}}function l(e){(e=e||{}).chunkSize||(e.chunkSize=v.LocalChunkSize),u.call(this,e);var i,r,n="undefined"!=typeof FileReader;this.stream=function(e){this._input=e,r=e.slice||e.webkitSlice||e.mozSlice,n?((i=new FileReader).onload=y(this._chunkLoaded,this),i.onerror=y(this._chunkError,this)):i=new FileReaderSync,this._nextChunk()},this._nextChunk=function(){this._finished||this._config.preview&&!(this._rowCount<this._config.preview)||this._readChunk()},this._readChunk=function(){var e=this._input,t=(this._config.chunkSize&&(t=Math.min(this._start+this._config.chunkSize,this._input.size),e=r.call(e,this._start,t)),i.readAsText(e,this._config.encoding));n||this._chunkLoaded({target:{result:t}})},this._chunkLoaded=function(e){this._start+=this._config.chunkSize,this._finished=!this._config.chunkSize||this._start>=this._input.size,this.parseChunk(e.target.result)},this._chunkError=function(){this._sendError(i.error)}}function c(e){var i;u.call(this,e=e||{}),this.stream=function(e){return i=e,this._nextChunk()},this._nextChunk=function(){var e,t;if(!this._finished)return e=this._config.chunkSize,i=e?(t=i.substring(0,e),i.substring(e)):(t=i,""),this._finished=!i,this.parseChunk(t)}}function p(e){u.call(this,e=e||{});var t=[],i=!0,r=!1;this.pause=function(){u.prototype.pause.apply(this,arguments),this._input.pause()},this.resume=function(){u.prototype.resume.apply(this,arguments),this._input.resume()},this.stream=function(e){this._input=e,this._input.on("data",this._streamData),this._input.on("end",this._streamEnd),this._input.on("error",this._streamError)},this._checkIsFinished=function(){r&&1===t.length&&(this._finished=!0)},this._nextChunk=function(){this._checkIsFinished(),t.length?this.parseChunk(t.shift()):i=!0},this._streamData=y(function(e){try{t.push("string"==typeof e?e:e.toString(this._config.encoding)),i&&(i=!1,this._checkIsFinished(),this.parseChunk(t.shift()))}catch(e){this._streamError(e)}},this),this._streamError=y(function(e){this._streamCleanUp(),this._sendError(e)},this),this._streamEnd=y(function(){this._streamCleanUp(),r=!0,this._streamData("")},this),this._streamCleanUp=y(function(){this._input.removeListener("data",this._streamData),this._input.removeListener("end",this._streamEnd),this._input.removeListener("error",this._streamError)},this)}function i(m){var n,s,a,t,o=Math.pow(2,53),h=-o,u=/^\s*-?(\d+\.?|\.\d+|\d+\.\d+)([eE][-+]?\d+)?\s*$/,d=/^((\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z)))$/,i=this,r=0,f=0,l=!1,e=!1,c=[],p={data:[],errors:[],meta:{}};function y(e){return"greedy"===m.skipEmptyLines?""===e.join("").trim():1===e.length&&0===e[0].length}function g(){if(p&&a&&(k("Delimiter","UndetectableDelimiter","Unable to auto-detect delimiting character; defaulted to '"+v.DefaultDelimiter+"'"),a=!1),m.skipEmptyLines&&(p.data=p.data.filter(function(e){return!y(e)})),_()){if(p)if(Array.isArray(p.data[0])){for(var e=0;_()&&e<p.data.length;e++)p.data[e].forEach(t);p.data.splice(0,1)}else p.data.forEach(t);function t(e,t){e=P(e),q(m.transformHeader)&&(e=m.transformHeader(e,t)),c.push(e)}}function i(e,t){for(var i=m.header?{}:[],r=0;r<e.length;r++){var n=r,s=e[r],s=((e,t)=>(e=>(m.dynamicTypingFunction&&void 0===m.dynamicTyping[e]&&(m.dynamicTyping[e]=m.dynamicTypingFunction(e)),!0===(m.dynamicTyping[e]||m.dynamicTyping)))(e)?"true"===t||"TRUE"===t||"false"!==t&&"FALSE"!==t&&((e=>{if(u.test(e)){e=parseFloat(e);if(h<e&&e<o)return 1}})(t)?parseFloat(t):d.test(t)?new Date(t):""===t?null:t):t)(n=m.header?r>=c.length?"__parsed_extra":c[r]:n,s=m.transform?m.transform(s,n):s);"__parsed_extra"===n?(i[n]=i[n]||[],i[n].push(s)):i[n]=s}return m.header&&(r>c.length?k("FieldMismatch","TooManyFields","Too many fields: expected "+c.length+" fields but parsed "+r,f+t):r<c.length&&k("FieldMismatch","TooFewFields","Too few fields: expected "+c.length+" fields but parsed "+r,f+t)),i}var r;p&&(m.header||m.dynamicTyping||m.transform)&&(r=1,!p.data.length||Array.isArray(p.data[0])?(p.data=p.data.map(i),r=p.data.length):p.data=i(p.data,0),m.header&&p.meta&&(p.meta.fields=c),f+=r)}function _(){return m.header&&0===c.length}function k(e,t,i,r){e={type:e,code:t,message:i};void 0!==r&&(e.row=r),p.errors.push(e)}q(m.step)&&(t=m.step,m.step=function(e){p=e,_()?g():(g(),0!==p.data.length&&(r+=e.data.length,m.preview&&r>m.preview?s.abort():(p.data=p.data[0],t(p,i))))}),this.parse=function(e,t,i){var r=m.quoteChar||'"',r=(m.newline||(m.newline=this.guessLineEndings(e,r)),a=!1,m.delimiter?q(m.delimiter)&&(m.delimiter=m.delimiter(e),p.meta.delimiter=m.delimiter):((r=((e,t,i,r,n)=>{var s,a,o,h;n=n||[",","\t","|",";",v.RECORD_SEP,v.UNIT_SEP];for(var u=0;u<n.length;u++){for(var d,f=n[u],l=0,c=0,p=0,g=(o=void 0,new E({comments:r,delimiter:f,newline:t,preview:10}).parse(e)),_=0;_<g.data.length;_++)i&&y(g.data[_])?p++:(d=g.data[_].length,c+=d,void 0===o?o=d:0<d&&(l+=Math.abs(d-o),o=d));0<g.data.length&&(c/=g.data.length-p),(void 0===a||l<=a)&&(void 0===h||h<c)&&1.99<c&&(a=l,s=f,h=c)}return{successful:!!(m.delimiter=s),bestDelimiter:s}})(e,m.newline,m.skipEmptyLines,m.comments,m.delimitersToGuess)).successful?m.delimiter=r.bestDelimiter:(a=!0,m.delimiter=v.DefaultDelimiter),p.meta.delimiter=m.delimiter),b(m));return m.preview&&m.header&&r.preview++,n=e,s=new E(r),p=s.parse(n,t,i),g(),l?{meta:{paused:!0}}:p||{meta:{paused:!1}}},this.paused=function(){return l},this.pause=function(){l=!0,s.abort(),n=q(m.chunk)?"":n.substring(s.getCharIndex())},this.resume=function(){i.streamer._halted?(l=!1,i.streamer.parseChunk(n,!0)):setTimeout(i.resume,3)},this.aborted=function(){return e},this.abort=function(){e=!0,s.abort(),p.meta.aborted=!0,q(m.complete)&&m.complete(p),n=""},this.guessLineEndings=function(e,t){e=e.substring(0,1048576);var t=new RegExp(U(t)+"([^]*?)"+U(t),"gm"),i=(e=e.replace(t,"")).split("\r"),t=e.split("\n"),e=1<t.length&&t[0].length<i[0].length;if(1===i.length||e)return"\n";for(var r=0,n=0;n<i.length;n++)"\n"===i[n][0]&&r++;return r>=i.length/2?"\r\n":"\r"}}function U(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}function E(C){var S=(C=C||{}).delimiter,O=C.newline,x=C.comments,I=C.step,A=C.preview,T=C.fastMode,D=null,L=!1,F=null==C.quoteChar?'"':C.quoteChar,j=F;if(void 0!==C.escapeChar&&(j=C.escapeChar),("string"!=typeof S||-1<v.BAD_DELIMITERS.indexOf(S))&&(S=","),x===S)throw new Error("Comment character same as delimiter");!0===x?x="#":("string"!=typeof x||-1<v.BAD_DELIMITERS.indexOf(x))&&(x=!1),"\n"!==O&&"\r"!==O&&"\r\n"!==O&&(O="\n");var z=0,M=!1;this.parse=function(i,t,r){if("string"!=typeof i)throw new Error("Input must be a string");var n=i.length,e=S.length,s=O.length,a=x.length,o=q(I),h=[],u=[],d=[],f=z=0;if(!i)return w();if(T||!1!==T&&-1===i.indexOf(F)){for(var l=i.split(O),c=0;c<l.length;c++){if(d=l[c],z+=d.length,c!==l.length-1)z+=O.length;else if(r)return w();if(!x||d.substring(0,a)!==x){if(o){if(h=[],k(d.split(S)),R(),M)return w()}else k(d.split(S));if(A&&A<=c)return h=h.slice(0,A),w(!0)}}return w()}for(var p=i.indexOf(S,z),g=i.indexOf(O,z),_=new RegExp(U(j)+U(F),"g"),m=i.indexOf(F,z);;)if(i[z]===F)for(m=z,z++;;){if(-1===(m=i.indexOf(F,m+1)))return r||u.push({type:"Quotes",code:"MissingQuotes",message:"Quoted field unterminated",row:h.length,index:z}),E();if(m===n-1)return E(i.substring(z,m).replace(_,F));if(F===j&&i[m+1]===j)m++;else if(F===j||0===m||i[m-1]!==j){-1!==p&&p<m+1&&(p=i.indexOf(S,m+1));var y=v(-1===(g=-1!==g&&g<m+1?i.indexOf(O,m+1):g)?p:Math.min(p,g));if(i.substr(m+1+y,e)===S){d.push(i.substring(z,m).replace(_,F)),i[z=m+1+y+e]!==F&&(m=i.indexOf(F,z)),p=i.indexOf(S,z),g=i.indexOf(O,z);break}y=v(g);if(i.substring(m+1+y,m+1+y+s)===O){if(d.push(i.substring(z,m).replace(_,F)),b(m+1+y+s),p=i.indexOf(S,z),m=i.indexOf(F,z),o&&(R(),M))return w();if(A&&h.length>=A)return w(!0);break}u.push({type:"Quotes",code:"InvalidQuotes",message:"Trailing quote on quoted field is malformed",row:h.length,index:z}),m++}}else if(x&&0===d.length&&i.substring(z,z+a)===x){if(-1===g)return w();z=g+s,g=i.indexOf(O,z),p=i.indexOf(S,z)}else if(-1!==p&&(p<g||-1===g))d.push(i.substring(z,p)),z=p+e,p=i.indexOf(S,z);else{if(-1===g)break;if(d.push(i.substring(z,g)),b(g+s),o&&(R(),M))return w();if(A&&h.length>=A)return w(!0)}return E();function k(e){h.push(e),f=z}function v(e){var t=0;return t=-1!==e&&(e=i.substring(m+1,e))&&""===e.trim()?e.length:t}function E(e){return r||(void 0===e&&(e=i.substring(z)),d.push(e),z=n,k(d),o&&R()),w()}function b(e){z=e,k(d),d=[],g=i.indexOf(O,z)}function w(e){if(C.header&&!t&&h.length&&!L){var s=h[0],a=Object.create(null),o=new Set(s);let n=!1;for(let r=0;r<s.length;r++){let i=P(s[r]);if(a[i=q(C.transformHeader)?C.transformHeader(i,r):i]){let e,t=a[i];for(;e=i+"_"+t,t++,o.has(e););o.add(e),s[r]=e,a[i]++,n=!0,(D=null===D?{}:D)[e]=i}else a[i]=1,s[r]=i;o.add(i)}n&&console.warn("Duplicate headers found and renamed."),L=!0}return{data:h,errors:u,meta:{delimiter:S,linebreak:O,aborted:M,truncated:!!e,cursor:f+(t||0),renamedHeaders:D}}}function R(){I(w()),h=[],u=[]}},this.abort=function(){M=!0},this.getCharIndex=function(){return z}}function g(e){var t=e.data,i=o[t.workerId],r=!1;if(t.error)i.userError(t.error,t.file);else if(t.results&&t.results.data){var n={abort:function(){r=!0,_(t.workerId,{data:[],errors:[],meta:{aborted:!0}})},pause:m,resume:m};if(q(i.userStep)){for(var s=0;s<t.results.data.length&&(i.userStep({data:t.results.data[s],errors:t.results.errors,meta:t.results.meta},n),!r);s++);delete t.results}else q(i.userChunk)&&(i.userChunk(t.results,n,t.file),delete t.results)}t.finished&&!r&&_(t.workerId,t.results)}function _(e,t){var i=o[e];q(i.userComplete)&&i.userComplete(t),i.terminate(),delete o[e]}function m(){throw new Error("Not implemented.")}function b(e){if("object"!=typeof e||null===e)return e;var t,i=Array.isArray(e)?[]:{};for(t in e)i[t]=b(e[t]);return i}function y(e,t){return function(){e.apply(t,arguments)}}function q(e){return"function"==typeof e}return v.parse=function(e,t){var i=(t=t||{}).dynamicTyping||!1;q(i)&&(t.dynamicTypingFunction=i,i={});if(t.dynamicTyping=i,t.transform=!!q(t.transform)&&t.transform,!t.worker||!v.WORKERS_SUPPORTED)return i=null,v.NODE_STREAM_INPUT,"string"==typeof e?(e=P(e),i=new(t.download?f:c)(t)):!0===e.readable&&q(e.read)&&q(e.on)?i=new p(t):(n.File&&e instanceof File||e instanceof Object)&&(i=new l(t)),i.stream(e);(i=(()=>{var e;return!!v.WORKERS_SUPPORTED&&(e=(()=>{var e=n.URL||n.webkitURL||null,t=r.toString();return v.BLOB_URL||(v.BLOB_URL=e.createObjectURL(new Blob(["var global = (function() { if (typeof self !== 'undefined') { return self; } if (typeof window !== 'undefined') { return window; } if (typeof global !== 'undefined') { return global; } return {}; })(); global.IS_PAPA_WORKER=true; ","(",t,")();"],{type:"text/javascript"})))})(),(e=new n.Worker(e)).onmessage=g,e.id=h++,o[e.id]=e)})()).userStep=t.step,i.userChunk=t.chunk,i.userComplete=t.complete,i.userError=t.error,t.step=q(t.step),t.chunk=q(t.chunk),t.complete=q(t.complete),t.error=q(t.error),delete t.worker,i.postMessage({input:e,config:t,workerId:i.id})},v.unparse=function(e,t){var s=!1,_=!0,m=",",y="\r\n",a='"',o=a+a,i=!1,r=null,h=!1,u=((()=>{if("object"==typeof t){if("string"!=typeof t.delimiter||v.BAD_DELIMITERS.filter(function(e){return-1!==t.delimiter.indexOf(e)}).length||(m=t.delimiter),"boolean"!=typeof t.quotes&&"function"!=typeof t.quotes&&!Array.isArray(t.quotes)||(s=t.quotes),"boolean"!=typeof t.skipEmptyLines&&"string"!=typeof t.skipEmptyLines||(i=t.skipEmptyLines),"string"==typeof t.newline&&(y=t.newline),"string"==typeof t.quoteChar&&(a=t.quoteChar,o=a+a),"boolean"==typeof t.header&&(_=t.header),Array.isArray(t.columns)){if(0===t.columns.length)throw new Error("Option columns is empty");r=t.columns}void 0!==t.escapeChar&&(o=t.escapeChar+a),t.escapeFormulae instanceof RegExp?h=t.escapeFormulae:"boolean"==typeof t.escapeFormulae&&t.escapeFormulae&&(h=/^[=+\-@\t\r].*$/)}})(),new RegExp(U(a),"g"));"string"==typeof e&&(e=JSON.parse(e));if(Array.isArray(e)){if(!e.length||Array.isArray(e[0]))return n(null,e,i);if("object"==typeof e[0])return n(r||Object.keys(e[0]),e,i)}else if("object"==typeof e)return"string"==typeof e.data&&(e.data=JSON.parse(e.data)),Array.isArray(e.data)&&(e.fields||(e.fields=e.meta&&e.meta.fields||r),e.fields||(e.fields=Array.isArray(e.data[0])?e.fields:"object"==typeof e.data[0]?Object.keys(e.data[0]):[]),Array.isArray(e.data[0])||"object"==typeof e.data[0]||(e.data=[e.data])),n(e.fields||[],e.data||[],i);throw new Error("Unable to serialize unrecognized input");function n(e,t,i){var r="",n=("string"==typeof e&&(e=JSON.parse(e)),"string"==typeof t&&(t=JSON.parse(t)),Array.isArray(e)&&0<e.length),s=!Array.isArray(t[0]);if(n&&_){for(var a=0;a<e.length;a++)0<a&&(r+=m),r+=k(e[a],a);0<t.length&&(r+=y)}for(var o=0;o<t.length;o++){var h=(n?e:t[o]).length,u=!1,d=n?0===Object.keys(t[o]).length:0===t[o].length;if(i&&!n&&(u="greedy"===i?""===t[o].join("").trim():1===t[o].length&&0===t[o][0].length),"greedy"===i&&n){for(var f=[],l=0;l<h;l++){var c=s?e[l]:l;f.push(t[o][c])}u=""===f.join("").trim()}if(!u){for(var p=0;p<h;p++){0<p&&!d&&(r+=m);var g=n&&s?e[p]:p;r+=k(t[o][g],p)}o<t.length-1&&(!i||0<h&&!d)&&(r+=y)}}return r}function k(e,t){var i,r,n;return null==e?"":e.constructor===Date?JSON.stringify(e).slice(1,25):(n=!1,h&&"string"==typeof e&&h.test(e)&&(e="'"+e,n=!0),r=(i=e.toString()).replace(u,o),(n=n||!0===s||"function"==typeof s&&s(e,t)||Array.isArray(s)&&s[t]||((e,t)=>{for(var i=0;i<t.length;i++)if(-1<e.indexOf(t[i]))return!0;return!1})(r,v.BAD_DELIMITERS)||-1<r.indexOf(m)||-1<i.indexOf(a)||" "===r.charAt(0)||" "===r.charAt(r.length-1))?a+r+a:r)}},v.RECORD_SEP=String.fromCharCode(30),v.UNIT_SEP=String.fromCharCode(31),v.BYTE_ORDER_MARK="\ufeff",v.BAD_DELIMITERS=["\r","\n",'"',v.BYTE_ORDER_MARK],v.WORKERS_SUPPORTED=!s&&!!n.Worker,v.NODE_STREAM_INPUT=1,v.LocalChunkSize=10485760,v.RemoteChunkSize=5242880,v.DefaultDelimiter=",",v.Parser=E,v.ParserHandle=i,v.NetworkStreamer=f,v.FileStreamer=l,v.StringStreamer=c,v.ReadableStreamStreamer=p,n.jQuery&&((d=n.jQuery).fn.parse=function(o){var i=o.config||{},h=[];return this.each(function(e){if(!("INPUT"===d(this).prop("tagName").toUpperCase()&&"file"===d(this).attr("type").toLowerCase()&&n.FileReader)||!this.files||0===this.files.length)return!0;for(var t=0;t<this.files.length;t++)h.push({file:this.files[t],inputElem:this,instanceConfig:d.extend({},i)})}),e(),this;function e(){if(0===h.length)q(o.complete)&&o.complete();else{var e,t,i,r,n=h[0];if(q(o.before)){var s=o.before(n.file,n.inputElem);if("object"==typeof s){if("abort"===s.action)return e="AbortError",t=n.file,i=n.inputElem,r=s.reason,void(q(o.error)&&o.error({name:e},t,i,r));if("skip"===s.action)return void u();"object"==typeof s.config&&(n.instanceConfig=d.extend(n.instanceConfig,s.config))}else if("skip"===s)return void u()}var a=n.instanceConfig.complete;n.instanceConfig.complete=function(e){q(a)&&a(e,n.file,n.inputElem),u()},v.parse(n.file,n.instanceConfig)}}function u(){h.splice(0,1),e()}}),a&&(n.onmessage=function(e){e=e.data;void 0===v.WORKER_ID&&e&&(v.WORKER_ID=e.workerId);"string"==typeof e.input?n.postMessage({workerId:v.WORKER_ID,results:v.parse(e.input,e.config),finished:!0}):(n.File&&e.input instanceof File||e.input instanceof Object)&&(e=v.parse(e.input,e.config))&&n.postMessage({workerId:v.WORKER_ID,results:e,finished:!0})}),(f.prototype=Object.create(u.prototype)).constructor=f,(l.prototype=Object.create(u.prototype)).constructor=l,(c.prototype=Object.create(c.prototype)).constructor=c,(p.prototype=Object.create(u.prototype)).constructor=p,v});
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/reflect-metadata/Reflect.js":
+/***/ "./node_modules/reflect-metadata/Reflect.js"
 /*!**************************************************!*\
   !*** ./node_modules/reflect-metadata/Reflect.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
 /*! *****************************************************************************
 Copyright (C) Microsoft. All rights reserved.
@@ -12581,13 +12581,964 @@ var Reflect;
 })(Reflect || (Reflect = {}));
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/typescript-json-serializer/index.js":
+/***/ "./src/app.ts"
+/*!********************!*\
+  !*** ./src/app.ts ***!
+  \********************/
+(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/card.ts");
+/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typescript-json-serializer */ "./node_modules/typescript-json-serializer/index.js");
+/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let activeCards = [];
+let currentCard = 0;
+function updatePreview() {
+    let canvas = document.getElementById('preview');
+    if (canvas && activeCards[currentCard]) {
+        activeCards[currentCard].draw(canvas, 0);
+    }
+    sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
+}
+function onCardTypeChanged(event) {
+    const selectElem = event.target;
+    if (selectElem && activeCards[currentCard]) {
+        activeCards[currentCard]._heading = selectElem.selectedOptions[0].text;
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').val(activeCards[currentCard]._heading);
+        if (selectElem.selectedOptions[0].text == 'Stratagem') {
+            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
+        }
+        else if (selectElem.selectedOptions[0].text == 'Psychic Power') {
+            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower;
+        }
+        else if (selectElem.selectedOptions[0].text == 'Tactical Objective') {
+            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective;
+        }
+        else if (selectElem.selectedOptions[0].text == 'Prayer') {
+            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer;
+        }
+        updateCardUI();
+        updatePreview();
+    }
+}
+function onCardStyleChanged(event) {
+    const selectElem = event.target;
+    if (selectElem && activeCards[currentCard]) {
+        if (selectElem.selectedOptions[0].text == 'Assault') {
+            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault;
+        }
+        else if (selectElem.selectedOptions[0].text == 'Support') {
+            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support;
+        }
+        else if (selectElem.selectedOptions[0].text == 'Mobility') {
+            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility;
+        }
+        updateCardUI();
+        updatePreview();
+    }
+}
+function onHeaderChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._heading = inputElem.value;
+        updatePreview();
+    }
+}
+function onTitleChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._title = inputElem.value;
+        updatePreview();
+    }
+}
+function onRuleChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._rule = inputElem.value;
+        updatePreview();
+    }
+}
+function onFluffChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._fluff = inputElem.value;
+        updatePreview();
+    }
+}
+function onValueChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._value = inputElem.value;
+        updatePreview();
+    }
+}
+function onFooterChanged(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._footer = inputElem.value;
+        updatePreview();
+    }
+}
+function onDiceCostChange(event) {
+    const inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        for (let i = 1; i < 7; i++) {
+            const input = document.getElementById(`dice_cost_${i}`);
+            activeCards[currentCard]._diceCost[parseInt(input.name)] = parseInt(input.value);
+        }
+        updatePreview();
+    }
+}
+function onPreviousCard() {
+    currentCard = Math.max(currentCard - 1, 0);
+    updateCardUI();
+    updatePreview();
+}
+function onNextCard() {
+    currentCard = Math.min(currentCard + 1, activeCards.length - 1);
+    updateCardUI();
+    updatePreview();
+}
+function mmToInches(mm) {
+    return mm / 25.4;
+}
+function handleCreate() {
+    if (activeCards[currentCard]) {
+        const cardSizeMm = [63, 88];
+        let dpi = 300;
+        let marginMm = 0;
+        const outputDPIInput = document.getElementById('outputdpi');
+        if (outputDPIInput)
+            dpi = parseInt(outputDPIInput.value);
+        const outputMargin = document.getElementById('outputmargin');
+        if (outputMargin)
+            marginMm = parseInt(outputMargin.value);
+        let marginPx = Math.ceil(mmToInches(marginMm) * dpi);
+        let canvas = document.createElement('canvas');
+        canvas.width = Math.round(mmToInches(cardSizeMm[0]) * dpi) + 2 * marginPx;
+        canvas.height = Math.round(mmToInches(cardSizeMm[1]) * dpi) + 2 * marginPx;
+        activeCards[currentCard].draw(canvas, marginMm);
+        let link = document.createElement('a');
+        link.download = `${activeCards[currentCard]._title}.png`;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        console.log("Current card: " + currentCard + " Num active cards: " + activeCards.length);
+        updateCardUI();
+        updatePreview();
+    }
+}
+function getFileExtension(filename) {
+    const substrings = filename.split('.');
+    if (substrings.length > 1) {
+        return substrings[substrings.length - 1].toLowerCase();
+    }
+    return "";
+}
+function textToStyle(styleText) {
+    if (styleText == 'CLASSIC')
+        return _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Classic;
+    return _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th;
+}
+function onBatchNameChanged(event) {
+    let inputElem = event.target;
+    if (inputElem && activeCards[currentCard]) {
+        activeCards[currentCard]._batch = inputElem.value;
+        console.log("Current set: " + inputElem.value);
+        updatePreview();
+    }
+}
+function handleFileSelect(event) {
+    const input = event.target;
+    const files = input.files;
+    let defaultStyle = _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th;
+    if (files) {
+        currentCard = 0;
+        activeCards.length = 0;
+        for (let f of files) {
+            const fileExt = getFileExtension(f.name);
+            if (fileExt === "csv" || fileExt === 'tsv') {
+                let config;
+                (0,papaparse__WEBPACK_IMPORTED_MODULE_2__.parse)(f, {
+                    delimiter: papaparse__WEBPACK_IMPORTED_MODULE_2__.RECORD_SEP,
+                    newline: "\r\n",
+                    complete: (result) => {
+                        const fileName = f.name.substring(0, f.name.length - 4);
+                        for (let data of result.data) {
+                            let fields = data;
+                            let cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
+                            if (fields[0].toUpperCase() == "STRATAGEM")
+                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
+                            else if (fields[0].toUpperCase() === "PSYCHIC POWER")
+                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower;
+                            else if (fields[0].toUpperCase() === "TACTICAL OBJECTIVE")
+                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective;
+                            else if (fields[0].toUpperCase() === "PRAYER")
+                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer;
+                            else {
+                                continue;
+                            }
+                            if (cardType == _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer) {
+                                let i = 1;
+                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+                                card._type = cardType;
+                                card._value = "";
+                                card._batch = fileName;
+                                if (fields.length == 6) {
+                                    card._style = defaultStyle;
+                                }
+                                else if (fields.length == 7) {
+                                    card._style = textToStyle(fields[i++]);
+                                }
+                                switch (fields[i++]) {
+                                    case "Assault": {
+                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault;
+                                        break;
+                                    }
+                                    case "Support": {
+                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support;
+                                        break;
+                                    }
+                                    case "Mobility": {
+                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility;
+                                        break;
+                                    }
+                                }
+                                card._title = fields[i++];
+                                card._heading = fields[i++];
+                                card._fluff = fields[i++];
+                                card._rule = fields[i++];
+                                activeCards.push(card);
+                            }
+                            else if (cardType == _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective) {
+                                let i = 1;
+                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+                                card._type = cardType;
+                                if (fields.length == 5) {
+                                    card._style = defaultStyle;
+                                }
+                                else if (fields.length >= 6) {
+                                    card._style = textToStyle(fields[i++]);
+                                }
+                                card._title = fields[i++];
+                                card._heading = fields[i++];
+                                card._fluff = fields[i++];
+                                card._rule = fields[i++];
+                                if (fields.length == 7) {
+                                    card._footer = fields[i++];
+                                }
+                                else {
+                                    card._footer = "OBJECTIVE";
+                                }
+                                activeCards.push(card);
+                            }
+                            else {
+                                let i = 1;
+                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+                                card._type = cardType;
+                                if (fields.length == 6) {
+                                    card._style = defaultStyle;
+                                }
+                                else if (fields.length == 7) {
+                                    card._style = textToStyle(fields[i++]);
+                                }
+                                card._value = fields[i++];
+                                card._title = fields[i++];
+                                card._heading = fields[i++];
+                                card._fluff = fields[i++];
+                                card._rule = fields[i++];
+                                activeCards.push(card);
+                            }
+                        }
+                        currentCard = 0;
+                        console.log("Current set: " + fileName);
+                        console.log("Num active cards: " + activeCards.length);
+                        updateCardUI();
+                        updatePreview();
+                    }
+                });
+            }
+            else {
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#errorText').html('StrataGen only supports .csv files.  Selected file is a \'' + fileExt + "\' file.");
+            }
+        }
+    }
+}
+function onBatchSave() {
+    let cards_to_export = [];
+    activeCards.forEach((card) => {
+        cards_to_export.push(["PRAYER", card._style.toLocaleUpperCase(), parseOrder(card), card._title, card._heading, card._fluff, card._rule]);
+    });
+    console.log(cards_to_export);
+    let csvContent = "data:text/csv;charset=utf-8,"
+        + cards_to_export.map(e => e.join(papaparse__WEBPACK_IMPORTED_MODULE_2__.RECORD_SEP)).join("\r\n");
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${activeCards[currentCard]._batch}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    return null;
+}
+function onBatchPrint() {
+    let currentCardHolder = currentCard;
+    currentCard = 0;
+    activeCards.forEach((_, i) => {
+        handleCreate();
+        currentCard++;
+    });
+    currentCard = currentCardHolder;
+}
+function onSaveCard() {
+    localStorage.setItem('lastCard', JSON.stringify((0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__.serialize)(activeCards[currentCard])));
+}
+function onLoadCard() {
+    activeCards.push(activeCards[currentCard]);
+    currentCard++;
+    activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+    activeCards[currentCard]._batch = activeCards[currentCard - 1]._batch;
+    console.log(activeCards);
+    updateCardUI();
+    updatePreview();
+}
+function deleteCard() {
+    if (confirm(`Are you sure you want to delete ${activeCards[currentCard]._title}?`)) {
+        if (activeCards.length == 1) {
+            activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+        }
+        else if (activeCards.length > 1) {
+            activeCards.splice(currentCard, 1);
+            if (currentCard >= activeCards.length) {
+                currentCard -= 1;
+            }
+        }
+    }
+    updateCardUI();
+    updatePreview();
+}
+function onBackgroundLoad(event) {
+    const input = event.target;
+    const files = input.files;
+    if (files && files[0]) {
+    }
+}
+function onBgOpacityChanged(event) {
+    const inputElem = event.target;
+    if (inputElem) {
+        inputElem.value;
+    }
+}
+function onBgSaturationChanged(event) {
+    const inputElem = event.target;
+    if (inputElem) {
+        inputElem.value;
+    }
+}
+function parseOrder(card) {
+    switch (card._order) {
+        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault: {
+            return "Assault";
+        }
+        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support: {
+            return "Support";
+        }
+        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility: {
+            return "Mobility";
+        }
+    }
+}
+function updateCardUI() {
+    if (activeCards[currentCard]) {
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()("#cardcounter").html(`[${currentCard + 1}/${activeCards.length}]`);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()("#batchname").val(`${activeCards[currentCard]._batch}`);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtype').val(activeCards[currentCard]._type.toString());
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardstyle').val(parseOrder(activeCards[currentCard]));
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').val(activeCards[currentCard]._heading);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtitle').val(activeCards[currentCard]._title);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardrule').val(activeCards[currentCard]._rule);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfluff').val(activeCards[currentCard]._fluff);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfooter').val(activeCards[currentCard]._footer);
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfootercontrol').hide();
+        if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem) {
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 1, "max": 3 });
+            if (parseInt(activeCards[currentCard]._value) > 3)
+                activeCards[currentCard]._value = "3";
+            else if (parseInt(activeCards[currentCard]._value) < 1)
+                activeCards[currentCard]._value = "1";
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Command Points");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
+        }
+        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower) {
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 2, "max": 12 });
+            if (parseInt(activeCards[currentCard]._value) > 12)
+                activeCards[currentCard]._value = "12";
+            else if (parseInt(activeCards[currentCard]._value) < 2)
+                activeCards[currentCard]._value = "2";
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Warp Charge");
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
+        }
+        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective) {
+            if (activeCards[currentCard]._style == _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Classic) {
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 11, "max": 66 });
+                if (parseInt(activeCards[currentCard]._value) > 66)
+                    activeCards[currentCard]._value = "66";
+                else if (parseInt(activeCards[currentCard]._value) < 11)
+                    activeCards[currentCard]._value = "11";
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Objective (D66)");
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
+            }
+            else if (activeCards[currentCard]._style == _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th) {
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
+                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfootercontrol').show();
+            }
+        }
+        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer) {
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
+        }
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').val(activeCards[currentCard]._value);
+        for (let i = 1; i < 7; i++) {
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(`#dice_cost_${i}`).val(activeCards[currentCard]._diceCost[i - 1]);
+        }
+    }
+}
+function loadPreviousCards() {
+    let cardsBackup = sessionStorage.getItem("setBackup");
+    if (cardsBackup) {
+        JSON.parse(cardsBackup).forEach((card, i) => {
+            activeCards[i] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+            activeCards[i]._batch = card._batch;
+            activeCards[i]._fluff = card._fluff;
+            activeCards[i]._footer = card._footer;
+            activeCards[i]._heading = card._heading;
+            activeCards[i]._order = card._order;
+            activeCards[i]._rule = card._rule;
+            activeCards[i]._style = card._style;
+            activeCards[i]._title = card._title;
+            activeCards[i]._type = card._type;
+            activeCards[i]._value = card._value;
+            activeCards[i]._diceCost = card._diceCost;
+            currentCard = i;
+        });
+        console.log(activeCards);
+    }
+}
+function plumbCallbacks() {
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#previouscard').click(onPreviousCard);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#nextcard').click(onNextCard);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardstyle').on('change', onCardStyleChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').on('input', onHeaderChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtitle').on('input', onTitleChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardrule').on('input', onRuleChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfluff').on('input', onFluffChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').on('input', onValueChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfooter').on('input', onFooterChanged);
+    for (let i = 1; i < 7; i++) {
+        jquery__WEBPACK_IMPORTED_MODULE_3___default()(`#dice_cost_${i}`).on('change', onDiceCostChange);
+    }
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#createcard').click(handleCreate);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#deletecard').click(deleteCard);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchname').on('blur', onBatchNameChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#datacardfile').on('change', handleFileSelect);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchsave').click(onBatchSave);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchcreate').click(onBatchPrint);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#backgroundfile').on('change', onBackgroundLoad);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgopacity').on('input', onBgOpacityChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgsaturation').on('input', onBgSaturationChanged);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#savecard').click(onSaveCard);
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#loadcard').click(onLoadCard);
+}
+console.log("Reloading web page.");
+let canvas = document.getElementById('preview');
+if (canvas) {
+    let ctx = canvas.getContext('2d');
+    if (ctx) {
+        if (activeCards.length == 0) {
+            currentCard = 0;
+            activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
+        }
+    }
+}
+loadPreviousCards();
+plumbCallbacks();
+updateCardUI();
+updatePreview();
+console.log("Starting up...");
+
+
+/***/ },
+
+/***/ "./src/card.ts"
+/*!*********************!*\
+  !*** ./src/card.ts ***!
+  \*********************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Card: () => (/* binding */ Card),
+/* harmony export */   CardOrderColor: () => (/* binding */ CardOrderColor),
+/* harmony export */   CardStyle: () => (/* binding */ CardStyle),
+/* harmony export */   CardType: () => (/* binding */ CardType)
+/* harmony export */ });
+/* unused harmony exports Justification, RenderText, RenderParagraph */
+/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-json-serializer */ "./node_modules/typescript-json-serializer/index.js");
+/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var Card_1;
+
+var CardType;
+(function (CardType) {
+    CardType["Stratagem"] = "Stratagem";
+    CardType["PsychicPower"] = "Psychic Power";
+    CardType["TacticalObjective"] = "Tactical Objective";
+    CardType["Prayer"] = "Prayer";
+})(CardType || (CardType = {}));
+var CardOrderColor;
+(function (CardOrderColor) {
+    CardOrderColor["Assault"] = "#f24d41";
+    CardOrderColor["Support"] = "lightgreen";
+    CardOrderColor["Mobility"] = "lightblue";
+})(CardOrderColor || (CardOrderColor = {}));
+var CardStyle;
+(function (CardStyle) {
+    CardStyle["Classic"] = "Classic";
+    CardStyle["Edition_9th"] = "9th Edition";
+})(CardStyle || (CardStyle = {}));
+var Justification;
+(function (Justification) {
+    Justification[Justification["Left"] = 0] = "Left";
+    Justification[Justification["Right"] = 1] = "Right";
+    Justification[Justification["Center"] = 2] = "Center";
+})(Justification || (Justification = {}));
+;
+function RenderText(ctx, text, x, y, w, h, how) {
+    if (ctx && text.length) {
+        ctx.textBaseline = 'top';
+        let measure = ctx.measureText(text);
+        const tw = measure.width;
+        const th = measure.actualBoundingBoxDescent - measure.actualBoundingBoxAscent;
+        if (how == Justification.Center) {
+            ctx.fillText(text, x + Math.max((w - tw) / 2, 0), y + (h - th) / 2, w);
+        }
+        else if (how == Justification.Left) {
+            ctx.fillText(text, x, y + (h - th) / 2, w);
+        }
+        else if (how == Justification.Right) {
+            ctx.fillText(text, x + w - tw, y + (h - th) / 2, w);
+        }
+    }
+}
+function RenderParagraph(ctx, text, x, y, w, how) {
+    let curY = y;
+    if (ctx && text.length) {
+        let lines = [];
+        let currentLine = [];
+        ctx.textBaseline = 'top';
+        let length = 0;
+        const spaceWidth = ctx.measureText(" ").width;
+        const heightMeasure = ctx.measureText(text);
+        const th = (heightMeasure.actualBoundingBoxDescent - heightMeasure.actualBoundingBoxAscent) * 1.5;
+        text.split("\n").forEach(function (paragraph) {
+            currentLine.length = 0;
+            length = 0;
+            paragraph.split(" ").forEach(function (word) {
+                const measure = ctx.measureText(word);
+                if ((length + measure.width) > w) {
+                    lines.push(currentLine.join(" "));
+                    currentLine.length = 0;
+                    length = 0;
+                }
+                length += measure.width + spaceWidth;
+                currentLine.push(word);
+            });
+            if (currentLine.length > 0) {
+                lines.push(currentLine.join(" "));
+            }
+        });
+        for (let l of lines) {
+            let measure = ctx.measureText(l);
+            const tw = measure.width;
+            if (how == Justification.Center) {
+                ctx.fillText(l, x + Math.max((w - tw) / 2, 0), curY, w);
+            }
+            else if (how == Justification.Left) {
+                ctx.fillText(l, x, curY, w);
+            }
+            else if (how == Justification.Right) {
+                ctx.fillText(l, x + w - tw, curY, w);
+            }
+            curY += th;
+        }
+    }
+    return curY;
+}
+let Card = Card_1 = class Card {
+    constructor() {
+        this._width = Card_1.defaultWidthPx;
+        this._height = Card_1.defaultHeightPx;
+        this._scale = 1;
+        this._type = CardType.Prayer;
+        this._style = CardStyle.Classic;
+        this._order = CardOrderColor.Assault;
+        this._batch = "New Set";
+        this._heading = "CORE";
+        this._title = "<Title>";
+        this._fluff = "<Fluff text>";
+        this._rule = "<Rule text>";
+        this._footer = "<Footer>";
+        this._value = "1";
+        this._diceCost = [0, 0, 0, 0, 0, 0];
+    }
+    headerFont() {
+        if (this._style == CardStyle.Edition_9th) {
+            return Math.round(20 * this._scale).toString() + 'px ' + 'Teko';
+        }
+        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
+    }
+    titleFont() {
+        return Math.round(32 * this._scale).toString() + 'px ' + 'Teko';
+    }
+    fluffFont() {
+        return 'italic ' + Math.round(13 * this._scale).toString() + 'px ' + 'serif';
+    }
+    ruleFont() {
+        return Math.round(15 * this._scale).toString() + 'px ' + 'serif';
+    }
+    footFont() {
+        return Math.round(18 * this._scale).toString() + 'px ' + 'Teko';
+    }
+    valueFont() {
+        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
+    }
+    footerFont() {
+        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
+    }
+    drawDiceRow(ctx, diceImages, centerY) {
+        const imageArray = Array.from({ length: 6 }, (_, i) => {
+            const img = document.createElement("img");
+            img.src = `./css/images/Dice_${i + 1}.webp`;
+            return img;
+        });
+        if (diceImages.length === 0) {
+            return;
+        }
+        const iconSize = 45;
+        const spacing = 5;
+        const totalWidth = (iconSize + spacing) * 6;
+        const sumUsed = diceImages.reduce((sum, value) => sum + value, 0);
+        const startX = (this._width / 2) - (Math.min(sumUsed, 6) * (iconSize + spacing) / 2);
+        let used = 0;
+        diceImages.forEach((entry, index) => {
+            for (let i = 0; i < entry; i++) {
+                const x = startX + used * (iconSize + spacing);
+                used++;
+                if (used <= 6) {
+                    ctx.drawImage(imageArray[index], x, centerY, iconSize, iconSize);
+                }
+            }
+        });
+    }
+    draw(canvas, marginPx) {
+        let ctx = canvas.getContext('2d');
+        if (!ctx)
+            return;
+        this._width = canvas.width - 2 * marginPx;
+        this._height = canvas.height - 2 * marginPx;
+        this._scale = Math.max(this._width / Card_1.defaultWidthPx, this._height / Card_1.defaultHeightPx);
+        ctx.fillStyle = "#f8f9fa";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.translate(marginPx, marginPx);
+        ctx.fillRect(0, 0, this._width, this._height);
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = 'silver';
+        let borderX = 5;
+        let borderY = 5;
+        const borderWidth = this._width - 2 * borderX;
+        const borderHeight = this._height - 2 * borderY;
+        const borderLineWidth = Math.ceil(5);
+        let numRows = 12;
+        if (this._style == CardStyle.Edition_9th)
+            numRows = 20;
+        const textRegionHeight = this._height / numRows;
+        if (this._style == CardStyle.Classic) {
+            ctx.save();
+            ctx.strokeStyle = 'grey';
+            ctx.lineWidth = borderLineWidth;
+            this.drawBorder(ctx, borderX, borderY, borderWidth, borderHeight, textRegionHeight);
+            ctx.restore();
+        }
+        const cardHeader = this._heading.toLocaleUpperCase();
+        ctx.save();
+        ctx.font = this.headerFont();
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = 'black';
+        RenderText(ctx, cardHeader, borderX, borderY, borderWidth, textRegionHeight, Justification.Center);
+        ctx.restore();
+        borderX = this._width * 0.05;
+        borderY = this._height * 0.02;
+        let curY = borderY * 2 + textRegionHeight;
+        const marginXLeft = borderX * 2;
+        const marginXRight = this._width - 2 * borderX;
+        const textWidth = marginXRight - marginXLeft;
+        ctx.moveTo(marginXLeft, curY);
+        ctx.lineTo(marginXRight, curY);
+        ctx.stroke();
+        const cardTitle = this._title.toLocaleUpperCase();
+        ctx.save();
+        ctx.font = this.titleFont();
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = 'black';
+        RenderText(ctx, cardTitle, marginXLeft, curY, textWidth, textRegionHeight, Justification.Center);
+        ctx.restore();
+        curY += textRegionHeight;
+        if (this._style == CardStyle.Classic) {
+            ctx.moveTo(marginXLeft, curY);
+            ctx.lineTo(marginXRight, curY);
+            ctx.stroke();
+            curY += borderY;
+        }
+        else {
+            curY += borderY;
+        }
+        if (this._fluff.length > 0) {
+            ctx.save();
+            ctx.font = this.fluffFont();
+            ctx.fillStyle = 'black';
+            curY = RenderParagraph(ctx, this._fluff, marginXLeft, curY, textWidth, Justification.Center);
+            ctx.restore();
+            curY += textRegionHeight / 2;
+        }
+        ctx.moveTo(marginXLeft, curY);
+        ctx.lineTo(marginXRight, curY);
+        ctx.stroke();
+        curY += textRegionHeight / 2;
+        ctx.save();
+        ctx.font = this.ruleFont();
+        ctx.fillStyle = 'black';
+        curY = RenderParagraph(ctx, this._rule, marginXLeft, curY, textWidth, Justification.Center);
+        ctx.restore();
+        curY = this._height - borderY * 1.5 - textRegionHeight;
+        this.drawDiceRow(ctx, this._diceCost, curY);
+        if ((this._type == CardType.Stratagem) || (this._type == CardType.PsychicPower) || (this._type == CardType.TacticalObjective)) {
+            if (this._style == CardStyle.Classic) {
+                this.drawFooterClassic(ctx, marginXLeft, marginXRight, curY, textRegionHeight, textWidth);
+            }
+            else if (this._style == CardStyle.Edition_9th) {
+                this.drawFooter9th(ctx, marginXLeft, marginXRight, curY, textRegionHeight, textWidth);
+            }
+        }
+        else if (this._type == CardType.Prayer) {
+        }
+    }
+    toString() {
+        return "Card: " + this._type.toString() + "  Title: " + this._title + "  Rule: " + this._rule + "  CP: " + this._value;
+    }
+    roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        if (fill) {
+            ctx.fill();
+        }
+        if (stroke) {
+            ctx.stroke();
+        }
+    }
+    bevelRect(ctx, x, y, width, height, bevel, fill, stroke) {
+        ctx.beginPath();
+        ctx.moveTo(x, y + bevel);
+        ctx.lineTo(x, y + height - bevel);
+        ctx.lineTo(x + bevel, y + height);
+        ctx.lineTo(x + width - bevel, y + height);
+        ctx.lineTo(x + width, y + height - bevel);
+        ctx.lineTo(x + width, y + bevel);
+        ctx.lineTo(x + width - bevel, y);
+        ctx.lineTo(x + bevel, y);
+        ctx.closePath();
+        if (fill) {
+            ctx.fill();
+        }
+        if (stroke) {
+            ctx.stroke();
+        }
+    }
+    drawBorder(ctx, x, y, width, height, bevel) {
+        this.bevelRect(ctx, x, y, width, height, bevel, false, true);
+        ctx.moveTo(x, y + bevel);
+        ctx.lineTo(x + width, y + bevel);
+        let orderColor = new Path2D();
+        orderColor.moveTo(x, y + bevel);
+        orderColor.lineTo(x + width, y + bevel);
+        orderColor.lineTo(x + width - bevel, y);
+        orderColor.lineTo(x + bevel, y);
+        ctx.fillStyle = this.cardColor();
+        ctx.fill(orderColor, "evenodd");
+        ctx.stroke();
+    }
+    cardColor() {
+        return this._order;
+    }
+    drawFooterClassic(ctx, x, x1, y, textRegionHeight, textWidth) {
+        const cpBoxSize = textRegionHeight;
+        ctx.save();
+        ctx.lineWidth = Math.max(Math.ceil(this._scale), 1.0);
+        this.roundRect(ctx, x * 2 + cpBoxSize, y, textWidth - 2 * x - cpBoxSize, textRegionHeight - 6, 8, false, true);
+        ctx.restore();
+        ctx.save();
+        ctx.font = this.footFont();
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = 'black';
+        let footText = 'COMMAND POINTS';
+        if (this._type === CardType.Stratagem) {
+            if (this._value == '1') {
+                footText = 'COMMAND POINT';
+            }
+        }
+        else if (this._type === CardType.PsychicPower) {
+            footText = 'WARP CHARGE';
+        }
+        else if (this._type === CardType.TacticalObjective) {
+            footText = this._footer;
+        }
+        RenderText(ctx, footText, x * 2 + cpBoxSize, y, textWidth - 2 * x - cpBoxSize, textRegionHeight - 6, Justification.Center);
+        ctx.restore();
+        ctx.save();
+        ctx.fillStyle = '#ba2222';
+        ctx.lineWidth = Math.max(Math.ceil(this._scale), 1.0);
+        this.bevelRect(ctx, x * 2, y - 3, cpBoxSize, cpBoxSize, 5, true, true);
+        ctx.restore();
+        ctx.save();
+        ctx.font = this.valueFont();
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = '#f5f2f2';
+        RenderText(ctx, this._value, x * 2, y - 3, cpBoxSize, cpBoxSize, Justification.Center);
+        ctx.restore();
+    }
+    drawFooter9th(ctx, x0, x1, y, textRegionHeight, textWidth) {
+        let footText = '';
+        if (this._type === CardType.Stratagem) {
+            footText = this._value + ' COMMAND POINT';
+            if (this._value != "1") {
+                footText += 'S';
+            }
+        }
+        else if (this._type === CardType.PsychicPower) {
+            footText = 'WARP CHARGE ' + this._value;
+        }
+        else if (this._type === CardType.TacticalObjective) {
+            footText = this._footer;
+        }
+        if (footText.length > 0) {
+            ctx.moveTo(x0, y);
+            ctx.lineTo(x1, y);
+            ctx.stroke();
+            y += 4;
+            ctx.save();
+            ctx.font = this.footFont();
+            ctx.textBaseline = 'top';
+            ctx.fillStyle = 'black';
+            RenderText(ctx, footText, x0, y, textWidth, textRegionHeight, Justification.Center);
+            ctx.restore();
+        }
+    }
+};
+Card.defaultWidthPx = 400;
+Card.defaultHeightPx = 560;
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", Number)
+], Card.prototype, "_width", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", Number)
+], Card.prototype, "_height", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", Number)
+], Card.prototype, "_scale", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_type", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_style", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_order", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_batch", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_heading", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_title", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_fluff", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_rule", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_footer", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", String)
+], Card.prototype, "_value", void 0);
+__decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
+    __metadata("design:type", Array)
+], Card.prototype, "_diceCost", void 0);
+Card = Card_1 = __decorate([
+    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.Serializable)()
+], Card);
+
+
+
+/***/ },
+
+/***/ "./node_modules/typescript-json-serializer/index.js"
 /*!**********************************************************!*\
   !*** ./node_modules/typescript-json-serializer/index.js ***!
   \**********************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -12956,13 +13907,13 @@ function castSimpleData(type, data, propertyName, className) {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/clients/WebSocketClient.js":
+/***/ "./node_modules/webpack-dev-server/client/clients/WebSocketClient.js"
 /*!***************************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/clients/WebSocketClient.js ***!
   \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -12977,9 +13928,15 @@ function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), 
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
+
+/** @typedef {import("../index").EXPECTED_ANY} EXPECTED_ANY */
+
+/**
+ * @implements {CommunicationClient}
+ */
 var WebSocketClient = /*#__PURE__*/function () {
   /**
-   * @param {string} url
+   * @param {string} url url to connect
    */
   function WebSocketClient(url) {
     _classCallCheck(this, WebSocketClient);
@@ -12990,58 +13947,58 @@ var WebSocketClient = /*#__PURE__*/function () {
   }
 
   /**
-   * @param {(...args: any[]) => void} f
+   * @param {(...args: EXPECTED_ANY[]) => void} fn function
    */
   return _createClass(WebSocketClient, [{
     key: "onOpen",
-    value: function onOpen(f) {
-      this.client.onopen = f;
+    value: function onOpen(fn) {
+      this.client.onopen = fn;
     }
 
     /**
-     * @param {(...args: any[]) => void} f
+     * @param {(...args: EXPECTED_ANY[]) => void} fn function
      */
   }, {
     key: "onClose",
-    value: function onClose(f) {
-      this.client.onclose = f;
+    value: function onClose(fn) {
+      this.client.onclose = fn;
     }
 
     // call f with the message string as the first argument
     /**
-     * @param {(...args: any[]) => void} f
+     * @param {(...args: EXPECTED_ANY[]) => void} fn function
      */
   }, {
     key: "onMessage",
-    value: function onMessage(f) {
-      this.client.onmessage = function (e) {
-        f(e.data);
+    value: function onMessage(fn) {
+      this.client.onmessage = function (err) {
+        fn(err.data);
       };
     }
   }]);
 }();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true":
+/***/ "./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true"
 /*!***********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true ***!
   \***********************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
 var __resourceQuery = "?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true";
-/* unused harmony exports getCurrentScriptSource, parseURL, createSocketURL */
-/* harmony import */ var webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webpack/hot/log.js */ "./node_modules/webpack/hot/log.js");
-/* harmony import */ var webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! webpack/hot/emitter.js */ "./node_modules/webpack/hot/emitter.js");
-/* harmony import */ var webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _socket_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./socket.js */ "./node_modules/webpack-dev-server/client/socket.js");
-/* harmony import */ var _overlay_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./overlay.js */ "./node_modules/webpack-dev-server/client/overlay.js");
-/* harmony import */ var _utils_log_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/log.js */ "./node_modules/webpack-dev-server/client/utils/log.js");
-/* harmony import */ var _utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/sendMessage.js */ "./node_modules/webpack-dev-server/client/utils/sendMessage.js");
-/* harmony import */ var _progress_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./progress.js */ "./node_modules/webpack-dev-server/client/progress.js");
+/* unused harmony exports createSocketURL, getCurrentScriptSource, parseURL */
+/* harmony import */ var webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! webpack/hot/emitter.js */ "./node_modules/webpack/hot/emitter.js");
+/* harmony import */ var webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! webpack/hot/log.js */ "./node_modules/webpack/hot/log.js");
+/* harmony import */ var webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _overlay_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./overlay.js */ "./node_modules/webpack-dev-server/client/overlay.js");
+/* harmony import */ var _progress_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./progress.js */ "./node_modules/webpack-dev-server/client/progress.js");
+/* harmony import */ var _socket_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./socket.js */ "./node_modules/webpack-dev-server/client/socket.js");
+/* harmony import */ var _utils_log_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/log.js */ "./node_modules/webpack-dev-server/client/utils/log.js");
+/* harmony import */ var _utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/sendMessage.js */ "./node_modules/webpack-dev-server/client/utils/sendMessage.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -13049,7 +14006,9 @@ function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" 
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 /* global __resourceQuery, __webpack_hash__ */
-/// <reference types="webpack/module" />
+// @ts-expect-error
+
+// @ts-expect-error
 
 
 
@@ -13057,45 +14016,62 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 
 
 
+// eslint-disable-next-line jsdoc/no-restricted-syntax
+/** @typedef {any} EXPECTED_ANY */
 
 /**
- * @typedef {Object} OverlayOptions
- * @property {boolean | (error: Error) => boolean} [warnings]
- * @property {boolean | (error: Error) => boolean} [errors]
- * @property {boolean | (error: Error) => boolean} [runtimeErrors]
- * @property {string} [trustedTypesPolicyName]
+ * @typedef {object} RawOverlayOptions
+ * @property {string=} warnings warnings
+ * @property {string=} errors errors
+ * @property {string=} runtimeErrors runtime errors
+ * @property {string=} trustedTypesPolicyName trusted types policy name
  */
 
 /**
- * @typedef {Object} Options
- * @property {boolean} hot
- * @property {boolean} liveReload
- * @property {boolean} progress
- * @property {boolean | OverlayOptions} overlay
- * @property {string} [logging]
- * @property {number} [reconnect]
+ * @typedef {object} OverlayOptions
+ * @property {(boolean | ((error: Error) => boolean))=} warnings warnings
+ * @property {(boolean | ((error: Error) => boolean))=} errors errors
+ * @property {(boolean | ((error: Error) => boolean))=} runtimeErrors runtime errors
+ * @property {string=} trustedTypesPolicyName trusted types policy name
+ */
+
+/** @typedef {false | true | "none" | "error" | "warn" | "info" | "log" | "verbose"} LogLevel */
+
+/**
+ * @typedef {object} Options
+ * @property {boolean} hot true when hot enabled, otherwise false
+ * @property {boolean} liveReload true when live reload enabled, otherwise false
+ * @property {boolean} progress true when need to show progress, otherwise false
+ * @property {boolean | OverlayOptions} overlay overlay options
+ * @property {LogLevel=} logging logging level
+ * @property {number=} reconnect count of allowed reconnection
  */
 
 /**
- * @typedef {Object} Status
- * @property {boolean} isUnloading
- * @property {string} currentHash
- * @property {string} [previousHash]
+ * @typedef {object} Status
+ * @property {boolean} isUnloading true when unloaded, otherwise false
+ * @property {string} currentHash current hash
+ * @property {string=} previousHash previous hash
  */
 
 /**
- * @param {boolean | { warnings?: boolean | string; errors?: boolean | string; runtimeErrors?: boolean | string; }} overlayOptions
+ * @param {boolean | RawOverlayOptions | OverlayOptions} overlayOptions overlay options
  */
 var decodeOverlayOptions = function decodeOverlayOptions(overlayOptions) {
   if (_typeof(overlayOptions) === "object") {
-    ["warnings", "errors", "runtimeErrors"].forEach(function (property) {
+    var requiredOptions = ["warnings", "errors", "runtimeErrors"];
+    for (var i = 0; i < requiredOptions.length; i++) {
+      var property = /** @type {keyof Omit<RawOverlayOptions, "trustedTypesPolicyName">} */
+      requiredOptions[i];
       if (typeof overlayOptions[property] === "string") {
         var overlayFilterFunctionString = decodeURIComponent(overlayOptions[property]);
 
+        /** @type {OverlayOptions} */
+        overlayOptions[property] = /** @type {(error: Error) => boolean} */
         // eslint-disable-next-line no-new-func
-        overlayOptions[property] = new Function("message", "var callback = ".concat(overlayFilterFunctionString, "\n        return callback(message)"));
+        new Function("message", "var callback = ".concat(overlayFilterFunctionString, "\n        return callback(message)"));
       }
-    });
+    }
   }
 };
 
@@ -13104,18 +14080,17 @@ var decodeOverlayOptions = function decodeOverlayOptions(overlayOptions) {
  */
 var status = {
   isUnloading: false,
-  // eslint-disable-next-line camelcase
   currentHash: __webpack_require__.h()
 };
 
 /**
- * @returns {string}
+ * @returns {string} current script source
  */
 var getCurrentScriptSource = function getCurrentScriptSource() {
   // `document.currentScript` is the most accurate way to find the current script,
   // but is not supported in all browsers.
   if (document.currentScript) {
-    return document.currentScript.getAttribute("src");
+    return /** @type {string} */document.currentScript.getAttribute("src");
   }
 
   // Fallback to getting all scripts running in the document.
@@ -13132,17 +14107,22 @@ var getCurrentScriptSource = function getCurrentScriptSource() {
   throw new Error("[webpack-dev-server] Failed to get current script source.");
 };
 
+/** @typedef {{ hot?: string, ["live-reload"]?: string, progress?: string, reconnect?: string, logging?: LogLevel, overlay?: string, fromCurrentScript?: boolean }} AdditionalParsedURL */
+/** @typedef {Partial<URL> & AdditionalParsedURL} ParsedURL */
+
 /**
- * @param {string} resourceQuery
- * @returns {{ [key: string]: string | boolean }}
+ * @param {string} resourceQuery resource query
+ * @returns {ParsedURL} parsed URL
  */
 var parseURL = function parseURL(resourceQuery) {
-  /** @type {{ [key: string]: string }} */
+  /** @type {ParsedURL} */
   var result = {};
   if (typeof resourceQuery === "string" && resourceQuery !== "") {
     var searchParams = resourceQuery.slice(1).split("&");
     for (var i = 0; i < searchParams.length; i++) {
       var pair = searchParams[i].split("=");
+
+      /** @type {EXPECTED_ANY} */
       result[pair[0]] = decodeURIComponent(pair[1]);
     }
   } else {
@@ -13154,7 +14134,7 @@ var parseURL = function parseURL(resourceQuery) {
       // is to allow parsing of path-relative or protocol-relative URLs,
       // and will have no effect if `scriptSource` is a fully valid URL.
       scriptSourceURL = new URL(scriptSource, self.location.href);
-    } catch (error) {
+    } catch (_err) {
       // URL parsing failed, do nothing.
       // We will still proceed to see if we can recover using `resourceQuery`
     }
@@ -13166,6 +14146,10 @@ var parseURL = function parseURL(resourceQuery) {
   return result;
 };
 var parsedResourceQuery = parseURL(__resourceQuery);
+
+/** @typedef {{ ["Hot Module Replacement"]: boolean, ["Live Reloading"]: boolean, Progress: boolean, Overlay: boolean }} Features */
+
+/** @type {Features} */
 var enabledFeatures = {
   "Hot Module Replacement": false,
   "Live Reloading": false,
@@ -13195,8 +14179,8 @@ if (parsedResourceQuery.progress === "true") {
 if (parsedResourceQuery.overlay) {
   try {
     options.overlay = JSON.parse(parsedResourceQuery.overlay);
-  } catch (e) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.error("Error parsing overlay options from resource query:", e);
+  } catch (err) {
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.error("Error parsing overlay options from resource query:", err);
   }
 
   // Fill in default "true" params for partially-specified objects.
@@ -13218,16 +14202,20 @@ if (typeof parsedResourceQuery.reconnect !== "undefined") {
 }
 
 /**
- * @param {string} level
+ * @param {false | true | "none" | "error" | "warn" | "info" | "log" | "verbose"} level level
  */
 var setAllLogLevel = function setAllLogLevel(level) {
   // This is needed because the HMR logger operate separately from dev server logger
-  webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_0___default().setLogLevel(level === "verbose" || level === "log" ? "info" : level);
-  (0,_utils_log_js__WEBPACK_IMPORTED_MODULE_4__.setLogLevel)(level);
+  webpack_hot_log_js__WEBPACK_IMPORTED_MODULE_1___default().setLogLevel(level === "verbose" || level === "log" ? "info" : level);
+  (0,_utils_log_js__WEBPACK_IMPORTED_MODULE_5__.setLogLevel)(level);
 };
 if (options.logging) {
   setAllLogLevel(options.logging);
 }
+
+/**
+ * @param {Features} features features
+ */
 var logEnabledFeatures = function logEnabledFeatures(features) {
   var listEnabledFeatures = Object.keys(features);
   if (!features || listEnabledFeatures.length === 0) {
@@ -13237,18 +14225,18 @@ var logEnabledFeatures = function logEnabledFeatures(features) {
 
   // Server started: Hot Module Replacement enabled, Live Reloading enabled, Overlay disabled.
   for (var i = 0; i < listEnabledFeatures.length; i++) {
-    var key = listEnabledFeatures[i];
+    var key = /** @type {keyof Features} */listEnabledFeatures[i];
     logString += " ".concat(key, " ").concat(features[key] ? "enabled" : "disabled", ",");
   }
   // replace last comma with a period
   logString = logString.slice(0, -1).concat(".");
-  _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info(logString);
+  _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info(logString);
 };
 logEnabledFeatures(enabledFeatures);
 self.addEventListener("beforeunload", function () {
   status.isUnloading = true;
 });
-var overlay = typeof window !== "undefined" ? (0,_overlay_js__WEBPACK_IMPORTED_MODULE_3__.createOverlay)(_typeof(options.overlay) === "object" ? {
+var overlay = typeof window !== "undefined" ? (0,_overlay_js__WEBPACK_IMPORTED_MODULE_2__.createOverlay)(_typeof(options.overlay) === "object" ? {
   trustedTypesPolicyName: options.overlay.trustedTypesPolicyName,
   catchRuntimeError: options.overlay.runtimeErrors
 } : {
@@ -13259,8 +14247,8 @@ var overlay = typeof window !== "undefined" ? (0,_overlay_js__WEBPACK_IMPORTED_M
 };
 
 /**
- * @param {Options} options
- * @param {Status} currentStatus
+ * @param {Options} options options
+ * @param {Status} currentStatus current status
  */
 var reloadApp = function reloadApp(_ref, currentStatus) {
   var hot = _ref.hot,
@@ -13276,20 +14264,31 @@ var reloadApp = function reloadApp(_ref, currentStatus) {
   }
 
   /**
-   * @param {Window} rootWindow
-   * @param {number} intervalId
+   * @param {Window} rootWindow root window
+   * @param {number} intervalId interval id
    */
   function applyReload(rootWindow, intervalId) {
     clearInterval(intervalId);
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("App updated. Reloading...");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("App updated. Reloading...");
     rootWindow.location.reload();
   }
   var search = self.location.search.toLowerCase();
   var allowToHot = search.indexOf("webpack-dev-server-hot=false") === -1;
   var allowToLiveReload = search.indexOf("webpack-dev-server-live-reload=false") === -1;
   if (hot && allowToHot) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("App hot update...");
-    webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_1___default().emit("webpackHotUpdate", currentStatus.currentHash);
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("App hot update...");
+    if (typeof EventTarget !== "undefined" && (webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0___default()) instanceof EventTarget) {
+      var event = new CustomEvent("webpackHotUpdate", {
+        detail: {
+          currentHash: currentStatus.currentHash
+        },
+        bubbles: true,
+        cancelable: false
+      });
+      webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0___default().dispatchEvent(event);
+    } else {
+      webpack_hot_emitter_js__WEBPACK_IMPORTED_MODULE_0___default().emit("webpackHotUpdate", currentStatus.currentHash);
+    }
     if (typeof self !== "undefined" && self.window) {
       // broadcast update to window
       self.postMessage("webpackHotUpdate".concat(currentStatus.currentHash), "*");
@@ -13297,6 +14296,7 @@ var reloadApp = function reloadApp(_ref, currentStatus) {
   }
   // allow refreshing the page only if liveReload isn't disabled
   else if (liveReload && allowToLiveReload) {
+    /** @type {Window} */
     var rootWindow = self;
 
     // use parent window for reload (in case we're in an iframe with no valid src)
@@ -13317,13 +14317,11 @@ var reloadApp = function reloadApp(_ref, currentStatus) {
 var ansiRegex = new RegExp(["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)", "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-nq-uy=><~]))"].join("|"), "g");
 
 /**
- *
  * Strip [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code) from a string.
  * Adapted from code originally released by Sindre Sorhus
  * Licensed the MIT License
- *
- * @param {string} string
- * @return {string}
+ * @param {string} string string
+ * @returns {string} string without ansi
  */
 var stripAnsi = function stripAnsi(string) {
   if (typeof string !== "string") {
@@ -13345,7 +14343,7 @@ var onSocketMessage = {
     options.liveReload = true;
   },
   invalid: function invalid() {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("App updated. Recompiling...");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("App updated. Recompiling...");
 
     // Fixes #1042. overlay doesn't clear if errors are fixed but warnings remain.
     if (options.overlay) {
@@ -13353,10 +14351,10 @@ var onSocketMessage = {
         type: "DISMISS"
       });
     }
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Invalid");
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Invalid");
   },
   /**
-   * @param {string} hash
+   * @param {string} hash hash
    */
   hash: function hash(_hash) {
     status.previousHash = status.currentHash;
@@ -13364,7 +14362,7 @@ var onSocketMessage = {
   },
   logging: setAllLogLevel,
   /**
-   * @param {boolean} value
+   * @param {boolean} value overlay value
    */
   overlay: function overlay(value) {
     if (typeof document === "undefined") {
@@ -13374,7 +14372,7 @@ var onSocketMessage = {
     decodeOverlayOptions(options.overlay);
   },
   /**
-   * @param {number} value
+   * @param {number} value reconnect value
    */
   reconnect: function reconnect(value) {
     if (parsedResourceQuery.reconnect === "false") {
@@ -13383,43 +14381,41 @@ var onSocketMessage = {
     options.reconnect = value;
   },
   /**
-   * @param {boolean} value
+   * @param {boolean} value progress value
    */
   progress: function progress(value) {
     options.progress = value;
   },
   /**
-   * @param {{ pluginName?: string, percent: number, msg: string }} data
+   * @param {{ pluginName?: string, percent: string, msg: string }} data date with progress
    */
   "progress-update": function progressUpdate(data) {
     if (options.progress) {
-      _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("".concat(data.pluginName ? "[".concat(data.pluginName, "] ") : "").concat(data.percent, "% - ").concat(data.msg, "."));
+      _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("".concat(data.pluginName ? "[".concat(data.pluginName, "] ") : "").concat(data.percent, "% - ").concat(data.msg, "."));
     }
-    if ((0,_progress_js__WEBPACK_IMPORTED_MODULE_6__.isProgressSupported)()) {
-      if (typeof options.progress === "string") {
-        var progress = document.querySelector("wds-progress");
-        if (!progress) {
-          (0,_progress_js__WEBPACK_IMPORTED_MODULE_6__.defineProgressElement)();
-          progress = document.createElement("wds-progress");
-          document.body.appendChild(progress);
-        }
-        progress.setAttribute("progress", data.percent);
-        progress.setAttribute("type", options.progress);
+    if ((0,_progress_js__WEBPACK_IMPORTED_MODULE_3__.isProgressSupported)() && typeof options.progress === "string") {
+      var progress = document.querySelector("wds-progress");
+      if (!progress) {
+        (0,_progress_js__WEBPACK_IMPORTED_MODULE_3__.defineProgressElement)();
+        progress = document.createElement("wds-progress");
+        document.body.appendChild(progress);
       }
+      progress.setAttribute("progress", data.percent);
+      progress.setAttribute("type", options.progress);
     }
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Progress", data);
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Progress", data);
   },
   "still-ok": function stillOk() {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("Nothing changed.");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("Nothing changed.");
     if (options.overlay) {
       overlay.send({
         type: "DISMISS"
       });
     }
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("StillOk");
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("StillOk");
   },
   ok: function ok() {
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Ok");
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Ok");
     if (options.overlay) {
       overlay.send({
         type: "DISMISS"
@@ -13428,27 +14424,27 @@ var onSocketMessage = {
     reloadApp(options, status);
   },
   /**
-   * @param {string} file
+   * @param {string} file changed file
    */
   "static-changed": function staticChanged(file) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("".concat(file ? "\"".concat(file, "\"") : "Content", " from static directory was changed. Reloading..."));
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("".concat(file ? "\"".concat(file, "\"") : "Content", " from static directory was changed. Reloading..."));
     self.location.reload();
   },
   /**
-   * @param {Error[]} warnings
-   * @param {any} params
+   * @param {Error[]} warnings warnings
+   * @param {{ preventReloading: boolean }=} params extra params
    */
   warnings: function warnings(_warnings, params) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.warn("Warnings while compiling.");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.warn("Warnings while compiling.");
     var printableWarnings = _warnings.map(function (error) {
-      var _formatProblem = (0,_overlay_js__WEBPACK_IMPORTED_MODULE_3__.formatProblem)("warning", error),
+      var _formatProblem = (0,_overlay_js__WEBPACK_IMPORTED_MODULE_2__.formatProblem)("warning", error),
         header = _formatProblem.header,
         body = _formatProblem.body;
       return "".concat(header, "\n").concat(stripAnsi(body));
     });
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Warnings", printableWarnings);
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Warnings", printableWarnings);
     for (var i = 0; i < printableWarnings.length; i++) {
-      _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.warn(printableWarnings[i]);
+      _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.warn(printableWarnings[i]);
     }
     var overlayWarningsSetting = typeof options.overlay === "boolean" ? options.overlay : options.overlay && options.overlay.warnings;
     if (overlayWarningsSetting) {
@@ -13467,19 +14463,19 @@ var onSocketMessage = {
     reloadApp(options, status);
   },
   /**
-   * @param {Error[]} errors
+   * @param {Error[]} errors errors
    */
   errors: function errors(_errors) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.error("Errors while compiling. Reload prevented.");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.error("Errors while compiling. Reload prevented.");
     var printableErrors = _errors.map(function (error) {
-      var _formatProblem2 = (0,_overlay_js__WEBPACK_IMPORTED_MODULE_3__.formatProblem)("error", error),
+      var _formatProblem2 = (0,_overlay_js__WEBPACK_IMPORTED_MODULE_2__.formatProblem)("error", error),
         header = _formatProblem2.header,
         body = _formatProblem2.body;
       return "".concat(header, "\n").concat(stripAnsi(body));
     });
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Errors", printableErrors);
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Errors", printableErrors);
     for (var i = 0; i < printableErrors.length; i++) {
-      _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.error(printableErrors[i]);
+      _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.error(printableErrors[i]);
     }
     var overlayErrorsSettings = typeof options.overlay === "boolean" ? options.overlay : options.overlay && options.overlay.errors;
     if (overlayErrorsSettings) {
@@ -13494,29 +14490,29 @@ var onSocketMessage = {
     }
   },
   /**
-   * @param {Error} error
+   * @param {Error} error error
    */
   error: function error(_error) {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.error(_error);
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.error(_error);
   },
   close: function close() {
-    _utils_log_js__WEBPACK_IMPORTED_MODULE_4__.log.info("Disconnected!");
+    _utils_log_js__WEBPACK_IMPORTED_MODULE_5__.log.info("Disconnected!");
     if (options.overlay) {
       overlay.send({
         type: "DISMISS"
       });
     }
-    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_5__["default"])("Close");
+    (0,_utils_sendMessage_js__WEBPACK_IMPORTED_MODULE_6__["default"])("Close");
   }
 };
 
 /**
- * @param {{ protocol?: string, auth?: string, hostname?: string, port?: string, pathname?: string, search?: string, hash?: string, slashes?: boolean }} objURL
- * @returns {string}
+ * @param {{ protocol?: string, auth?: string, hostname?: string, port?: string, pathname?: string, search?: string, hash?: string, slashes?: boolean }} objURL object URL
+ * @returns {string} formatted url
  */
 var formatURL = function formatURL(objURL) {
   var protocol = objURL.protocol || "";
-  if (protocol && protocol.substr(-1) !== ":") {
+  if (protocol && protocol.slice(-1) !== ":") {
     protocol += ":";
   }
   var auth = objURL.auth || "";
@@ -13551,8 +14547,8 @@ var formatURL = function formatURL(objURL) {
   }
   pathname = pathname.replace(/[?#]/g,
   /**
-   * @param {string} match
-   * @returns {string}
+   * @param {string} match matched string
+   * @returns {string} encoded URI component
    */
   function (match) {
     return encodeURIComponent(match);
@@ -13562,8 +14558,8 @@ var formatURL = function formatURL(objURL) {
 };
 
 /**
- * @param {URL & { fromCurrentScript?: boolean }} parsedURL
- * @returns {string}
+ * @param {ParsedURL} parsedURL parsed URL
+ * @returns {string} socket URL
  */
 var createSocketURL = function createSocketURL(parsedURL) {
   var hostname = parsedURL.hostname;
@@ -13631,16 +14627,16 @@ var createSocketURL = function createSocketURL(parsedURL) {
   });
 };
 var socketURL = createSocketURL(parsedResourceQuery);
-(0,_socket_js__WEBPACK_IMPORTED_MODULE_2__["default"])(socketURL, onSocketMessage, options.reconnect);
+(0,_socket_js__WEBPACK_IMPORTED_MODULE_4__["default"])(socketURL, onSocketMessage, options.reconnect);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/modules/logger/index.js":
+/***/ "./node_modules/webpack-dev-server/client/modules/logger/index.js"
 /*!************************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/modules/logger/index.js ***!
   \************************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
+(__unused_webpack_module, exports) {
 
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
@@ -13656,6 +14652,10 @@ __nested_webpack_require_372__.r(__nested_webpack_exports__);
 /* harmony export */ __nested_webpack_require_372__.d(__nested_webpack_exports__, {
 /* harmony export */   SyncBailHook: function() { return /* binding */ SyncBailHook; }
 /* harmony export */ });
+/**
+ * @returns {SyncBailHook} mocked sync bail hook
+ * @constructor
+ */
 function SyncBailHook() {
   return {
     call: function call() {}
@@ -13665,7 +14665,6 @@ function SyncBailHook() {
 /**
  * Client stub for tapable SyncBailHook
  */
-// eslint-disable-next-line import/prefer-default-export
 
 
 /***/ }),
@@ -13781,23 +14780,32 @@ var LogType = Object.freeze({
 module.exports.LogType = LogType;
 
 /** @typedef {typeof LogType[keyof typeof LogType]} LogTypeEnum */
+/** @typedef {Map<string | undefined, [number, number]>} TimersMap */
 
 var LOG_SYMBOL = (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; })("webpack logger raw log method");
 var TIMERS_SYMBOL = (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; })("webpack logger times");
 var TIMERS_AGGREGATES_SYMBOL = (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; })("webpack logger aggregated times");
+
+/** @typedef {EXPECTED_ANY[]} Args */
+/** @typedef {(type: LogTypeEnum, args?: Args) => void} LogFn */
+/** @typedef {(name: string | (() => string)) => WebpackLogger} GetChildLogger */
 var WebpackLogger = /*#__PURE__*/function () {
   /**
-   * @param {(type: LogTypeEnum, args?: EXPECTED_ANY[]) => void} log log function
-   * @param {(name: string | (() => string)) => WebpackLogger} getChildLogger function to create child logger
+   * Creates an instance of WebpackLogger.
+   * @param {LogFn} log log function
+   * @param {GetChildLogger} getChildLogger function to create child logger
    */
   function WebpackLogger(log, getChildLogger) {
     _classCallCheck(this, WebpackLogger);
+    /** @type {LogFn} */
     this[LOG_SYMBOL] = log;
+    /** @type {GetChildLogger} */
     this.getChildLogger = getChildLogger;
   }
 
   /**
-   * @param {...EXPECTED_ANY} args args
+   * Processes the provided arg.
+   * @param {Args} args args
    */
   return _createClass(WebpackLogger, [{
     key: "error",
@@ -13809,7 +14817,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "warn",
@@ -13821,7 +14830,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "info",
@@ -13833,7 +14843,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "log",
@@ -13845,7 +14856,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "debug",
@@ -13857,13 +14869,14 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {EXPECTED_ANY} assertion assertion
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided condition.
+     * @param {boolean=} condition condition
+     * @param {Args} args args
      */
   }, {
     key: "assert",
-    value: function assert(assertion) {
-      if (!assertion) {
+    value: function assert(condition) {
+      if (!condition) {
         for (var _len6 = arguments.length, args = new Array(_len6 > 1 ? _len6 - 1 : 0), _key6 = 1; _key6 < _len6; _key6++) {
           args[_key6 - 1] = arguments[_key6];
         }
@@ -13882,7 +14895,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "status",
@@ -13894,7 +14908,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "group",
@@ -13906,7 +14921,8 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
-     * @param {...EXPECTED_ANY} args args
+     * Processes the provided arg.
+     * @param {Args} args args
      */
   }, {
     key: "groupCollapsed",
@@ -13923,6 +14939,7 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
+     * Processes the provided label.
      * @param {string=} label label
      */
   }, {
@@ -13932,6 +14949,7 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
+     * Processes the provided label.
      * @param {string=} label label
      */
   }, {
@@ -13941,17 +14959,19 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
+     * Processes the provided label.
      * @param {string} label label
      */
   }, {
     key: "time",
     value: function time(label) {
-      /** @type {Map<string | undefined, [number, number]>} */
+      /** @type {TimersMap} */
       this[TIMERS_SYMBOL] = this[TIMERS_SYMBOL] || new Map();
       this[TIMERS_SYMBOL].set(label, process.hrtime());
     }
 
     /**
+     * Processes the provided label.
      * @param {string=} label label
      */
   }, {
@@ -13966,6 +14986,7 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
+     * Processes the provided label.
      * @param {string=} label label
      */
   }, {
@@ -13976,12 +14997,13 @@ var WebpackLogger = /*#__PURE__*/function () {
         throw new Error("No such label '".concat(label, "' for WebpackLogger.timeEnd()"));
       }
       var time = process.hrtime(prev);
-      /** @type {Map<string | undefined, [number, number]>} */
+      /** @type {TimersMap} */
       this[TIMERS_SYMBOL].delete(label);
       this[LOG_SYMBOL](LogType.time, [label].concat(_toConsumableArray(time)));
     }
 
     /**
+     * Processes the provided label.
      * @param {string=} label label
      */
   }, {
@@ -13992,9 +15014,9 @@ var WebpackLogger = /*#__PURE__*/function () {
         throw new Error("No such label '".concat(label, "' for WebpackLogger.timeAggregate()"));
       }
       var time = process.hrtime(prev);
-      /** @type {Map<string | undefined, [number, number]>} */
+      /** @type {TimersMap} */
       this[TIMERS_SYMBOL].delete(label);
-      /** @type {Map<string | undefined, [number, number]>} */
+      /** @type {TimersMap} */
       this[TIMERS_AGGREGATES_SYMBOL] = this[TIMERS_AGGREGATES_SYMBOL] || new Map();
       var current = this[TIMERS_AGGREGATES_SYMBOL].get(label);
       if (current !== undefined) {
@@ -14010,6 +15032,7 @@ var WebpackLogger = /*#__PURE__*/function () {
     }
 
     /**
+     * Time aggregate end.
      * @param {string=} label label
      */
   }, {
@@ -14031,7 +15054,7 @@ module.exports.Logger = WebpackLogger;
 /*!*****************************************************************!*\
   !*** ./node_modules/webpack/lib/logging/createConsoleLogger.js ***!
   \*****************************************************************/
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_12803__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_13435__) {
 
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -14109,42 +15132,46 @@ function _typeof(o) {
     return o && "function" == typeof (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; }) && o.constructor === (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; }) && o !== (typeof Symbol !== "undefined" ? Symbol : function (i) { return i; }).prototype ? "symbol" : typeof o;
   }, _typeof(o);
 }
-var _require = __nested_webpack_require_12803__(/*! ./Logger */ "./node_modules/webpack/lib/logging/Logger.js"),
+var _require = __nested_webpack_require_13435__(/*! ./Logger */ "./node_modules/webpack/lib/logging/Logger.js"),
   LogType = _require.LogType;
 
 /** @typedef {import("../../declarations/WebpackOptions").FilterItemTypes} FilterItemTypes */
 /** @typedef {import("../../declarations/WebpackOptions").FilterTypes} FilterTypes */
 /** @typedef {import("./Logger").LogTypeEnum} LogTypeEnum */
+/** @typedef {import("./Logger").Args} Args */
 
 /** @typedef {(item: string) => boolean} FilterFunction */
-/** @typedef {(value: string, type: LogTypeEnum, args?: EXPECTED_ANY[]) => void} LoggingFunction */
+/** @typedef {(value: string, type: LogTypeEnum, args?: Args) => void} LoggingFunction */
 
 /**
+ * Defines the logger console type used by this module.
  * @typedef {object} LoggerConsole
  * @property {() => void} clear
  * @property {() => void} trace
- * @property {(...args: EXPECTED_ANY[]) => void} info
- * @property {(...args: EXPECTED_ANY[]) => void} log
- * @property {(...args: EXPECTED_ANY[]) => void} warn
- * @property {(...args: EXPECTED_ANY[]) => void} error
- * @property {(...args: EXPECTED_ANY[]) => void=} debug
- * @property {(...args: EXPECTED_ANY[]) => void=} group
- * @property {(...args: EXPECTED_ANY[]) => void=} groupCollapsed
- * @property {(...args: EXPECTED_ANY[]) => void=} groupEnd
- * @property {(...args: EXPECTED_ANY[]) => void=} status
- * @property {(...args: EXPECTED_ANY[]) => void=} profile
- * @property {(...args: EXPECTED_ANY[]) => void=} profileEnd
- * @property {(...args: EXPECTED_ANY[]) => void=} logTime
+ * @property {(...args: Args) => void} info
+ * @property {(...args: Args) => void} log
+ * @property {(...args: Args) => void} warn
+ * @property {(...args: Args) => void} error
+ * @property {(...args: Args) => void=} debug
+ * @property {(...args: Args) => void=} group
+ * @property {(...args: Args) => void=} groupCollapsed
+ * @property {(...args: Args) => void=} groupEnd
+ * @property {(...args: Args) => void=} status
+ * @property {(...args: Args) => void=} profile
+ * @property {(...args: Args) => void=} profileEnd
+ * @property {(...args: Args) => void=} logTime
  */
 
 /**
+ * Defines the logger options type used by this module.
  * @typedef {object} LoggerOptions
- * @property {false|true|"none"|"error"|"warn"|"info"|"log"|"verbose"} level loglevel
- * @property {FilterTypes|boolean} debug filter for debug logging
+ * @property {false | true | "none" | "error" | "warn" | "info" | "log" | "verbose"} level loglevel
+ * @property {FilterTypes | boolean} debug filter for debug logging
  * @property {LoggerConsole} console the console to log to
  */
 
 /**
+ * Filter to function.
  * @param {FilterItemTypes} item an input item
  * @returns {FilterFunction | undefined} filter function
  */
@@ -14171,6 +15198,7 @@ var filterToFunction = function filterToFunction(item) {
 };
 
 /**
+ * Enumerates the available values.
  * @enum {number}
  */
 var LogLevel = {
@@ -14185,6 +15213,7 @@ var LogLevel = {
 };
 
 /**
+ * Returns logging function.
  * @param {LoggerOptions} options options object
  * @returns {LoggingFunction} logging function
  */
@@ -14198,16 +15227,22 @@ module.exports = function (_ref) {
 
   typeof debug === "boolean" ? [function () {
     return debug;
-  }] : /** @type {FilterItemTypes[]} */[].concat(debug).map(filterToFunction);
+  }] : /** @type {FilterItemTypes[]} */_toConsumableArray(Array.isArray(debug) ? debug : [debug]).map(filterToFunction);
   var loglevel = LogLevel["".concat(level)] || 0;
 
   /**
+   * Processes the provided name.
    * @param {string} name name of the logger
    * @param {LogTypeEnum} type type of the log entry
-   * @param {EXPECTED_ANY[]=} args arguments of the log entry
+   * @param {Args=} args arguments of the log entry
    * @returns {void}
    */
   var logger = function logger(name, type, args) {
+    /**
+     * Returns labeled args.
+     * @template T
+     * @returns {[string?, ...T[]]} labeled args
+     */
     var labeledArgs = function labeledArgs() {
       if (Array.isArray(args)) {
         if (args.length > 0 && typeof args[0] === "string") {
@@ -14332,7 +15367,7 @@ module.exports = function (_ref) {
 /*!*****************************************************!*\
   !*** ./node_modules/webpack/lib/logging/runtime.js ***!
   \*****************************************************/
-/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_23778__) {
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_24722__) {
 
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -14350,11 +15385,11 @@ function _extends() {
     return n;
   }, _extends.apply(null, arguments);
 }
-var _require = __nested_webpack_require_23778__(/*! tapable */ "./client-src/modules/logger/tapable.js"),
+var _require = __nested_webpack_require_24722__(/*! tapable */ "./client-src/modules/logger/tapable.js"),
   SyncBailHook = _require.SyncBailHook;
-var _require2 = __nested_webpack_require_23778__(/*! ./Logger */ "./node_modules/webpack/lib/logging/Logger.js"),
+var _require2 = __nested_webpack_require_24722__(/*! ./Logger */ "./node_modules/webpack/lib/logging/Logger.js"),
   Logger = _require2.Logger;
-var createConsoleLogger = __nested_webpack_require_23778__(/*! ./createConsoleLogger */ "./node_modules/webpack/lib/logging/createConsoleLogger.js");
+var createConsoleLogger = __nested_webpack_require_24722__(/*! ./createConsoleLogger */ "./node_modules/webpack/lib/logging/createConsoleLogger.js");
 
 /** @type {createConsoleLogger.LoggerOptions} */
 var currentDefaultLoggerOptions = {
@@ -14365,6 +15400,17 @@ var currentDefaultLoggerOptions = {
 var currentDefaultLogger = createConsoleLogger(currentDefaultLoggerOptions);
 
 /**
+ * Processes the provided create console logger.logger option.
+ * @param {createConsoleLogger.LoggerOptions} options new options, merge with old options
+ * @returns {void}
+ */
+module.exports.configureDefaultLogger = function (options) {
+  _extends(currentDefaultLoggerOptions, options);
+  currentDefaultLogger = createConsoleLogger(currentDefaultLoggerOptions);
+};
+
+/**
+ * Returns a logger.
  * @param {string} name name of the logger
  * @returns {Logger} a logger
  */
@@ -14376,15 +15422,6 @@ module.exports.getLogger = function (name) {
   }, function (childName) {
     return module.exports.getLogger("".concat(name, "/").concat(childName));
   });
-};
-
-/**
- * @param {createConsoleLogger.LoggerOptions} options new options, merge with old options
- * @returns {void}
- */
-module.exports.configureDefaultLogger = function (options) {
-  _extends(currentDefaultLoggerOptions, options);
-  currentDefaultLogger = createConsoleLogger(currentDefaultLoggerOptions);
 };
 module.exports.hooks = {
   log: new SyncBailHook(["origin", "type", "args"])
@@ -14398,7 +15435,7 @@ module.exports.hooks = {
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __nested_webpack_require_25855__(moduleId) {
+/******/ 	function __nested_webpack_require_26883__(moduleId) {
 /******/ 		// Check if module is in cache
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
@@ -14412,7 +15449,13 @@ module.exports.hooks = {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_25855__);
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_26883__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -14422,9 +15465,9 @@ module.exports.hooks = {
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__nested_webpack_require_25855__.d = function(exports, definition) {
+/******/ 		__nested_webpack_require_26883__.d = function(exports, definition) {
 /******/ 			for(var key in definition) {
-/******/ 				if(__nested_webpack_require_25855__.o(definition, key) && !__nested_webpack_require_25855__.o(exports, key)) {
+/******/ 				if(__nested_webpack_require_26883__.o(definition, key) && !__nested_webpack_require_26883__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
@@ -14433,13 +15476,13 @@ module.exports.hooks = {
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
-/******/ 		__nested_webpack_require_25855__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 		__nested_webpack_require_26883__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
-/******/ 		__nested_webpack_require_25855__.r = function(exports) {
+/******/ 		__nested_webpack_require_26883__.r = function(exports) {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
@@ -14454,11 +15497,12 @@ var __nested_webpack_exports__ = {};
 /*!********************************************!*\
   !*** ./client-src/modules/logger/index.js ***!
   \********************************************/
-__nested_webpack_require_25855__.r(__nested_webpack_exports__);
-/* harmony export */ __nested_webpack_require_25855__.d(__nested_webpack_exports__, {
+__nested_webpack_require_26883__.r(__nested_webpack_exports__);
+/* harmony export */ __nested_webpack_require_26883__.d(__nested_webpack_exports__, {
 /* harmony export */   "default": function() { return /* reexport default export from named module */ webpack_lib_logging_runtime_js__WEBPACK_IMPORTED_MODULE_0__; }
 /* harmony export */ });
-/* harmony import */ var webpack_lib_logging_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_25855__(/*! webpack/lib/logging/runtime.js */ "./node_modules/webpack/lib/logging/runtime.js");
+/* harmony import */ var webpack_lib_logging_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_26883__(/*! webpack/lib/logging/runtime.js */ "./node_modules/webpack/lib/logging/runtime.js");
+// @ts-expect-error
 
 }();
 var __webpack_export_target__ = exports;
@@ -14467,13 +15511,13 @@ if(__nested_webpack_exports__.__esModule) Object.defineProperty(__webpack_export
 /******/ })()
 ;
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/overlay.js":
+/***/ "./node_modules/webpack-dev-server/client/overlay.js"
 /*!***********************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/overlay.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -14493,20 +15537,25 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
+/** @typedef {import("./index").EXPECTED_ANY} EXPECTED_ANY */
+
 /**
- * @type {(input: string, position: number) => string}
+ * @type {(input: string, position: number) => number | undefined}
  */
-var getCodePoint = String.prototype.codePointAt ? function (input, position) {
+// @ts-expect-error
+var getCodePoint = String.prototype.codePointAt ?
+// @ts-expect-error
+function (input, position) {
   return input.codePointAt(position);
 } : function (input, position) {
   return (input.charCodeAt(position) - 0xd800) * 0x400 + input.charCodeAt(position + 1) - 0xdc00 + 0x10000;
 };
 
 /**
- * @param {string} macroText
- * @param {RegExp} macroRegExp
- * @param {(input: string) => string} macroReplacer
- * @returns {string}
+ * @param {string} macroText macro text
+ * @param {RegExp} macroRegExp macro reg exp
+ * @param {(input: string) => string} macroReplacer macro replacer
+ * @returns {string} result
  */
 var replaceUsingRegExp = function replaceUsingRegExp(macroText, macroRegExp, macroReplacer) {
   macroRegExp.lastIndex = 0;
@@ -14517,15 +15566,14 @@ var replaceUsingRegExp = function replaceUsingRegExp(macroText, macroRegExp, mac
     var replaceLastIndex = 0;
     do {
       if (replaceLastIndex !== replaceMatch.index) {
-        replaceResult += macroText.substring(replaceLastIndex, replaceMatch.index);
+        replaceResult += macroText.slice(replaceLastIndex, replaceMatch.index);
       }
       var replaceInput = replaceMatch[0];
       replaceResult += macroReplacer(replaceInput);
       replaceLastIndex = replaceMatch.index + replaceInput.length;
-      // eslint-disable-next-line no-cond-assign
     } while (replaceMatch = macroRegExp.exec(macroText));
     if (replaceLastIndex !== macroText.length) {
-      replaceResult += macroText.substring(replaceLastIndex);
+      replaceResult += macroText.slice(replaceLastIndex);
     }
   } else {
     replaceResult = macroText;
@@ -14542,14 +15590,14 @@ var references = {
 
 /**
  * @param {string} text text
- * @returns {string}
+ * @returns {string} encoded text
  */
 function encode(text) {
   if (!text) {
     return "";
   }
   return replaceUsingRegExp(text, /[<>'"&]/g, function (input) {
-    var result = references[input];
+    var result = references[(/** @type {keyof typeof references} */input)];
     if (!result) {
       var code = input.length > 1 ? getCodePoint(input, 0) : input.charCodeAt(0);
       result = "&#".concat(code, ";");
@@ -14559,36 +15607,43 @@ function encode(text) {
 }
 
 /**
- * @typedef {Object} StateDefinitions
- * @property {{[event: string]: { target: string; actions?: Array<string> }}} [on]
+ * @typedef {object} Context
+ * @property {'warning' | 'error'} level level
+ * @property {(string  | Message)[]} messages messages
+ * @property {'build' | 'runtime'} messageSource message source
+ */
+
+/** @typedef {{ type: string } & Record<string, EXPECTED_ANY>} Event */
+
+/**
+ * @typedef {object} Options
+ * @property {{ [state: string]: { on: Record<string, { target: string; actions?: Array<string> }> } }} states states
+ * @property {Context} context context
+ * @property {string} initial initial
  */
 
 /**
- * @typedef {Object} Options
- * @property {{[state: string]: StateDefinitions}} states
- * @property {object} context;
- * @property {string} initial
+ * @typedef {object} Implementation
+ * @property {{ [actionName: string]: (ctx: Context, event: Event) => Context | void }} actions actions
  */
 
 /**
- * @typedef {Object} Implementation
- * @property {{[actionName: string]: (ctx: object, event: any) => object}} actions
+ * @typedef {{ send: (event: Event) => void }} StateMachine
  */
 
 /**
  * A simplified `createMachine` from `@xstate/fsm` with the following differences:
- *
- *  - the returned machine is technically a "service". No `interpret(machine).start()` is needed.
- *  - the state definition only support `on` and target must be declared with { target: 'nextState', actions: [] } explicitly.
- *  - event passed to `send` must be an object with `type` property.
- *  - actions implementation will be [assign action](https://xstate.js.org/docs/guides/context.html#assign-action) if you return any value.
- *  Do not return anything if you just want to invoke side effect.
+ * - the returned machine is technically a "service". No `interpret(machine).start()` is needed.
+ * - the state definition only support `on` and target must be declared with { target: 'nextState', actions: [] } explicitly.
+ * - event passed to `send` must be an object with `type` property.
+ * - actions implementation will be [assign action](https://xstate.js.org/docs/guides/context.html#assign-action) if you return any value.
+ * Do not return anything if you just want to invoke side effect.
  *
  * The goal of this custom function is to avoid installing the entire `'xstate/fsm'` package, while enabling modeling using
  * state machine. You can copy the first parameter into the editor at https://stately.ai/viz to visualize the state machine.
- *
- * @param {Options} options
- * @param {Implementation} implementation
+ * @param {Options} options options
+ * @param {Implementation} implementation implementation
+ * @returns {StateMachine} state machine
  */
 function createMachine(_ref, _ref2) {
   var states = _ref.states,
@@ -14618,20 +15673,21 @@ function createMachine(_ref, _ref2) {
 }
 
 /**
- * @typedef {Object} ShowOverlayData
- * @property {'warning' | 'error'} level
- * @property {Array<string  | { moduleIdentifier?: string, moduleName?: string, loc?: string, message?: string }>} messages
- * @property {'build' | 'runtime'} messageSource
+ * @typedef {object} ShowOverlayData
+ * @property {'warning' | 'error'} level level
+ * @property {(string  | Message)[]} messages messages
+ * @property {'build' | 'runtime'} messageSource message source
  */
 
 /**
- * @typedef {Object} CreateOverlayMachineOptions
- * @property {(data: ShowOverlayData) => void} showOverlay
- * @property {() => void} hideOverlay
+ * @typedef {object} CreateOverlayMachineOptions
+ * @property {(data: ShowOverlayData) => void} showOverlay show overlay
+ * @property {() => void} hideOverlay hide overlay
  */
 
 /**
- * @param {CreateOverlayMachineOptions} options
+ * @param {CreateOverlayMachineOptions} options options
+ * @returns {StateMachine} state machine
  */
 var createOverlayMachine = function createOverlayMachine(options) {
   var hideOverlay = options.hideOverlay,
@@ -14715,8 +15771,8 @@ var createOverlayMachine = function createOverlayMachine(options) {
 };
 
 /**
- *
- * @param {Error} error
+ * @param {Error} error error
+ * @returns {undefined | string[]} stack
  */
 var parseErrorToStacks = function parseErrorToStacks(error) {
   if (!error || !(error instanceof Error)) {
@@ -14736,7 +15792,8 @@ var parseErrorToStacks = function parseErrorToStacks(error) {
  */
 
 /**
- * @param {ErrorCallback} callback
+ * @param {ErrorCallback} callback callback
+ * @returns {() => void} cleanup
  */
 var listenToRuntimeError = function listenToRuntimeError(callback) {
   window.addEventListener("error", callback);
@@ -14752,7 +15809,8 @@ var listenToRuntimeError = function listenToRuntimeError(callback) {
  */
 
 /**
- * @param {UnhandledRejectionCallback} callback
+ * @param {UnhandledRejectionCallback} callback callback
+ * @returns {() => void} cleanup
  */
 var listenToUnhandledRejection = function listenToUnhandledRejection(callback) {
   window.addEventListener("unhandledrejection", callback);
@@ -14775,10 +15833,10 @@ var msgStyles = {
 };
 var iframeStyle = {
   position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
+  top: "0px",
+  left: "0px",
+  right: "0px",
+  bottom: "0px",
   width: "100vw",
   height: "100vh",
   border: "none",
@@ -14787,10 +15845,10 @@ var iframeStyle = {
 var containerStyle = {
   position: "fixed",
   boxSizing: "border-box",
-  left: 0,
-  top: 0,
-  right: 0,
-  bottom: 0,
+  left: "0px",
+  top: "0px",
+  right: "0px",
+  bottom: "0px",
   width: "100vw",
   height: "100vh",
   fontSize: "large",
@@ -14818,8 +15876,8 @@ var dismissButtonStyle = {
   padding: "1rem",
   cursor: "pointer",
   position: "absolute",
-  right: 0,
-  top: 0,
+  right: "0px",
+  top: "0px",
   backgroundColor: "transparent",
   border: "none"
 };
@@ -14851,10 +15909,12 @@ var colors = {
 };
 ansi_html_community__WEBPACK_IMPORTED_MODULE_0___default().setColors(colors);
 
+/** @typedef {Error & { file?: string, moduleName?: string, moduleIdentifier?: string, loc?: string, message?: string; stack?: string | string[] }} Message */
+
 /**
- * @param {string} type
- * @param {string  | { file?: string, moduleName?: string, loc?: string, message?: string; stack?: string[] }} item
- * @returns {{ header: string, body: string }}
+ * @param {string} type type
+ * @param {string | Message} item item
+ * @returns {{ header: string, body: string }} formatted problem
  */
 var formatProblem = function formatProblem(type, item) {
   var header = type === "warning" ? "WARNING" : "ERROR";
@@ -14863,13 +15923,12 @@ var formatProblem = function formatProblem(type, item) {
     body += item;
   } else {
     var file = item.file || "";
-    // eslint-disable-next-line no-nested-ternary
     var moduleName = item.moduleName ? item.moduleName.indexOf("!") !== -1 ? "".concat(item.moduleName.replace(/^(\s|\S)*!/, ""), " (").concat(item.moduleName, ")") : "".concat(item.moduleName) : "";
     var loc = item.loc;
     header += "".concat(moduleName || file ? " in ".concat(moduleName ? "".concat(moduleName).concat(file ? " (".concat(file, ")") : "") : file).concat(loc ? " ".concat(loc) : "") : "");
     body += item.message || "";
   }
-  if (Array.isArray(item.stack)) {
+  if (typeof item !== "string" && Array.isArray(item.stack)) {
     item.stack.forEach(function (stack) {
       if (typeof stack === "string") {
         body += "\r\n".concat(stack);
@@ -14883,14 +15942,14 @@ var formatProblem = function formatProblem(type, item) {
 };
 
 /**
- * @typedef {Object} CreateOverlayOptions
- * @property {string | null} trustedTypesPolicyName
- * @property {boolean | (error: Error) => void} [catchRuntimeError]
+ * @typedef {object} CreateOverlayOptions
+ * @property {(false | string)=} trustedTypesPolicyName trusted types policy name
+ * @property {(boolean | ((error: Error) => void))=} catchRuntimeError runtime error catcher
  */
 
 /**
- *
- * @param {CreateOverlayOptions} options
+ * @param {CreateOverlayOptions} options options
+ * @returns {StateMachine} overlay
  */
 var createOverlay = function createOverlay(options) {
   /** @type {HTMLIFrameElement | null | undefined} */
@@ -14901,22 +15960,24 @@ var createOverlay = function createOverlay(options) {
   var headerElement;
   /** @type {Array<(element: HTMLDivElement) => void>} */
   var onLoadQueue = [];
-  /** @type {TrustedTypePolicy | undefined} */
+  /** @type {Omit<TrustedTypePolicy, "createScript" | "createScriptURL"> | undefined} */
   var overlayTrustedTypesPolicy;
 
+  /** @typedef {Extract<keyof CSSStyleDeclaration, "string">} CSSStyleDeclarationKeys */
+
   /**
-   *
-   * @param {HTMLElement} element
-   * @param {CSSStyleDeclaration} style
+   * @param {HTMLElement} element element
+   * @param {Partial<CSSStyleDeclaration>} style style
    */
   function applyStyle(element, style) {
     Object.keys(style).forEach(function (prop) {
-      element.style[prop] = style[prop];
+      element.style[(/** @type {CSSStyleDeclarationKeys} */prop)] = /** @type {string} */
+      style[(/** @type {CSSStyleDeclarationKeys} */prop)];
     });
   }
 
   /**
-   * @param {string | null} trustedTypesPolicyName
+   * @param {string | false | undefined} trustedTypesPolicyName trusted types police name
    */
   function createContainer(trustedTypesPolicyName) {
     // Enable Trusted Types if they are available in the current browser.
@@ -14972,11 +16033,12 @@ var createOverlay = function createOverlay(options) {
   }
 
   /**
-   * @param {(element: HTMLDivElement) => void} callback
-   * @param {string | null} trustedTypesPolicyName
+   * @param {(element: HTMLDivElement) => void} callback callback
+   * @param {string | false | undefined} trustedTypesPolicyName trusted types policy name
    */
   function ensureOverlayExists(callback, trustedTypesPolicyName) {
     if (containerElement) {
+      // @ts-expect-error https://github.com/microsoft/TypeScript/issues/30024
       containerElement.innerHTML = overlayTrustedTypesPolicy ? overlayTrustedTypesPolicy.createHTML("") : "";
       // Everything is ready, call the callback right away.
       callback(containerElement);
@@ -14990,6 +16052,9 @@ var createOverlay = function createOverlay(options) {
   }
 
   // Successful compilation.
+  /**
+   * @returns {void}
+   */
   function hide() {
     if (!iframeContainerElement) {
       return;
@@ -15003,13 +16068,14 @@ var createOverlay = function createOverlay(options) {
 
   // Compilation with errors (e.g. syntax error or missing modules).
   /**
-   * @param {string} type
-   * @param {Array<string  | { moduleIdentifier?: string, moduleName?: string, loc?: string, message?: string }>} messages
-   * @param {string | null} trustedTypesPolicyName
-   * @param {'build' | 'runtime'} messageSource
+   * @param {string} type type
+   * @param {(string | Message)[]} messages messages
+   * @param {undefined | false | string} trustedTypesPolicyName trusted types policy name
+   * @param {'build' | 'runtime'} messageSource message source
    */
   function show(type, messages, trustedTypesPolicyName, messageSource) {
     ensureOverlayExists(function () {
+      /** @type {HTMLDivElement} */
       headerElement.innerText = messageSource === "runtime" ? "Uncaught runtime errors:" : "Compiled with problems:";
       messages.forEach(function (message) {
         var entryElement = document.createElement("div");
@@ -15023,12 +16089,12 @@ var createOverlay = function createOverlay(options) {
           body = _formatProblem.body;
         typeElement.innerText = header;
         applyStyle(typeElement, msgTypeStyle);
-        if (message.moduleIdentifier) {
+        if (typeof message !== "string" && message.moduleIdentifier) {
           applyStyle(typeElement, {
             cursor: "pointer"
           });
           // element.dataset not supported in IE
-          typeElement.setAttribute("data-can-open", true);
+          typeElement.setAttribute("data-can-open", "true");
           typeElement.addEventListener("click", function () {
             fetch("/webpack-dev-server/open-editor?fileName=".concat(message.moduleIdentifier));
           });
@@ -15038,6 +16104,8 @@ var createOverlay = function createOverlay(options) {
         var text = ansi_html_community__WEBPACK_IMPORTED_MODULE_0___default()(encode(body));
         var messageTextNode = document.createElement("div");
         applyStyle(messageTextNode, msgTextStyle);
+
+        // @ts-expect-error https://github.com/microsoft/TypeScript/issues/30024
         messageTextNode.innerHTML = overlayTrustedTypesPolicy ? overlayTrustedTypesPolicy.createHTML(text) : text;
         entryElement.appendChild(typeElement);
         entryElement.appendChild(messageTextNode);
@@ -15047,6 +16115,18 @@ var createOverlay = function createOverlay(options) {
       });
     }, trustedTypesPolicyName);
   }
+
+  /** @type {(event: KeyboardEvent) => void} */
+  var handleEscapeKey;
+
+  /**
+   * @returns {void}
+   */
+
+  var hideOverlayWithEscCleanup = function hideOverlayWithEscCleanup() {
+    window.removeEventListener("keydown", handleEscapeKey);
+    hide();
+  };
   var overlayService = createOverlayMachine({
     showOverlay: function showOverlay(_ref3) {
       var _ref3$level = _ref3.level,
@@ -15055,15 +16135,29 @@ var createOverlay = function createOverlay(options) {
         messageSource = _ref3.messageSource;
       return show(level, messages, options.trustedTypesPolicyName, messageSource);
     },
-    hideOverlay: hide
+    hideOverlay: hideOverlayWithEscCleanup
   });
+  /**
+   * ESC key press to dismiss the overlay.
+   * @param {KeyboardEvent} event Keydown event
+   */
+  handleEscapeKey = function handleEscapeKey(event) {
+    if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
+      overlayService.send({
+        type: "DISMISS"
+      });
+    }
+  };
+  window.addEventListener("keydown", handleEscapeKey);
   if (options.catchRuntimeError) {
     /**
-     * @param {Error | undefined} error
-     * @param {string} fallbackMessage
+     * @param {Error | undefined} error error
+     * @param {string} fallbackMessage fallback message
      */
     var handleError = function handleError(error, fallbackMessage) {
-      var errorObject = error instanceof Error ? error : new Error(error || fallbackMessage);
+      var errorObject = error instanceof Error ? error : new Error(error || fallbackMessage, {
+        cause: error
+      });
       var shouldDisplay = typeof options.catchRuntimeError === "function" ? options.catchRuntimeError(errorObject) : true;
       if (shouldDisplay) {
         overlayService.send({
@@ -15098,13 +16192,13 @@ var createOverlay = function createOverlay(options) {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/progress.js":
+/***/ "./node_modules/webpack-dev-server/client/progress.js"
 /*!************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/progress.js ***!
   \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -15130,9 +16224,16 @@ function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? O
 function _classPrivateMethodInitSpec(e, a) { _checkPrivateRedeclaration(e, a), a.add(e); }
 function _checkPrivateRedeclaration(e, t) { if (t.has(e)) throw new TypeError("Cannot initialize the same private elements twice on an object"); }
 function _assertClassBrand(e, t, n) { if ("function" == typeof e ? e === t : e.has(t)) return arguments.length < 3 ? t : n; throw new TypeError("Private element is not present on this object"); }
+/**
+ * @returns {boolean} true when custom elements supported, otherwise false
+ */
 function isProgressSupported() {
-  return "customElements" in self && !!HTMLElement.prototype.attachShadow;
+  return "customElements" in self && Boolean(HTMLElement.prototype.attachShadow);
 }
+
+/**
+ * @returns {void}
+ */
 function defineProgressElement() {
   var _WebpackDevServerProgress;
   if (customElements.get("wds-progress")) {
@@ -15160,13 +16261,23 @@ function defineProgressElement() {
       }
     }, {
       key: "attributeChangedCallback",
-      value: function attributeChangedCallback(name, oldValue, newValue) {
+      value:
+      /**
+       * @param {string} name name
+       * @param {string} oldValue old value
+       * @param {string} newValue new value
+       */
+      function attributeChangedCallback(name, oldValue, newValue) {
         if (name === "progress") {
           _assertClassBrand(_WebpackDevServerProgress_brand, this, _update).call(this, Number(newValue));
         } else if (name === "type") {
           _assertClassBrand(_WebpackDevServerProgress_brand, this, _reset).call(this);
         }
       }
+
+      /**
+       * @param {number} percent percent
+       */
     }], [{
       key: "observedAttributes",
       get: function get() {
@@ -15176,30 +16287,36 @@ function defineProgressElement() {
   }(/*#__PURE__*/_wrapNativeSuper(HTMLElement));
   _WebpackDevServerProgress = WebpackDevServerProgress;
   function _reset() {
-    var _this$getAttribute, _Number;
+    var _this$getAttribute;
     clearTimeout(this.animationTimer);
     this.animationTimer = null;
     var typeAttr = (_this$getAttribute = this.getAttribute("type")) === null || _this$getAttribute === void 0 ? void 0 : _this$getAttribute.toLowerCase();
     this.type = typeAttr === "circular" ? "circular" : "linear";
     var innerHTML = this.type === "circular" ? _circularTemplate.call(_WebpackDevServerProgress) : _linearTemplate.call(_WebpackDevServerProgress);
+    /** @type {ShadowRoot} */
     this.shadowRoot.innerHTML = innerHTML;
-    this.initialProgress = (_Number = Number(this.getAttribute("progress"))) !== null && _Number !== void 0 ? _Number : 0;
+    var progressValue = this.getAttribute("progress");
+    this.initialProgress = progressValue ? Number(progressValue) : 0;
     _assertClassBrand(_WebpackDevServerProgress_brand, this, _update).call(this, this.initialProgress);
   }
   function _circularTemplate() {
-    return "\n        <style>\n        :host {\n            width: 200px;\n            height: 200px;\n            position: fixed;\n            right: 5%;\n            top: 5%;\n            transition: opacity .25s ease-in-out;\n            z-index: 2147483645;\n        }\n\n        circle {\n            fill: #282d35;\n        }\n\n        path {\n            fill: rgba(0, 0, 0, 0);\n            stroke: rgb(186, 223, 172);\n            stroke-dasharray: 219.99078369140625;\n            stroke-dashoffset: -219.99078369140625;\n            stroke-width: 10;\n            transform: rotate(90deg) translate(0px, -80px);\n        }\n\n        text {\n            font-family: 'Open Sans', sans-serif;\n            font-size: 18px;\n            fill: #ffffff;\n            dominant-baseline: middle;\n            text-anchor: middle;\n        }\n\n        tspan#percent-super {\n            fill: #bdc3c7;\n            font-size: 0.45em;\n            baseline-shift: 10%;\n        }\n\n        @keyframes fade {\n            0% { opacity: 1; transform: scale(1); }\n            100% { opacity: 0; transform: scale(0); }\n        }\n\n        .disappear {\n            animation: fade 0.3s;\n            animation-fill-mode: forwards;\n            animation-delay: 0.5s;\n        }\n\n        .hidden {\n            display: none;\n        }\n        </style>\n        <svg id=\"progress\" class=\"hidden noselect\" viewBox=\"0 0 80 80\">\n        <circle cx=\"50%\" cy=\"50%\" r=\"35\"></circle>\n        <path d=\"M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0\"></path>\n        <text x=\"50%\" y=\"51%\">\n            <tspan id=\"percent-value\">0</tspan>\n            <tspan id=\"percent-super\">%</tspan>\n        </text>\n        </svg>\n      ";
+    return "\n        <style>\n        :host {\n            width: 200px;\n            height: 200px;\n            position: fixed;\n            right: 5%;\n            top: 5%;\n            pointer-events: none;\n            transition: opacity .25s ease-in-out;\n            z-index: 2147483645;\n        }\n\n        circle {\n            fill: #282d35;\n        }\n\n        path {\n            fill: rgba(0, 0, 0, 0);\n            stroke: rgb(186, 223, 172);\n            stroke-dasharray: 219.99078369140625;\n            stroke-dashoffset: -219.99078369140625;\n            stroke-width: 10;\n            transform: rotate(90deg) translate(0px, -80px);\n        }\n\n        text {\n            font-family: 'Open Sans', sans-serif;\n            font-size: 18px;\n            fill: #ffffff;\n            dominant-baseline: middle;\n            text-anchor: middle;\n        }\n\n        tspan#percent-super {\n            fill: #bdc3c7;\n            font-size: 0.45em;\n            baseline-shift: 10%;\n        }\n\n        @keyframes fade {\n            0% { opacity: 1; transform: scale(1); }\n            100% { opacity: 0; transform: scale(0); }\n        }\n\n        .disappear {\n            animation: fade 0.3s;\n            animation-fill-mode: forwards;\n            animation-delay: 0.5s;\n        }\n\n        .hidden {\n            display: none;\n        }\n        </style>\n        <svg id=\"progress\" class=\"hidden noselect\" viewBox=\"0 0 80 80\">\n        <circle cx=\"50%\" cy=\"50%\" r=\"35\"></circle>\n        <path d=\"M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0\"></path>\n        <text x=\"50%\" y=\"51%\">\n            <tspan id=\"percent-value\">0</tspan>\n            <tspan id=\"percent-super\">%</tspan>\n        </text>\n        </svg>\n      ";
   }
   function _linearTemplate() {
-    return "\n        <style>\n        :host {\n            position: fixed;\n            top: 0;\n            left: 0;\n            height: 4px;\n            width: 100vw;\n            z-index: 2147483645;\n        }\n\n        #bar {\n            width: 0%;\n            height: 4px;\n            background-color: rgb(186, 223, 172);\n        }\n\n        @keyframes fade {\n            0% { opacity: 1; }\n            100% { opacity: 0; }\n        }\n\n        .disappear {\n            animation: fade 0.3s;\n            animation-fill-mode: forwards;\n            animation-delay: 0.5s;\n        }\n\n        .hidden {\n            display: none;\n        }\n        </style>\n        <div id=\"progress\"></div>\n        ";
+    return "\n        <style>\n        :host {\n            position: fixed;\n            top: 0;\n            left: 0;\n            pointer-events: none;\n            height: 4px;\n            width: 100vw;\n            z-index: 2147483645;\n        }\n\n        #bar {\n            width: 0%;\n            height: 4px;\n            background-color: rgb(186, 223, 172);\n        }\n\n        @keyframes fade {\n            0% { opacity: 1; }\n            100% { opacity: 0; }\n        }\n\n        .disappear {\n            animation: fade 0.3s;\n            animation-fill-mode: forwards;\n            animation-delay: 0.5s;\n        }\n\n        .hidden {\n            display: none;\n        }\n        </style>\n        <div id=\"progress\"></div>\n        ";
   }
   function _update(percent) {
-    var element = this.shadowRoot.querySelector("#progress");
+    var shadowRoot = /** @type {ShadowRoot} */this.shadowRoot;
+    var element = /** @type {HTMLElement} */
+    shadowRoot.querySelector("#progress");
     if (this.type === "circular") {
-      var path = this.shadowRoot.querySelector("path");
-      var value = this.shadowRoot.querySelector("#percent-value");
+      var path = /** @type {SVGPathElement} */
+      shadowRoot.querySelector("path");
+      var value = /** @type {HTMLElement} */
+      shadowRoot.querySelector("#percent-value");
       var offset = (100 - percent) / 100 * this.maxDashOffset;
-      path.style.strokeDashoffset = offset;
-      value.textContent = percent;
+      path.style.strokeDashoffset = String(offset);
+      value.textContent = String(percent);
     } else {
       element.style.width = "".concat(percent, "%");
     }
@@ -15210,12 +16327,16 @@ function defineProgressElement() {
     }
   }
   function _show() {
-    var element = this.shadowRoot.querySelector("#progress");
+    var shadowRoot = /** @type {ShadowRoot} */this.shadowRoot;
+    var element = /** @type {HTMLElement} */
+    shadowRoot.querySelector("#progress");
     element.classList.remove("hidden");
   }
   function _hide() {
     var _this2 = this;
-    var element = this.shadowRoot.querySelector("#progress");
+    var shadowRoot = /** @type {ShadowRoot} */this.shadowRoot;
+    var element = /** @type {HTMLElement} */
+    shadowRoot.querySelector("#progress");
     if (this.type === "circular") {
       element.classList.add("disappear");
       element.addEventListener("animationend", function () {
@@ -15237,13 +16358,13 @@ function defineProgressElement() {
   customElements.define("wds-progress", WebpackDevServerProgress);
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/socket.js":
+/***/ "./node_modules/webpack-dev-server/client/socket.js"
 /*!**********************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/socket.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -15258,28 +16379,33 @@ function defineProgressElement() {
 
 
 
-// this WebsocketClient is here as a default fallback, in case the client is not injected
-/* eslint-disable camelcase */
-var Client =
-// eslint-disable-next-line no-nested-ternary
-typeof __webpack_dev_server_client__ !== "undefined" ? typeof __webpack_dev_server_client__.default !== "undefined" ? __webpack_dev_server_client__.default : __webpack_dev_server_client__ : _clients_WebSocketClient_js__WEBPACK_IMPORTED_MODULE_0__["default"];
-/* eslint-enable camelcase */
+/** @typedef {import("./index.js").EXPECTED_ANY} EXPECTED_ANY */
+/** @typedef {import("./clients/SockJSClient")} SockJSClient */
 
+// this WebsocketClient is here as a default fallback, in case the client is not injected
+/** @type {CommunicationClientConstructor} */
+var Client = typeof __webpack_dev_server_client__ !== "undefined" ? typeof (/** @type {{ default: CommunicationClientConstructor }} */
+__webpack_dev_server_client__.default) !== "undefined" ? /** @type {{ default: CommunicationClientConstructor }} */
+__webpack_dev_server_client__.default : (/** @type {CommunicationClientConstructor} */
+__webpack_dev_server_client__) : _clients_WebSocketClient_js__WEBPACK_IMPORTED_MODULE_0__["default"];
 var retries = 0;
 var maxRetries = 10;
 
 // Initialized client is exported so external consumers can utilize the same instance
 // It is mutable to enforce singleton
+/** @type {CommunicationClient | null} */
 // eslint-disable-next-line import/no-mutable-exports
 var client = null;
+
+/** @type {ReturnType<typeof setTimeout> | undefined} */
 var timeout;
 
 /**
- * @param {string} url
- * @param {{ [handler: string]: (data?: any, params?: any) => any }} handlers
- * @param {number} [reconnect]
+ * @param {string} url url
+ * @param {{ [handler: string]: (data?: EXPECTED_ANY, params?: EXPECTED_ANY) => EXPECTED_ANY }} handlers handlers
+ * @param {number=} reconnect count of reconnections
  */
-var socket = function initSocket(url, handlers, reconnect) {
+function socket(url, handlers, reconnect) {
   client = new Client(url);
   client.onOpen(function () {
     retries = 0;
@@ -15302,7 +16428,6 @@ var socket = function initSocket(url, handlers, reconnect) {
     if (retries < maxRetries) {
       // Exponentially increase timeout to reconnect.
       // Respectfully copied from the package `got`.
-      // eslint-disable-next-line no-restricted-properties
       var retryInMs = 1000 * Math.pow(2, retries) + Math.random() * 100;
       retries += 1;
       _utils_log_js__WEBPACK_IMPORTED_MODULE_1__.log.info("Trying to reconnect...");
@@ -15313,7 +16438,7 @@ var socket = function initSocket(url, handlers, reconnect) {
   });
   client.onMessage(
   /**
-   * @param {any} data
+   * @param {EXPECTED_ANY} data data
    */
   function (data) {
     var message = JSON.parse(data);
@@ -15321,16 +16446,16 @@ var socket = function initSocket(url, handlers, reconnect) {
       handlers[message.type](message.data, message.params);
     }
   });
-};
+}
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (socket);
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/utils/log.js":
+/***/ "./node_modules/webpack-dev-server/client/utils/log.js"
 /*!*************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/utils/log.js ***!
   \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -15347,7 +16472,7 @@ var defaultLevel = "info";
 
 // options new options, merge with old options
 /**
- * @param {false | true | "none" | "error" | "warn" | "info" | "log" | "verbose"} level
+ * @param {false | true | "none" | "error" | "warn" | "info" | "log" | "verbose"} level level
  * @returns {void}
  */
 function setLogLevel(level) {
@@ -15359,24 +16484,26 @@ setLogLevel(defaultLevel);
 var log = _modules_logger_index_js__WEBPACK_IMPORTED_MODULE_0___default().getLogger(name);
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack-dev-server/client/utils/sendMessage.js":
+/***/ "./node_modules/webpack-dev-server/client/utils/sendMessage.js"
 /*!*********************************************************************!*\
   !*** ./node_modules/webpack-dev-server/client/utils/sendMessage.js ***!
   \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* global __resourceQuery WorkerGlobalScope */
+/* global WorkerGlobalScope */
+
+/** @typedef {import("../index").EXPECTED_ANY} EXPECTED_ANY */
 
 // Send messages to the outside, so plugins can consume it.
 /**
- * @param {string} type
- * @param {any} [data]
+ * @param {string} type type
+ * @param {EXPECTED_ANY=} data data
  */
 function sendMsg(type, data) {
   if (typeof self !== "undefined" && (typeof WorkerGlobalScope === "undefined" || !(self instanceof WorkerGlobalScope))) {
@@ -15388,19 +16515,21 @@ function sendMsg(type, data) {
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendMsg);
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack/hot/dev-server.js":
+/***/ "./node_modules/webpack/hot/dev-server.js"
 /*!************************************************!*\
   !*** ./node_modules/webpack/hot/dev-server.js ***!
   \************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
 /* globals __webpack_hash__ */
+// Universal regular-HMR client (web + Node): runs `module.hot.check` whenever a
+// `webpackHotUpdate` signal arrives on ./emitter (pushed by the dev-server).
 if (true) {
 	/** @type {undefined|string} */
 	var lastHash;
@@ -15459,38 +16588,53 @@ if (true) {
 				}
 			});
 	};
+	/** @type {EventTarget | NodeJS.EventEmitter} */
 	var hotEmitter = __webpack_require__(/*! ./emitter */ "./node_modules/webpack/hot/emitter.js");
-	hotEmitter.on("webpackHotUpdate", function (currentHash) {
-		lastHash = currentHash;
+	/**
+	 * @param {CustomEvent<{ currentHash: string }>} event event or hash
+	 */
+	var handler = function (event) {
+		lastHash = typeof event === "string" ? event : event.detail.currentHash;
 		if (!upToDate() && module.hot.status() === "idle") {
 			log("info", "[HMR] Checking for updates on the server...");
 			check();
 		}
-	});
+	};
+
+	if (typeof EventTarget !== "undefined" && hotEmitter instanceof EventTarget) {
+		hotEmitter.addEventListener(
+			"webpackHotUpdate",
+			/** @type {EventListener} */
+			(handler)
+		);
+	} else {
+		hotEmitter.on("webpackHotUpdate", handler);
+	}
+
 	log("info", "[HMR] Waiting for update signal from WDS...");
 } else // removed by dead control flow
 {}
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack/hot/emitter.js":
+/***/ "./node_modules/webpack/hot/emitter.js"
 /*!*********************************************!*\
   !*** ./node_modules/webpack/hot/emitter.js ***!
   \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 var EventEmitter = __webpack_require__(/*! events */ "./node_modules/events/events.js");
 module.exports = new EventEmitter();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack/hot/log-apply-result.js":
+/***/ "./node_modules/webpack/hot/log-apply-result.js"
 /*!******************************************************!*\
   !*** ./node_modules/webpack/hot/log-apply-result.js ***!
   \******************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
@@ -15543,13 +16687,13 @@ module.exports = function (updatedModules, renewedModules) {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/webpack/hot/log.js":
+/***/ "./node_modules/webpack/hot/log.js"
 /*!*****************************************!*\
   !*** ./node_modules/webpack/hot/log.js ***!
   \*****************************************/
-/***/ ((module) => {
+(module) {
 
 /** @typedef {"info" | "warning" | "error"} LogLevel */
 
@@ -15631,934 +16775,36 @@ module.exports.setLogLevel = function (level) {
 };
 
 
-/***/ }),
-
-/***/ "./src/app.ts":
-/*!********************!*\
-  !*** ./src/app.ts ***!
-  \********************/
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/card.ts");
-/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typescript-json-serializer */ "./node_modules/typescript-json-serializer/index.js");
-/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-let activeCards = [];
-let currentCard = 0;
-function updatePreview() {
-    let canvas = document.getElementById('preview');
-    if (canvas && activeCards[currentCard]) {
-        activeCards[currentCard].draw(canvas, 0);
-    }
-    sessionStorage.setItem("setBackup", JSON.stringify(activeCards));
-}
-function onCardTypeChanged(event) {
-    const selectElem = event.target;
-    if (selectElem && activeCards[currentCard]) {
-        activeCards[currentCard]._heading = selectElem.selectedOptions[0].text;
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').val(activeCards[currentCard]._heading);
-        if (selectElem.selectedOptions[0].text == 'Stratagem') {
-            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
-        }
-        else if (selectElem.selectedOptions[0].text == 'Psychic Power') {
-            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower;
-        }
-        else if (selectElem.selectedOptions[0].text == 'Tactical Objective') {
-            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective;
-        }
-        else if (selectElem.selectedOptions[0].text == 'Prayer') {
-            activeCards[currentCard]._type = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer;
-        }
-        updateCardUI();
-        updatePreview();
-    }
-}
-function onCardStyleChanged(event) {
-    const selectElem = event.target;
-    if (selectElem && activeCards[currentCard]) {
-        if (selectElem.selectedOptions[0].text == 'Assault') {
-            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault;
-        }
-        else if (selectElem.selectedOptions[0].text == 'Support') {
-            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support;
-        }
-        else if (selectElem.selectedOptions[0].text == 'Mobility') {
-            activeCards[currentCard]._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility;
-        }
-        updateCardUI();
-        updatePreview();
-    }
-}
-function onHeaderChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._heading = inputElem.value;
-        updatePreview();
-    }
-}
-function onTitleChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._title = inputElem.value;
-        updatePreview();
-    }
-}
-function onRuleChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._rule = inputElem.value;
-        updatePreview();
-    }
-}
-function onFluffChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._fluff = inputElem.value;
-        updatePreview();
-    }
-}
-function onValueChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._value = inputElem.value;
-        updatePreview();
-    }
-}
-function onFooterChanged(event) {
-    const inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._footer = inputElem.value;
-        updatePreview();
-    }
-}
-function onPreviousCard() {
-    currentCard = Math.max(currentCard - 1, 0);
-    updateCardUI();
-    updatePreview();
-}
-function onNextCard() {
-    currentCard = Math.min(currentCard + 1, activeCards.length - 1);
-    updateCardUI();
-    updatePreview();
-}
-function mmToInches(mm) {
-    return mm / 25.4;
-}
-function handleCreate() {
-    if (activeCards[currentCard]) {
-        const cardSizeMm = [63, 88];
-        let dpi = 300;
-        let marginMm = 0;
-        const outputDPIInput = document.getElementById('outputdpi');
-        if (outputDPIInput)
-            dpi = parseInt(outputDPIInput.value);
-        const outputMargin = document.getElementById('outputmargin');
-        if (outputMargin)
-            marginMm = parseInt(outputMargin.value);
-        let marginPx = Math.ceil(mmToInches(marginMm) * dpi);
-        let canvas = document.createElement('canvas');
-        canvas.width = Math.round(mmToInches(cardSizeMm[0]) * dpi) + 2 * marginPx;
-        canvas.height = Math.round(mmToInches(cardSizeMm[1]) * dpi) + 2 * marginPx;
-        activeCards[currentCard].draw(canvas, marginMm);
-        let link = document.createElement('a');
-        link.download = `${activeCards[currentCard]._title}.png`;
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-        console.log("Current card: " + currentCard + " Num active cards: " + activeCards.length);
-        updateCardUI();
-        updatePreview();
-    }
-}
-function getFileExtension(filename) {
-    const substrings = filename.split('.');
-    if (substrings.length > 1) {
-        return substrings[substrings.length - 1].toLowerCase();
-    }
-    return "";
-}
-function textToStyle(styleText) {
-    if (styleText == 'CLASSIC')
-        return _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Classic;
-    return _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th;
-}
-function onBatchNameChanged(event) {
-    let inputElem = event.target;
-    if (inputElem && activeCards[currentCard]) {
-        activeCards[currentCard]._batch = inputElem.value;
-        console.log("Current set: " + inputElem.value);
-        updatePreview();
-    }
-}
-function handleFileSelect(event) {
-    const input = event.target;
-    const files = input.files;
-    let defaultStyle = _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th;
-    if (files) {
-        currentCard = 0;
-        activeCards.length = 0;
-        for (let f of files) {
-            const fileExt = getFileExtension(f.name);
-            if (fileExt === "csv" || fileExt === 'tsv') {
-                let config;
-                (0,papaparse__WEBPACK_IMPORTED_MODULE_2__.parse)(f, {
-                    delimiter: papaparse__WEBPACK_IMPORTED_MODULE_2__.RECORD_SEP,
-                    newline: "\r\n",
-                    complete: (result) => {
-                        const fileName = f.name.substring(0, f.name.length - 4);
-                        for (let data of result.data) {
-                            let fields = data;
-                            let cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
-                            if (fields[0].toUpperCase() == "STRATAGEM")
-                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem;
-                            else if (fields[0].toUpperCase() === "PSYCHIC POWER")
-                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower;
-                            else if (fields[0].toUpperCase() === "TACTICAL OBJECTIVE")
-                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective;
-                            else if (fields[0].toUpperCase() === "PRAYER")
-                                cardType = _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer;
-                            else {
-                                continue;
-                            }
-                            if (cardType == _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer) {
-                                let i = 1;
-                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-                                card._type = cardType;
-                                card._value = "";
-                                card._batch = fileName;
-                                if (fields.length == 6) {
-                                    card._style = defaultStyle;
-                                }
-                                else if (fields.length == 7) {
-                                    card._style = textToStyle(fields[i++]);
-                                }
-                                switch (fields[i++]) {
-                                    case "Assault": {
-                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault;
-                                        break;
-                                    }
-                                    case "Support": {
-                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support;
-                                        break;
-                                    }
-                                    case "Mobility": {
-                                        card._order = _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility;
-                                        break;
-                                    }
-                                }
-                                card._title = fields[i++];
-                                card._heading = fields[i++];
-                                card._fluff = fields[i++];
-                                card._rule = fields[i++];
-                                activeCards.push(card);
-                            }
-                            else if (cardType == _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective) {
-                                let i = 1;
-                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-                                card._type = cardType;
-                                if (fields.length == 5) {
-                                    card._style = defaultStyle;
-                                }
-                                else if (fields.length >= 6) {
-                                    card._style = textToStyle(fields[i++]);
-                                }
-                                card._title = fields[i++];
-                                card._heading = fields[i++];
-                                card._fluff = fields[i++];
-                                card._rule = fields[i++];
-                                if (fields.length == 7) {
-                                    card._footer = fields[i++];
-                                }
-                                else {
-                                    card._footer = "OBJECTIVE";
-                                }
-                                activeCards.push(card);
-                            }
-                            else {
-                                let i = 1;
-                                let card = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-                                card._type = cardType;
-                                if (fields.length == 6) {
-                                    card._style = defaultStyle;
-                                }
-                                else if (fields.length == 7) {
-                                    card._style = textToStyle(fields[i++]);
-                                }
-                                card._value = fields[i++];
-                                card._title = fields[i++];
-                                card._heading = fields[i++];
-                                card._fluff = fields[i++];
-                                card._rule = fields[i++];
-                                activeCards.push(card);
-                            }
-                        }
-                        currentCard = 0;
-                        console.log("Current set: " + fileName);
-                        console.log("Num active cards: " + activeCards.length);
-                        updateCardUI();
-                        updatePreview();
-                    }
-                });
-            }
-            else {
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#errorText').html('StrataGen only supports .csv files.  Selected file is a \'' + fileExt + "\' file.");
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#errorDialog').modal();
-            }
-        }
-    }
-}
-function onBatchSave() {
-    let cards_to_export = [];
-    activeCards.forEach((card) => {
-        cards_to_export.push(["PRAYER", card._style.toLocaleUpperCase(), parseOrder(card), card._title, card._heading, card._fluff, card._rule]);
-    });
-    console.log(cards_to_export);
-    let csvContent = "data:text/csv;charset=utf-8,"
-        + cards_to_export.map(e => e.join(papaparse__WEBPACK_IMPORTED_MODULE_2__.RECORD_SEP)).join("\r\n");
-    var encodedUri = encodeURI(csvContent);
-    var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `${activeCards[currentCard]._batch}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    return null;
-}
-function onBatchPrint() {
-    let currentCardHolder = currentCard;
-    currentCard = 0;
-    activeCards.forEach((_, i) => {
-        handleCreate();
-        currentCard++;
-    });
-    currentCard = currentCardHolder;
-}
-function onSaveCard() {
-    localStorage.setItem('lastCard', JSON.stringify((0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_1__.serialize)(activeCards[currentCard])));
-}
-function onLoadCard() {
-    activeCards.push(activeCards[currentCard]);
-    currentCard++;
-    activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-    activeCards[currentCard]._batch = activeCards[currentCard - 1]._batch;
-    console.log(activeCards);
-    updateCardUI();
-    updatePreview();
-}
-function deleteCard() {
-    if (confirm(`Are you sure you want to delete ${activeCards[currentCard]._title}?`)) {
-        if (activeCards.length == 1) {
-            activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-        }
-        else if (activeCards.length > 1) {
-            activeCards.splice(currentCard, 1);
-            if (currentCard >= activeCards.length) {
-                currentCard -= 1;
-            }
-        }
-    }
-    updateCardUI();
-    updatePreview();
-}
-function onBackgroundLoad(event) {
-    const input = event.target;
-    const files = input.files;
-    if (files && files[0]) {
-    }
-}
-function onBgOpacityChanged(event) {
-    const inputElem = event.target;
-    if (inputElem) {
-        inputElem.value;
-    }
-}
-function onBgSaturationChanged(event) {
-    const inputElem = event.target;
-    if (inputElem) {
-        inputElem.value;
-    }
-}
-function parseOrder(card) {
-    switch (card._order) {
-        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Assault: {
-            return "Assault";
-        }
-        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Support: {
-            return "Support";
-        }
-        case _card__WEBPACK_IMPORTED_MODULE_0__.CardOrderColor.Mobility: {
-            return "Mobility";
-        }
-    }
-}
-function updateCardUI() {
-    if (activeCards[currentCard]) {
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()("#cardcounter").html(`[${currentCard + 1}/${activeCards.length}]`);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()("#batchname").val(`${activeCards[currentCard]._batch}`);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtype').val(activeCards[currentCard]._type.toString());
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardstyle').val(parseOrder(activeCards[currentCard]));
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').val(activeCards[currentCard]._heading);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtitle').val(activeCards[currentCard]._title);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardrule').val(activeCards[currentCard]._rule);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfluff').val(activeCards[currentCard]._fluff);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfooter').val(activeCards[currentCard]._footer);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfootercontrol').hide();
-        if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Stratagem) {
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 1, "max": 3 });
-            if (parseInt(activeCards[currentCard]._value) > 3)
-                activeCards[currentCard]._value = "3";
-            else if (parseInt(activeCards[currentCard]._value) < 1)
-                activeCards[currentCard]._value = "1";
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Command Points");
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
-        }
-        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.PsychicPower) {
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 2, "max": 12 });
-            if (parseInt(activeCards[currentCard]._value) > 12)
-                activeCards[currentCard]._value = "12";
-            else if (parseInt(activeCards[currentCard]._value) < 2)
-                activeCards[currentCard]._value = "2";
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Warp Charge");
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
-        }
-        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.TacticalObjective) {
-            if (activeCards[currentCard]._style == _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Classic) {
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').attr({ "min": 11, "max": 66 });
-                if (parseInt(activeCards[currentCard]._value) > 66)
-                    activeCards[currentCard]._value = "66";
-                else if (parseInt(activeCards[currentCard]._value) < 11)
-                    activeCards[currentCard]._value = "11";
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluelabel').html("Objective (D66)");
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').show();
-            }
-            else if (activeCards[currentCard]._style == _card__WEBPACK_IMPORTED_MODULE_0__.CardStyle.Edition_9th) {
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
-                jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfootercontrol').show();
-            }
-        }
-        else if (activeCards[currentCard]._type === _card__WEBPACK_IMPORTED_MODULE_0__.CardType.Prayer) {
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvaluecontrol').hide();
-        }
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').val(activeCards[currentCard]._value);
-    }
-}
-function loadPreviousCards() {
-    let cardsBackup = sessionStorage.getItem("setBackup");
-    if (cardsBackup) {
-        JSON.parse(cardsBackup).forEach((card, i) => {
-            activeCards[i] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-            activeCards[i]._batch = card._batch;
-            activeCards[i]._fluff = card._fluff;
-            activeCards[i]._footer = card._footer;
-            activeCards[i]._heading = card._heading;
-            activeCards[i]._order = card._order;
-            activeCards[i]._rule = card._rule;
-            activeCards[i]._style = card._style;
-            activeCards[i]._title = card._title;
-            activeCards[i]._type = card._type;
-            activeCards[i]._value = card._value;
-            currentCard = i;
-        });
-        console.log(activeCards);
-    }
-}
-function plumbCallbacks() {
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#previouscard').click(onPreviousCard);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#nextcard').click(onNextCard);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardstyle').on('change', onCardStyleChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardheader').on('input', onHeaderChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardtitle').on('input', onTitleChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardrule').on('input', onRuleChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfluff').on('input', onFluffChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardvalue').on('input', onValueChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#cardfooter').on('input', onFooterChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#createcard').click(handleCreate);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#deletecard').click(deleteCard);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchname').on('blur', onBatchNameChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#datacardfile').on('change', handleFileSelect);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchsave').click(onBatchSave);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#batchcreate').click(onBatchPrint);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#backgroundfile').on('change', onBackgroundLoad);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgopacity').on('input', onBgOpacityChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#bgsaturation').on('input', onBgSaturationChanged);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#savecard').click(onSaveCard);
-    jquery__WEBPACK_IMPORTED_MODULE_3___default()('#loadcard').click(onLoadCard);
-}
-console.log("Reloading web page.");
-let canvas = document.getElementById('preview');
-if (canvas) {
-    let ctx = canvas.getContext('2d');
-    if (ctx) {
-        if (activeCards.length == 0) {
-            currentCard = 0;
-            activeCards[currentCard] = new _card__WEBPACK_IMPORTED_MODULE_0__.Card();
-        }
-    }
-}
-loadPreviousCards();
-plumbCallbacks();
-updateCardUI();
-updatePreview();
-console.log("Starting up...");
-
-
-/***/ }),
-
-/***/ "./src/card.ts":
-/*!*********************!*\
-  !*** ./src/card.ts ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Card: () => (/* binding */ Card),
-/* harmony export */   CardOrderColor: () => (/* binding */ CardOrderColor),
-/* harmony export */   CardStyle: () => (/* binding */ CardStyle),
-/* harmony export */   CardType: () => (/* binding */ CardType)
-/* harmony export */ });
-/* unused harmony exports Justification, RenderText, RenderParagraph */
-/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typescript-json-serializer */ "./node_modules/typescript-json-serializer/index.js");
-/* harmony import */ var typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__);
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var Card_1;
-
-var CardType;
-(function (CardType) {
-    CardType["Stratagem"] = "Stratagem";
-    CardType["PsychicPower"] = "Psychic Power";
-    CardType["TacticalObjective"] = "Tactical Objective";
-    CardType["Prayer"] = "Prayer";
-})(CardType || (CardType = {}));
-var CardOrderColor;
-(function (CardOrderColor) {
-    CardOrderColor["Assault"] = "#f24d41";
-    CardOrderColor["Support"] = "lightgreen";
-    CardOrderColor["Mobility"] = "lightblue";
-})(CardOrderColor || (CardOrderColor = {}));
-var CardStyle;
-(function (CardStyle) {
-    CardStyle["Classic"] = "Classic";
-    CardStyle["Edition_9th"] = "9th Edition";
-})(CardStyle || (CardStyle = {}));
-var Justification;
-(function (Justification) {
-    Justification[Justification["Left"] = 0] = "Left";
-    Justification[Justification["Right"] = 1] = "Right";
-    Justification[Justification["Center"] = 2] = "Center";
-})(Justification || (Justification = {}));
-;
-function RenderText(ctx, text, x, y, w, h, how) {
-    if (ctx && text.length) {
-        ctx.textBaseline = 'top';
-        let measure = ctx.measureText(text);
-        const tw = measure.width;
-        const th = measure.actualBoundingBoxDescent - measure.actualBoundingBoxAscent;
-        if (how == Justification.Center) {
-            ctx.fillText(text, x + Math.max((w - tw) / 2, 0), y + (h - th) / 2, w);
-        }
-        else if (how == Justification.Left) {
-            ctx.fillText(text, x, y + (h - th) / 2, w);
-        }
-        else if (how == Justification.Right) {
-            ctx.fillText(text, x + w - tw, y + (h - th) / 2, w);
-        }
-    }
-}
-function RenderParagraph(ctx, text, x, y, w, how) {
-    let curY = y;
-    if (ctx && text.length) {
-        let lines = [];
-        let currentLine = [];
-        ctx.textBaseline = 'top';
-        let length = 0;
-        const spaceWidth = ctx.measureText(" ").width;
-        const heightMeasure = ctx.measureText(text);
-        const th = (heightMeasure.actualBoundingBoxDescent - heightMeasure.actualBoundingBoxAscent) * 1.5;
-        text.split("\n").forEach(function (paragraph) {
-            currentLine.length = 0;
-            length = 0;
-            paragraph.split(" ").forEach(function (word) {
-                const measure = ctx.measureText(word);
-                if ((length + measure.width) > w) {
-                    lines.push(currentLine.join(" "));
-                    currentLine.length = 0;
-                    length = 0;
-                }
-                length += measure.width + spaceWidth;
-                currentLine.push(word);
-            });
-            if (currentLine.length > 0) {
-                lines.push(currentLine.join(" "));
-            }
-        });
-        for (let l of lines) {
-            let measure = ctx.measureText(l);
-            const tw = measure.width;
-            if (how == Justification.Center) {
-                ctx.fillText(l, x + Math.max((w - tw) / 2, 0), curY, w);
-            }
-            else if (how == Justification.Left) {
-                ctx.fillText(l, x, curY, w);
-            }
-            else if (how == Justification.Right) {
-                ctx.fillText(l, x + w - tw, curY, w);
-            }
-            curY += th;
-        }
-    }
-    return curY;
-}
-let Card = Card_1 = class Card {
-    constructor() {
-        this._width = Card_1.defaultWidthPx;
-        this._height = Card_1.defaultHeightPx;
-        this._scale = 1;
-        this._type = CardType.Prayer;
-        this._style = CardStyle.Classic;
-        this._order = CardOrderColor.Assault;
-        this._batch = "New Set";
-        this._heading = "CORE";
-        this._title = "<Title>";
-        this._fluff = "<Fluff text>";
-        this._rule = "<Rule text>";
-        this._footer = "<Footer>";
-        this._value = "1";
-    }
-    headerFont() {
-        if (this._style == CardStyle.Edition_9th) {
-            return Math.round(20 * this._scale).toString() + 'px ' + 'Teko';
-        }
-        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
-    }
-    titleFont() {
-        return Math.round(32 * this._scale).toString() + 'px ' + 'Teko';
-    }
-    fluffFont() {
-        return 'italic ' + Math.round(13 * this._scale).toString() + 'px ' + 'serif';
-    }
-    ruleFont() {
-        return Math.round(15 * this._scale).toString() + 'px ' + 'serif';
-    }
-    footFont() {
-        return Math.round(18 * this._scale).toString() + 'px ' + 'Teko';
-    }
-    valueFont() {
-        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
-    }
-    footerFont() {
-        return Math.round(24 * this._scale).toString() + 'px ' + 'Teko';
-    }
-    draw(canvas, marginPx) {
-        let ctx = canvas.getContext('2d');
-        if (!ctx)
-            return;
-        this._width = canvas.width - 2 * marginPx;
-        this._height = canvas.height - 2 * marginPx;
-        this._scale = Math.max(this._width / Card_1.defaultWidthPx, this._height / Card_1.defaultHeightPx);
-        ctx.fillStyle = "#f8f9fa";
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.translate(marginPx, marginPx);
-        ctx.fillRect(0, 0, this._width, this._height);
-        ctx.lineJoin = 'round';
-        ctx.strokeStyle = 'silver';
-        let borderX = 5;
-        let borderY = 5;
-        const borderWidth = this._width - 2 * borderX;
-        const borderHeight = this._height - 2 * borderY;
-        const borderLineWidth = Math.ceil(5);
-        let numRows = 12;
-        if (this._style == CardStyle.Edition_9th)
-            numRows = 20;
-        const textRegionHeight = this._height / numRows;
-        if (this._style == CardStyle.Classic) {
-            ctx.save();
-            ctx.strokeStyle = 'grey';
-            ctx.lineWidth = borderLineWidth;
-            this.drawBorder(ctx, borderX, borderY, borderWidth, borderHeight, textRegionHeight);
-            ctx.restore();
-        }
-        const cardHeader = this._heading.toLocaleUpperCase();
-        ctx.save();
-        ctx.font = this.headerFont();
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = 'black';
-        RenderText(ctx, cardHeader, borderX, borderY, borderWidth, textRegionHeight, Justification.Center);
-        ctx.restore();
-        borderX = this._width * 0.05;
-        borderY = this._height * 0.02;
-        let curY = borderY * 2 + textRegionHeight;
-        const marginXLeft = borderX * 2;
-        const marginXRight = this._width - 2 * borderX;
-        const textWidth = marginXRight - marginXLeft;
-        ctx.moveTo(marginXLeft, curY);
-        ctx.lineTo(marginXRight, curY);
-        ctx.stroke();
-        const cardTitle = this._title.toLocaleUpperCase();
-        ctx.save();
-        ctx.font = this.titleFont();
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = 'black';
-        RenderText(ctx, cardTitle, marginXLeft, curY, textWidth, textRegionHeight, Justification.Center);
-        ctx.restore();
-        curY += textRegionHeight;
-        if (this._style == CardStyle.Classic) {
-            ctx.moveTo(marginXLeft, curY);
-            ctx.lineTo(marginXRight, curY);
-            ctx.stroke();
-            curY += borderY;
-        }
-        else {
-            curY += borderY;
-        }
-        if (this._fluff.length > 0) {
-            ctx.save();
-            ctx.font = this.fluffFont();
-            ctx.fillStyle = 'black';
-            curY = RenderParagraph(ctx, this._fluff, marginXLeft, curY, textWidth, Justification.Center);
-            ctx.restore();
-            curY += textRegionHeight / 2;
-        }
-        ctx.moveTo(marginXLeft, curY);
-        ctx.lineTo(marginXRight, curY);
-        ctx.stroke();
-        curY += textRegionHeight / 2;
-        ctx.save();
-        ctx.font = this.ruleFont();
-        ctx.fillStyle = 'black';
-        curY = RenderParagraph(ctx, this._rule, marginXLeft, curY, textWidth, Justification.Center);
-        ctx.restore();
-        curY = this._height - borderY * 1.5 - textRegionHeight;
-        if ((this._type == CardType.Stratagem) || (this._type == CardType.PsychicPower) || (this._type == CardType.TacticalObjective)) {
-            if (this._style == CardStyle.Classic) {
-                this.drawFooterClassic(ctx, marginXLeft, marginXRight, curY, textRegionHeight, textWidth);
-            }
-            else if (this._style == CardStyle.Edition_9th) {
-                this.drawFooter9th(ctx, marginXLeft, marginXRight, curY, textRegionHeight, textWidth);
-            }
-        }
-        else if (this._type == CardType.Prayer) {
-        }
-    }
-    toString() {
-        return "Card: " + this._type.toString() + "  Title: " + this._title + "  Rule: " + this._rule + "  CP: " + this._value;
-    }
-    roundRect(ctx, x, y, width, height, radius, fill, stroke) {
-        ctx.beginPath();
-        ctx.moveTo(x + radius, y);
-        ctx.lineTo(x + width - radius, y);
-        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-        ctx.lineTo(x + width, y + height - radius);
-        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-        ctx.lineTo(x + radius, y + height);
-        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-        ctx.lineTo(x, y + radius);
-        ctx.quadraticCurveTo(x, y, x + radius, y);
-        ctx.closePath();
-        if (fill) {
-            ctx.fill();
-        }
-        if (stroke) {
-            ctx.stroke();
-        }
-    }
-    bevelRect(ctx, x, y, width, height, bevel, fill, stroke) {
-        ctx.beginPath();
-        ctx.moveTo(x, y + bevel);
-        ctx.lineTo(x, y + height - bevel);
-        ctx.lineTo(x + bevel, y + height);
-        ctx.lineTo(x + width - bevel, y + height);
-        ctx.lineTo(x + width, y + height - bevel);
-        ctx.lineTo(x + width, y + bevel);
-        ctx.lineTo(x + width - bevel, y);
-        ctx.lineTo(x + bevel, y);
-        ctx.closePath();
-        if (fill) {
-            ctx.fill();
-        }
-        if (stroke) {
-            ctx.stroke();
-        }
-    }
-    drawBorder(ctx, x, y, width, height, bevel) {
-        this.bevelRect(ctx, x, y, width, height, bevel, false, true);
-        ctx.moveTo(x, y + bevel);
-        ctx.lineTo(x + width, y + bevel);
-        let orderColor = new Path2D();
-        orderColor.moveTo(x, y + bevel);
-        orderColor.lineTo(x + width, y + bevel);
-        orderColor.lineTo(x + width - bevel, y);
-        orderColor.lineTo(x + bevel, y);
-        ctx.fillStyle = this.cardColor();
-        ctx.fill(orderColor, "evenodd");
-        ctx.stroke();
-    }
-    cardColor() {
-        return this._order;
-    }
-    drawFooterClassic(ctx, x, x1, y, textRegionHeight, textWidth) {
-        const cpBoxSize = textRegionHeight;
-        ctx.save();
-        ctx.lineWidth = Math.max(Math.ceil(this._scale), 1.0);
-        this.roundRect(ctx, x * 2 + cpBoxSize, y, textWidth - 2 * x - cpBoxSize, textRegionHeight - 6, 8, false, true);
-        ctx.restore();
-        ctx.save();
-        ctx.font = this.footFont();
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = 'black';
-        let footText = 'COMMAND POINTS';
-        if (this._type === CardType.Stratagem) {
-            if (this._value == '1') {
-                footText = 'COMMAND POINT';
-            }
-        }
-        else if (this._type === CardType.PsychicPower) {
-            footText = 'WARP CHARGE';
-        }
-        else if (this._type === CardType.TacticalObjective) {
-            footText = this._footer;
-        }
-        RenderText(ctx, footText, x * 2 + cpBoxSize, y, textWidth - 2 * x - cpBoxSize, textRegionHeight - 6, Justification.Center);
-        ctx.restore();
-        ctx.save();
-        ctx.fillStyle = '#ba2222';
-        ctx.lineWidth = Math.max(Math.ceil(this._scale), 1.0);
-        this.bevelRect(ctx, x * 2, y - 3, cpBoxSize, cpBoxSize, 5, true, true);
-        ctx.restore();
-        ctx.save();
-        ctx.font = this.valueFont();
-        ctx.textBaseline = 'top';
-        ctx.fillStyle = '#f5f2f2';
-        RenderText(ctx, this._value, x * 2, y - 3, cpBoxSize, cpBoxSize, Justification.Center);
-        ctx.restore();
-    }
-    drawFooter9th(ctx, x0, x1, y, textRegionHeight, textWidth) {
-        let footText = '';
-        if (this._type === CardType.Stratagem) {
-            footText = this._value + ' COMMAND POINT';
-            if (this._value != "1") {
-                footText += 'S';
-            }
-        }
-        else if (this._type === CardType.PsychicPower) {
-            footText = 'WARP CHARGE ' + this._value;
-        }
-        else if (this._type === CardType.TacticalObjective) {
-            footText = this._footer;
-        }
-        if (footText.length > 0) {
-            ctx.moveTo(x0, y);
-            ctx.lineTo(x1, y);
-            ctx.stroke();
-            y += 4;
-            ctx.save();
-            ctx.font = this.footFont();
-            ctx.textBaseline = 'top';
-            ctx.fillStyle = 'black';
-            RenderText(ctx, footText, x0, y, textWidth, textRegionHeight, Justification.Center);
-            ctx.restore();
-        }
-    }
-};
-Card.defaultWidthPx = 400;
-Card.defaultHeightPx = 560;
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", Number)
-], Card.prototype, "_width", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", Number)
-], Card.prototype, "_height", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", Number)
-], Card.prototype, "_scale", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_type", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_style", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_order", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_batch", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_heading", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_title", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_fluff", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_rule", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_footer", void 0);
-__decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.JsonProperty)(),
-    __metadata("design:type", String)
-], Card.prototype, "_value", void 0);
-Card = Card_1 = __decorate([
-    (0,typescript_json_serializer__WEBPACK_IMPORTED_MODULE_0__.Serializable)()
-], Card);
-
-
-
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		let module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		var execOptions = { id: moduleId, module: module, factory: __webpack_modules__[moduleId], require: __webpack_require__ };
+/******/ 		const execOptions = { id: moduleId, module: module, factory: __webpack_modules__[moduleId], require: __webpack_require__ };
 /******/ 		__webpack_require__.i.forEach(function(handler) { handler(execOptions); });
+/******/ 		if (!execOptions.factory) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		module = execOptions.module;
 /******/ 		execOptions.factory.call(module.exports, module, module.exports, execOptions.require);
 /******/ 	
@@ -16580,7 +16826,7 @@ Card = Card_1 = __decorate([
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
+/******/ 			const getter = module && module.__esModule ?
 /******/ 				() => (module['default']) :
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
@@ -16590,11 +16836,26 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
+/******/ 		// define getter/value functions for harmony exports
 /******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
 /******/ 				}
 /******/ 			}
 /******/ 		};
@@ -16616,7 +16877,7 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5f61900c9f892f32bcf9")
+/******/ 		__webpack_require__.h = () => ("ef27359e96c9ac204ef7")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -16638,16 +16899,16 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
-/******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "stratagen:";
+/******/ 		const inProgress = {};
+/******/ 		const dataWebpackPrefix = "stratagen:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
-/******/ 			var script, needAttach;
+/******/ 			let script, needAttach;
 /******/ 			if(key !== undefined) {
-/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				const scripts = document.getElementsByTagName("script");
 /******/ 				for(var i = 0; i < scripts.length; i++) {
-/******/ 					var s = scripts[i];
+/******/ 					const s = scripts[i];
 /******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
 /******/ 				}
 /******/ 			}
@@ -16664,17 +16925,17 @@ Card = Card_1 = __decorate([
 /******/ 				script.src = url;
 /******/ 			}
 /******/ 			inProgress[url] = [done];
-/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 			const onScriptComplete = (prev, event) => {
 /******/ 				// avoid mem leaks in IE.
 /******/ 				script.onerror = script.onload = null;
 /******/ 				clearTimeout(timeout);
-/******/ 				var doneFns = inProgress[url];
+/******/ 				const doneFns = inProgress[url];
 /******/ 				delete inProgress[url];
-/******/ 				script.parentNode && script.parentNode.removeChild(script);
-/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				script.parentNode?.removeChild(script);
+/******/ 				doneFns?.forEach((fn) => (fn(event)));
 /******/ 				if(prev) return prev(event);
 /******/ 			}
-/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			const timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
 /******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
@@ -16685,7 +16946,7 @@ Card = Card_1 = __decorate([
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
 /******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			if(Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
@@ -16773,10 +17034,10 @@ Card = Card_1 = __decorate([
 /******/ 					Object.defineProperty(fn, name, createPropertyDescriptor(name));
 /******/ 				}
 /******/ 			}
-/******/ 			fn.e = function (chunkId, fetchPriority) {
+/******/ 			(fn).e = function (chunkId, fetchPriority) {
 /******/ 				return trackBlockingPromise(require.e(chunkId, fetchPriority));
 /******/ 			};
-/******/ 			return fn;
+/******/ 			return (fn);
 /******/ 		}
 /******/ 		
 /******/ 		function createModuleHotObject(moduleId, me) {
@@ -16837,7 +17098,7 @@ Card = Card_1 = __decorate([
 /******/ 							Object.keys(__webpack_require__.hmrI).forEach(function (key) {
 /******/ 								__webpack_require__.hmrI[key](
 /******/ 									moduleId,
-/******/ 									currentUpdateApplyHandlers
+/******/ 									(currentUpdateApplyHandlers)
 /******/ 								);
 /******/ 							});
 /******/ 							setStatus("ready");
@@ -16846,7 +17107,7 @@ Card = Card_1 = __decorate([
 /******/ 							Object.keys(__webpack_require__.hmrI).forEach(function (key) {
 /******/ 								__webpack_require__.hmrI[key](
 /******/ 									moduleId,
-/******/ 									currentUpdateApplyHandlers
+/******/ 									(currentUpdateApplyHandlers)
 /******/ 								);
 /******/ 							});
 /******/ 							break;
@@ -16926,11 +17187,13 @@ Card = Card_1 = __decorate([
 /******/ 		
 /******/ 		function waitForBlockingPromises(fn) {
 /******/ 			if (blockingPromises === 0) return fn();
-/******/ 			return new Promise(function (resolve) {
-/******/ 				blockingPromisesWaiting.push(function () {
-/******/ 					resolve(fn());
-/******/ 				});
-/******/ 			});
+/******/ 			return (
+/******/ 				new Promise(function (resolve) {
+/******/ 					blockingPromisesWaiting.push(function () {
+/******/ 						resolve(fn());
+/******/ 					});
+/******/ 				})
+/******/ 			);
 /******/ 		}
 /******/ 		
 /******/ 		function hotCheck(applyOnUpdate) {
@@ -16962,11 +17225,13 @@ Card = Card_1 = __decorate([
 /******/ 									update.r,
 /******/ 									update.m,
 /******/ 									promises,
-/******/ 									currentUpdateApplyHandlers,
-/******/ 									updatedModules
+/******/ 									(currentUpdateApplyHandlers),
+/******/ 									updatedModules,
+/******/ 									update.css,
+/******/ 									update.f
 /******/ 								);
 /******/ 								return promises;
-/******/ 							}, [])
+/******/ 							}, ([]))
 /******/ 						).then(function () {
 /******/ 							return waitForBlockingPromises(function () {
 /******/ 								if (applyOnUpdate) {
@@ -16999,8 +17264,10 @@ Card = Card_1 = __decorate([
 /******/ 		
 /******/ 			applyInvalidatedModules();
 /******/ 		
-/******/ 			var results = currentUpdateApplyHandlers.map(function (handler) {
-/******/ 				return handler(options);
+/******/ 			var results = (
+/******/ 				currentUpdateApplyHandlers
+/******/ 			).map(function (handler) {
+/******/ 				return handler((options));
 /******/ 			});
 /******/ 			currentUpdateApplyHandlers = undefined;
 /******/ 		
@@ -17063,7 +17330,7 @@ Card = Card_1 = __decorate([
 /******/ 						return result.apply;
 /******/ 					})
 /******/ 					.map(function (result) {
-/******/ 						return result.apply(reportError);
+/******/ 						return (result.apply)(reportError);
 /******/ 					})
 /******/ 			)
 /******/ 				.then(function (applyResults) {
@@ -17082,12 +17349,14 @@ Card = Card_1 = __decorate([
 /******/ 			if (queuedInvalidatedModules) {
 /******/ 				if (!currentUpdateApplyHandlers) currentUpdateApplyHandlers = [];
 /******/ 				Object.keys(__webpack_require__.hmrI).forEach(function (key) {
-/******/ 					queuedInvalidatedModules.forEach(function (moduleId) {
-/******/ 						__webpack_require__.hmrI[key](
-/******/ 							moduleId,
-/******/ 							currentUpdateApplyHandlers
-/******/ 						);
-/******/ 					});
+/******/ 					(queuedInvalidatedModules).forEach(
+/******/ 						function (moduleId) {
+/******/ 							__webpack_require__.hmrI[key](
+/******/ 								moduleId,
+/******/ 								(currentUpdateApplyHandlers)
+/******/ 							);
+/******/ 						}
+/******/ 					);
 /******/ 				});
 /******/ 				queuedInvalidatedModules = undefined;
 /******/ 				return true;
@@ -17097,16 +17366,16 @@ Card = Card_1 = __decorate([
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
+/******/ 		let scriptUrl;
 /******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
+/******/ 		const document = __webpack_require__.g.document;
 /******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 			if (document.currentScript?.tagName.toUpperCase() === 'SCRIPT')
 /******/ 				scriptUrl = document.currentScript.src;
 /******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				const scripts = document.getElementsByTagName("script");
 /******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
+/******/ 					let i = scripts.length - 1;
 /******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
 /******/ 				}
 /******/ 			}
@@ -17125,7 +17394,7 @@ Card = Card_1 = __decorate([
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
+/******/ 		const installedChunks = __webpack_require__.hmrS_jsonp = __webpack_require__.hmrS_jsonp || {
 /******/ 			"main": 0
 /******/ 		};
 /******/ 		
@@ -17135,21 +17404,21 @@ Card = Card_1 = __decorate([
 /******/ 		
 /******/ 		// no preloaded
 /******/ 		
-/******/ 		var currentUpdatedModulesList;
-/******/ 		var waitingUpdateResolves = {};
+/******/ 		let currentUpdatedModulesList;
+/******/ 		const waitingUpdateResolves = {};
 /******/ 		function loadUpdateChunk(chunkId, updatedModulesList) {
 /******/ 			currentUpdatedModulesList = updatedModulesList;
 /******/ 			return new Promise((resolve, reject) => {
 /******/ 				waitingUpdateResolves[chunkId] = resolve;
 /******/ 				// start update chunk loading
-/******/ 				var url = __webpack_require__.p + __webpack_require__.hu(chunkId);
+/******/ 				const url = __webpack_require__.p + __webpack_require__.hu(chunkId);
 /******/ 				// create error before stack unwound to get useful stacktrace later
-/******/ 				var error = new Error();
-/******/ 				var loadingEnded = (event) => {
+/******/ 				const error = new Error();
+/******/ 				const loadingEnded = (event) => {
 /******/ 					if(waitingUpdateResolves[chunkId]) {
 /******/ 						waitingUpdateResolves[chunkId] = undefined
-/******/ 						var errorType = event && (event.type === 'load' ? 'missing' : event.type);
-/******/ 						var realSrc = event && event.target && event.target.src;
+/******/ 						const errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 						const realSrc = event && event.target && event.target.src;
 /******/ 						error.message = 'Loading hot update chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
 /******/ 						error.name = 'ChunkLoadError';
 /******/ 						error.type = errorType;
@@ -17165,7 +17434,7 @@ Card = Card_1 = __decorate([
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					currentUpdate[moduleId] = moreModules[moduleId];
-/******/ 					if(currentUpdatedModulesList) currentUpdatedModulesList.push(moduleId);
+/******/ 					currentUpdatedModulesList?.push(moduleId);
 /******/ 				}
 /******/ 			}
 /******/ 			if(runtime) currentUpdateRuntime.push(runtime);
@@ -17181,7 +17450,9 @@ Card = Card_1 = __decorate([
 /******/ 		var currentUpdateRuntime;
 /******/ 		function applyHandler(options) {
 /******/ 			if (__webpack_require__.f) delete __webpack_require__.f.jsonpHmr;
-/******/ 			currentUpdateChunks = undefined;
+/******/ 			currentUpdateChunks = (
+/******/ 				(undefined)
+/******/ 			);
 /******/ 			function getAffectedModuleEffects(updateModuleId) {
 /******/ 				var outdatedModules = [updateModuleId];
 /******/ 				var outdatedDependencies = {};
@@ -17193,7 +17464,7 @@ Card = Card_1 = __decorate([
 /******/ 					};
 /******/ 				});
 /******/ 				while (queue.length > 0) {
-/******/ 					var queueItem = queue.pop();
+/******/ 					var queueItem = (queue.pop());
 /******/ 					var moduleId = queueItem.id;
 /******/ 					var chain = queueItem.chain;
 /******/ 					var module = __webpack_require__.c[moduleId];
@@ -17280,7 +17551,6 @@ Card = Card_1 = __decorate([
 /******/ 								type: "disposed",
 /******/ 								moduleId: moduleId
 /******/ 							};
-/******/ 					/** @type {Error|false} */
 /******/ 					var abortError = false;
 /******/ 					var doApply = false;
 /******/ 					var doDispose = false;
@@ -17333,15 +17603,24 @@ Card = Card_1 = __decorate([
 /******/ 						};
 /******/ 					}
 /******/ 					if (doApply) {
-/******/ 						appliedUpdate[moduleId] = newModuleFactory;
-/******/ 						addAllToSet(outdatedModules, result.outdatedModules);
-/******/ 						for (moduleId in result.outdatedDependencies) {
-/******/ 							if (__webpack_require__.o(result.outdatedDependencies, moduleId)) {
+/******/ 						appliedUpdate[moduleId] = (
+/******/ 							newModuleFactory
+/******/ 						);
+/******/ 						addAllToSet(
+/******/ 							outdatedModules,
+/******/ 							(result.outdatedModules)
+/******/ 						);
+/******/ 						var resultOutdatedDependencies =
+/******/ 							(
+/******/ 								result.outdatedDependencies
+/******/ 							);
+/******/ 						for (moduleId in resultOutdatedDependencies) {
+/******/ 							if (__webpack_require__.o(resultOutdatedDependencies, moduleId)) {
 /******/ 								if (!outdatedDependencies[moduleId])
 /******/ 									outdatedDependencies[moduleId] = [];
 /******/ 								addAllToSet(
 /******/ 									outdatedDependencies[moduleId],
-/******/ 									result.outdatedDependencies[moduleId]
+/******/ 									resultOutdatedDependencies[moduleId]
 /******/ 								);
 /******/ 							}
 /******/ 						}
@@ -17352,7 +17631,9 @@ Card = Card_1 = __decorate([
 /******/ 					}
 /******/ 				}
 /******/ 			}
-/******/ 			currentUpdate = undefined;
+/******/ 			currentUpdate = (
+/******/ 				(undefined)
+/******/ 			);
 /******/ 		
 /******/ 			// Store self accepted outdated modules to require them later by the module system
 /******/ 			var outdatedSelfAcceptedModules = [];
@@ -17382,12 +17663,14 @@ Card = Card_1 = __decorate([
 /******/ 					currentUpdateRemovedChunks.forEach(function (chunkId) {
 /******/ 						delete installedChunks[chunkId];
 /******/ 					});
-/******/ 					currentUpdateRemovedChunks = undefined;
+/******/ 					currentUpdateRemovedChunks = (
+/******/ 						(undefined)
+/******/ 					);
 /******/ 		
 /******/ 					var idx;
 /******/ 					var queue = outdatedModules.slice();
 /******/ 					while (queue.length > 0) {
-/******/ 						var moduleId = queue.pop();
+/******/ 						var moduleId = (queue.pop());
 /******/ 						var module = __webpack_require__.c[moduleId];
 /******/ 						if (!module) continue;
 /******/ 		
@@ -17481,7 +17764,7 @@ Card = Card_1 = __decorate([
 /******/ 									} catch (err) {
 /******/ 										if (typeof errorHandlers[k] === "function") {
 /******/ 											try {
-/******/ 												errorHandlers[k](err, {
+/******/ 												(errorHandlers[k])(err, {
 /******/ 													moduleId: outdatedModuleId,
 /******/ 													dependencyId: dependenciesForCallbacks[k]
 /******/ 												});
@@ -17514,8 +17797,12 @@ Card = Card_1 = __decorate([
 /******/ 											}
 /******/ 										}
 /******/ 									}
-/******/ 									if (result && typeof result.then === "function") {
-/******/ 										acceptPromises.push(result);
+/******/ 									if (
+/******/ 										result &&
+/******/ 										typeof ((result).then) ===
+/******/ 											"function"
+/******/ 									) {
+/******/ 										acceptPromises.push((result));
 /******/ 									}
 /******/ 								}
 /******/ 							}
@@ -17591,7 +17878,9 @@ Card = Card_1 = __decorate([
 /******/ 			removedModules,
 /******/ 			promises,
 /******/ 			applyHandlers,
-/******/ 			updatedModulesList
+/******/ 			updatedModulesList,
+/******/ 			css,
+/******/ 			forceLoadChunks
 /******/ 		) {
 /******/ 			applyHandlers.push(applyHandler);
 /******/ 			currentUpdateChunks = {};
@@ -17599,7 +17888,7 @@ Card = Card_1 = __decorate([
 /******/ 			currentUpdate = removedModules.reduce(function (obj, key) {
 /******/ 				obj[key] = false;
 /******/ 				return obj;
-/******/ 			}, {});
+/******/ 			}, ({}));
 /******/ 			currentUpdateRuntime = [];
 /******/ 			chunkIds.forEach(function (chunkId) {
 /******/ 				if (
@@ -17623,6 +17912,15 @@ Card = Card_1 = __decorate([
 /******/ 						currentUpdateChunks[chunkId] = true;
 /******/ 					}
 /******/ 				};
+/******/ 				// Force-load chunks that now own modules orphaned by a removed chunk;
+/******/ 				// ensure handlers skip already-installed chunks, so no guard is needed.
+/******/ 				if (forceLoadChunks) {
+/******/ 					forceLoadChunks.forEach(function (chunkId) {
+/******/ 						Object.keys(__webpack_require__.f).forEach(function (key) {
+/******/ 							__webpack_require__.f[key](chunkId, promises);
+/******/ 						});
+/******/ 					});
+/******/ 				}
 /******/ 			}
 /******/ 		};
 /******/ 		
@@ -17647,7 +17945,7 @@ Card = Card_1 = __decorate([
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=0.0.0.0&port=8080&pathname=%2Fws&logging=info&overlay=true&reconnect=10&hot=true&live-reload=true");
 /******/ 	__webpack_require__("./node_modules/webpack/hot/dev-server.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app.ts");
+/******/ 	let __webpack_exports__ = __webpack_require__("./src/app.ts");
 /******/ 	
 /******/ })()
 ;
